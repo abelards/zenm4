@@ -6,8 +6,8 @@
 </description>
     <link>http://zenm4.net/</link>
     <atom:link href="http://zenm4.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 Jan 2016 12:54:23 +0100</pubDate>
-    <lastBuildDate>Sun, 24 Jan 2016 12:54:23 +0100</lastBuildDate>
+    <pubDate>Sun, 24 Jan 2016 15:25:29 +0100</pubDate>
+    <lastBuildDate>Sun, 24 Jan 2016 15:25:29 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -36,16 +36,24 @@ Quand on y range autre chose, on “oublie”, perd, écrase ce qu’il y avait.
 &lt;p&gt;Dans certains langages, ces boîtes sont typées : on ne peut y mettre
 que des couteaux, ou que des fourchettes. Dans d’autres, pas de contraintes.&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;Attention : Cette approximation du type est grossière et largement fausse !&lt;/em&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;b&gt;Un pointeur&lt;/b&gt;&lt;/p&gt;
 
 &lt;p&gt;Un pointeur c’est comme un numéro de téléphone. Personne n’a jamais
 confondu le numéro avec la personne, alors pourquoi avoir peur dès que
-ça parle de code ? En C,&lt;br /&gt;
-&lt;code&gt;int i = 0xDEADBEEF&lt;/code&gt;&lt;br /&gt;
-met le numéro hexadécimal &lt;code&gt;0xDEADBEEF&lt;/code&gt; dans la variable &lt;code&gt;i&lt;/code&gt;, et &lt;code&gt;*i&lt;/code&gt;
-nous donne ce qu’il y a à cette adresse mémoire. &lt;code&gt;i&lt;/code&gt; serait le nom de
-là où vous avez rangé le numéro, et &lt;code&gt;*i&lt;/code&gt; appeler ce numéro : on
-s’attend à y trouver Alice.&lt;/p&gt;
+ça parle de code ? En C, avec&lt;br /&gt;
+&lt;code&gt;int valeur = 42;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;int* pointeur = &amp;amp;valeur&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous avez le nombre 42 dans &lt;code&gt;valeur&lt;/code&gt;, rangé à l’adresse mémoire
+&lt;code&gt;&amp;amp;valeur&lt;/code&gt;.  Le pointeur &lt;code&gt;pointeur&lt;/code&gt; est le numéro de téléphone, et
+&lt;code&gt;*pointeur&lt;/code&gt; son contenu : quand on regarde la valeur de &lt;code&gt;pointeur&lt;/code&gt; on
+n’a qu’un numéro, mais quand on regarde &lt;code&gt;*pointeur&lt;/code&gt; on retombe sur le
+contenu : &lt;code&gt;42&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;ERRATUM (&lt;a href=&quot;https://twitter.com/vdwxv&quot;&gt;@vdwxv&lt;/a&gt;) :
+je dis “chiffre” mais il faut bien sûr comprendre “nombre”.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;b&gt;Une liste chaînée&lt;/b&gt;&lt;/p&gt;
 
