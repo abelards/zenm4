@@ -6,15 +6,95 @@
 </description>
     <link>http://zenm4.net/</link>
     <atom:link href="http://zenm4.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 Jan 2016 15:53:57 +0100</pubDate>
-    <lastBuildDate>Sun, 17 Jan 2016 15:53:57 +0100</lastBuildDate>
+    <pubDate>Sun, 24 Jan 2016 12:54:23 +0100</pubDate>
+    <lastBuildDate>Sun, 24 Jan 2016 12:54:23 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>001. Liste chaînée</title>
+        <description>&lt;p&gt;Bonjour, bienvenue pour ce premier épisode de zenm4 :&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Les listes chaînées&lt;/b&gt;&lt;br /&gt;
+Pour cet épisode pilote, parlons d’un point douloureux du langage C.&lt;/p&gt;
+
+&lt;p&gt;Le C a un avantage pédagogique : comme il vous donne à peine assez
+d’outils pour travailler, vous êtes obligés de tout faire vous-mêmes
+et d’apprendre comment marche ce qu’il y a “en dessous” (système, C, UNIX).&lt;/p&gt;
+
+&lt;p&gt;Lors de l’apprentissage du C, un des premiers blocages que je vois
+souvent et qui impressionne les gens est celui de la liste
+chaînée. Cela fait appel à des concepts simples mais qui à ce
+moment-là de l’apprentissage sont souvent confus : les mélanger, c’est
+la catastrophe.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Une variable&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Une variable est une boîte, ou une étiquette.
+On y range des choses qu’on récupère plus tard en “rappelant” le nom qu’on avait utilisé.
+Quand on y range autre chose, on “oublie”, perd, écrase ce qu’il y avait.&lt;/p&gt;
+
+&lt;p&gt;Dans certains langages, ces boîtes sont typées : on ne peut y mettre
+que des couteaux, ou que des fourchettes. Dans d’autres, pas de contraintes.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Un pointeur&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Un pointeur c’est comme un numéro de téléphone. Personne n’a jamais
+confondu le numéro avec la personne, alors pourquoi avoir peur dès que
+ça parle de code ? En C,&lt;br /&gt;
+&lt;code&gt;int i = 0xDEADBEEF&lt;/code&gt;&lt;br /&gt;
+met le numéro hexadécimal &lt;code&gt;0xDEADBEEF&lt;/code&gt; dans la variable &lt;code&gt;i&lt;/code&gt;, et &lt;code&gt;*i&lt;/code&gt;
+nous donne ce qu’il y a à cette adresse mémoire. &lt;code&gt;i&lt;/code&gt; serait le nom de
+là où vous avez rangé le numéro, et &lt;code&gt;*i&lt;/code&gt; appeler ce numéro : on
+s’attend à y trouver Alice.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Une liste chaînée&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous souhaitez maintenant contacter Dave. Vous n’avez pas son numéro,
+mais vous savez que quelqu’un dans le cercle d’amis l’a. Vous appelez
+Alice, qui a le numéro de Bob, qui a celui de Carole, qui a celui de
+Dave.&lt;/p&gt;
+
+&lt;p&gt;Vous pouvez maintenant parler à Dave.&lt;/p&gt;
+
+&lt;p&gt;Bien sûr, je ne parle ici que des chaînons. Le principe d’une liste
+c’est que vous rangez quelque chose dedans : vous vous préparez alors
+à travailler sur une structure qui a une “charge utile”, par exemple
+le livre que vous avez prêté, et bien sûr le lien vers la prochaine
+personne à qui elle aurait pu prêter votre livre.&lt;/p&gt;
+
+&lt;p&gt;Pour récupérer votre livre, vous allez donc appeler Alice, qui ne l’a
+plus car elle l’a prêté à Bob, qui l’a prêté à Carole etc. Au bout
+d’un moment, la recherche s’arrête : soit vous trouvez que Dave a le
+livre, soit il ne l’a pas mais ne sait plus qui appeler, et la
+recherche a échoué.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Ces sujets sont-ils complexes ? Pas pires qu’autre chose.&lt;/b&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Le langage humain est complexe, et pourtant peu de gens se trompent.
+Quand on dit l’Élysée : c’est une adresse, un palais, le siège du
+pouvoir exécutif français, le président… on mélange tout cela et
+pourtant tout le monde comprend.&lt;/p&gt;
+
+&lt;p&gt;Alors, le code, c’est compliqué ?&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Prenez soin de vous, soyez heureux !&lt;/b&gt;&lt;br /&gt;
+Et pour vivre heureux, ne faisons plus de C.
+Il ne devrait plus y avoir de C dans zenm4.&lt;/p&gt;
+
+&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
+</description>
+        <pubDate>Sun, 24 Jan 2016 15:45:00 +0100</pubDate>
+        <link>http://zenm4.net/meta/2016/01/24/001.html</link>
+        <guid isPermaLink="true">http://zenm4.net/meta/2016/01/24/001.html</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>000. man zenm4</title>
         <description>&lt;p&gt;Bienvenue à l’épisode zéro de zenm4 !&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/242392059&amp;amp;color=ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;&lt;b&gt;Qu’est-ce que c’est,&lt;/b&gt; d’où ça vient, où ça va ?&lt;br /&gt;
 C’est &lt;b&gt;un podcast court français avec une métaphore par semaine&lt;/b&gt;.&lt;br /&gt;
