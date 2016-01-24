@@ -86,16 +86,24 @@ Quand on y range autre chose, on “oublie”, perd, écrase ce qu’il y avait.
 <p>Dans certains langages, ces boîtes sont typées : on ne peut y mettre
 que des couteaux, ou que des fourchettes. Dans d’autres, pas de contraintes.</p>
 
+<p><em>Attention : Cette approximation du type est grossière et largement fausse !</em></p>
+
 <p><b>Un pointeur</b></p>
 
 <p>Un pointeur c’est comme un numéro de téléphone. Personne n’a jamais
 confondu le numéro avec la personne, alors pourquoi avoir peur dès que
-ça parle de code ? En C,<br />
-<code>int i = 0xDEADBEEF</code><br />
-met le numéro hexadécimal <code>0xDEADBEEF</code> dans la variable <code>i</code>, et <code>*i</code>
-nous donne ce qu’il y a à cette adresse mémoire. <code>i</code> serait le nom de
-là où vous avez rangé le numéro, et <code>*i</code> appeler ce numéro : on
-s’attend à y trouver Alice.</p>
+ça parle de code ? En C, avec<br />
+<code>int valeur = 42;</code><br />
+<code>int* pointeur = &amp;valeur</code><br /></p>
+
+<p>Vous avez le nombre 42 dans <code>valeur</code>, rangé à l’adresse mémoire
+<code>&amp;valeur</code>.  Le pointeur <code>pointeur</code> est le numéro de téléphone, et
+<code>*pointeur</code> son contenu : quand on regarde la valeur de <code>pointeur</code> on
+n’a qu’un numéro, mais quand on regarde <code>*pointeur</code> on retombe sur le
+contenu : <code>42</code>.</p>
+
+<p><em>ERRATUM (<a href="https://twitter.com/vdwxv">@vdwxv</a>) :
+je dis “chiffre” mais il faut bien sûr comprendre “nombre”.</em></p>
 
 <p><b>Une liste chaînée</b></p>
 
