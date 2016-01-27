@@ -18,7 +18,7 @@ body {
   margin: auto;
 }
 
-header, article, .title, .sound, .links, .todo, .mot, ul.post-list {
+header, article, .title, .block, ul.post-list {
   width: 100%;
   min-width: 250px;
   max-width: 27em;
@@ -26,7 +26,7 @@ header, article, .title, .sound, .links, .todo, .mot, ul.post-list {
   margin: 0.5em;
 }
 
-.sound, .links, .todo, .mot {
+.block {
   float: left;
   background: #F4F4F4;
   border: 1px solid silver;
@@ -156,7 +156,7 @@ ul.post-list { margin-left: auto; margin-right: auto; }
 @media screen and (max-width:870px) {
  .page { max-width: 28em; }
 
- header, article, .title, .sound, .links, .todo, .mot, ul.post-list {
+ header, article, .title, .block, ul.post-list {
   width: 97%;
  }
 
@@ -205,9 +205,8 @@ ul.post-list:hover .post-meta { color: #000; }
 .menu { text-align: center; } // color: #A5A5A5; }
 // .submenu { background: #DEF; border-top: none; }
 
-.menu a { display: inline-block; width: 17%; margin: 0 auto; padding: 4px; }
-.menu a.soundcloud { width: 6em; }
-.menu a.rss { width: 3em; }
+.menu a { display: inline-block; min-width: 3em; margin: 0 auto; padding: 4px; }
+.menu a.icon { width: 5em; }
 // .menu a:hover, #tags .tag:hover { background: #6ED6FA; text-decoration: none; }
 // .menu a.active, #tags .tag.active { background: #8EE6FF; }
 .submenu a { width: 17%; }
