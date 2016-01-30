@@ -6,9 +6,148 @@
 </description>
     <link>http://zenm4.net/</link>
     <atom:link href="http://zenm4.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Jan 2016 14:02:42 +0100</pubDate>
-    <lastBuildDate>Wed, 27 Jan 2016 14:02:42 +0100</lastBuildDate>
+    <pubDate>Sat, 30 Jan 2016 20:24:28 +0100</pubDate>
+    <lastBuildDate>Sat, 30 Jan 2016 20:24:28 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>002. Cache-Cache</title>
+        <description>&lt;p&gt;Bonjour, bienvenue pour l’épisode 2, sur &lt;b&gt;le cache&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;Commençons par un adage connu de Phil Karlton :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Il n’y a que deux choses compliquées en informatique : invalider le cache et nommer les choses.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Bien utiliser le cache est complexe, mais le concept est simple.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Un carnet d’adresses&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans le dernier (et premier) épisode sur les listes chaînées,
+pour retrouver mon ami Dave, je devais appeler Alice puis Bob puis Carol.
+Beaucoup de gens dérangés pour pas grand-chose.&lt;/p&gt;
+
+&lt;p&gt;On peut apporter une solution très simple : garder un carnet d’adresses.
+Je note le numéro de Dave, et peut-être même celui de Bob et Carol.&lt;/p&gt;
+
+&lt;p&gt;À chaque fois que je voudrai appeler Dave, je l’aurai directement en
+ligne sans déranger personne : je viens d’inventer le cache !&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Le cache est mort, vive le cache !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Le problème bien sûr, c’est quand Dave change de numéro : plus moyen de le joindre !&lt;/p&gt;
+
+&lt;p&gt;On peut voir trois problèmes immédiats :
+le premier, c’est quand le numéro n’est pas attribué.
+Pas de Dave, fin de l’histoire.
+Si je n’ai pas d’autre moyen de le contacter, c’est fichu.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Mauvais destinataire&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Le deuxième est peut-être pire : le numéro a été réattribué entre temps.
+En fonction de votre phrase d’accroche, les conséquences sont variables.&lt;/p&gt;
+
+&lt;p&gt;Si je commence par des familiarités, c’est embarrassant mais pas bien dangereux.
+Si j’envoie le numéro de ma carte bleue ou autre donnée sensible, c’est dramatique.&lt;/p&gt;
+
+&lt;p&gt;Imaginons maintenant que j’envoie un SMS à ce numéro, “OK pour ce soir”.
+Je supposais que Dave allait réserver des places de cinéma et venir à 20h, personne.
+Dommage.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Parenthèse : chez le mauvais destinataire&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Petite digression : imaginons maintenant que la personne d’en face, disons Bernard,
+était elle aussi en train d’attendre un SMS de confirmation, et dans sa précipitation
+n’a pas vérifié la source du message, et répond “OK”.&lt;/p&gt;
+
+&lt;p&gt;Non seulement j’ai maintenant une grande confiance que Dave sera au cinéma,
+et c’est toujours aussi faux, mais en plus Bernard aura fait quelque chose,
+disons réserver deux autres places pour un autre film, en pensant que cela
+venait d’un autre ami.&lt;/p&gt;
+
+&lt;p&gt;Au moins nous serons deux à avoir l’air bête, mais c’est une piètre consolation.&lt;/p&gt;
+
+&lt;p&gt;La morale de l’histoire, c’est qu’il faut être clair quand on communique :
+si les humains peuvent se faire avoir,
+les ordinateurs qui sont très bêtes ne risquent pas de faire mieux.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;La chaîne est rompue&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Le troisième problème du cache, c’est que la chaîne est rompue.&lt;/p&gt;
+
+&lt;p&gt;Je faisais bien confiance à Alice pour me passer Dave, peut-être que
+quelqu’un me demandait à moi le numéro de Dave. Je ne l’appelle pas
+à chaque fois que je passe son numéro pour vérifier que c’est encore
+le bon : mon cache est corrompu.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Expiration du cache&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;La solution serait que Dave prévienne quand il change de numéro de téléphone.
+Celui qui sait que la donnée a changé, ici Dave, devrait prévenir ceux qui
+gardent ses données en cache, ici moi… encore faut-il que Dave sache qui cache.&lt;/p&gt;
+
+&lt;p&gt;Quitte à ne pas savoir, il pourrait demander à ses amis les plus proches
+de répandre la nouvelle. C’est peut-être faisable, peut-être pas,
+compliqué certainement, mais en tout cas dans l’intervalle
+il y a des gens qui ont l’ancien numéro.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Parenthèse : redirect&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans la vraie vie, vous pourriez imaginer des parades subtiles : Dave
+a un deuxième téléphone qu’il garde sur lui et pendant un temps, Dave
+répond aux deux numéros, et rappelle à chacun qu’il faut utiliser le
+nouveau numéro, ou met en place un répondeur automatique, voire
+plus simplement un renvoi d’appel.&lt;/p&gt;
+
+&lt;p&gt;Voilà, ça n’avait rien à voir avec le cache,
+mais vous venez de comprendre les redirections :)&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Du cache partout&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous voyez que la recette est simple, l’idée vient facilement à n’importe qui.
+On a du cache partout dans notre vie, et dans nos logiciels.&lt;/p&gt;
+
+&lt;p&gt;Dans le cas qui m’intéresse, une appli Web Ruby on Rails, on a du cache à tous les niveaux :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;votre base de données met des requêtes et donnés en cache&lt;/li&gt;
+  &lt;li&gt;Rails a plusieurs systèmes de cache (sur ses vues et partials etc)&lt;/li&gt;
+  &lt;li&gt;votre serveur applicatif ou serveur web également (a minima sur les fichiers)&lt;/li&gt;
+  &lt;li&gt;toute configuration que vous mettez en bonus, par exemple un reverse-proxy comme Varnish dont c’est exactement le job&lt;/li&gt;
+  &lt;li&gt;parfois le proxy de votre connexion Internet peut le faire aussi. Imaginons un réseau d’entreprise où tout le monde va sur la page d’un site d’actu : il peut le mettre en cache si c’est le même (en HTTPS il ne le saura pas ; chacun connecté sur son compte, le cache serait abusif aussi ; mais bon vous avez l’idée)&lt;/li&gt;
+  &lt;li&gt;et on vous a probablement déjà demandé de “vider le cache de votre navigateur” qui applique lui aussi ce genre de techniques pour ne pas tout re-télécharger à chaque fois !&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Voilà, dans un domaine particulier, j’ai pu citer six endroits où l’on met habituellement un cache.&lt;/p&gt;
+
+&lt;p&gt;Le problème est que tous ces caches sont appelés… “le cache”.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Cache de noeuds&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est pourquoi je recommande de “désambiguiser” : utiliser le même nom pour
+des choses différentes ? Non merci, faites-vous préciser et précisez-le.&lt;/p&gt;
+
+&lt;p&gt;(À l’opposé, des noms différents pour la même chose, c’est moins dangereux
+mais ça peut souvent être un signe d’ambiguïté à lever. Essayez, le pire
+qui puisse vous arriver c’est d’apprendre des choses dans l’intervalle !)&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Et voilà !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous venez de comprendre pourquoi l’invalidation du cache, c’est difficile !&lt;/p&gt;
+
+&lt;p&gt;J’accepte les critiques sur cet épisode et les idées pour les suivants sur twitter : @zen_m4&lt;/p&gt;
+
+&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
+</description>
+        <pubDate>Sun, 31 Jan 2016 15:45:00 +0100</pubDate>
+        <link>http://zenm4.net/meta/2016/01/31/002.html</link>
+        <guid isPermaLink="true">http://zenm4.net/meta/2016/01/31/002.html</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>001. Liste chaînée</title>
