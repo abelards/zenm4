@@ -6,9 +6,179 @@
 </description>
     <link>http://zenm4.net/</link>
     <atom:link href="http://zenm4.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Jan 2016 20:24:28 +0100</pubDate>
-    <lastBuildDate>Sat, 30 Jan 2016 20:24:28 +0100</lastBuildDate>
+    <pubDate>Sun, 07 Feb 2016 11:19:54 +0100</pubDate>
+    <lastBuildDate>Sun, 07 Feb 2016 11:19:54 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>003. Les requêtes N+1</title>
+        <description>&lt;p&gt;Bonjour, bienvenue pour l’épisode 3, plus proche de mon quotidien de Rubyiste,
+sur un oubli classique dans Rails &lt;b&gt;les requêtes N+1&lt;/b&gt;, un des premiers
+symptômes à vérifier quand votre application est trop lente.&lt;/p&gt;
+
+&lt;p&gt;Je n’aime lâcher personne dans un domaine complètement inconnu, on va
+commencer par une introduction superficielle à Rails et ActiveRecord,
+merci comme toujours de me pardonner quelques inexactitudes qui ne sont
+là que pour éviter la confusion.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Ruby on Rails / MVC&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Le framework Ruby on Rails a été conçu pour faire des applications Web avec
+une architecture MVC, Modèle-Vue-Contrôleur. On ne rentrera pas ici dans les
+détails mais vous pourrez trouver de nombreuses ressources sur Internet et
+dans les liens de cet épisode :
+&lt;a href=&quot;http://www.jeveuxapprendreruby.fr/&quot;&gt;jeveuxapprendreruby.fr&lt;/a&gt;
+et mon &lt;a href=&quot;http://maitre-du-monde.fr/web_primer/fr/&quot;&gt;“Web Primer”&lt;/a&gt;,
+une vue d’ensemble et liste de vocabulaire sur un grand nombre de concepts
+utilisés dans l’architecture Web et la conception MVC.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;ActiveRecord et ORM&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Là encore, le but n’est pas de tout détailler. ActiveRecord est à la fois
+le nom d’un concept architectural et le nom de son implémentation en Ruby
+pour Rails.&lt;/p&gt;
+
+&lt;p&gt;Le principe est que l’on travaille dans un langage objet, Ruby, et que
+l’on souhaite travailler avec des données venant d’une base de données
+relationnelles.&lt;/p&gt;
+
+&lt;p&gt;Rails a identifié des besoins courants, des choses que les développeurs
+résolvent toujours de la même manière, et souhaite donc vous les fournir
+directement sans une ligne de code : c’est sa philosophie
+“Convention over Configuration”.&lt;/p&gt;
+
+&lt;p&gt;Cette couche logicielle s’appelle ORM “Object-Relational Mapping”, c’est
+à dire correspondance Objet - Relationnel. Elle a des avantages bien sûr,
+mais aussi évidemment des défauts, dont celui de cacher les difficultés.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Quel piège ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Il est extrêmement simple en Ruby on Rails de créer des pages de référentiel,
+et par exemple une liste d’Auteurs et une liste de Livres. Quand on affiche
+la liste des Livres, on souhaite probablement afficher dans une colonne le
+nom de l’auteur, et que ce soit un lien vers la fiche détaillée de l’auteur.&lt;/p&gt;
+
+&lt;p&gt;Votre modèle fait quelques lignes (déclaration des champs et associations),
+votre vue est un HTML avec des balises pour exécuter du code Rails, qui se
+base sur la présence d’une variable @livres correctement remplie.&lt;/p&gt;
+
+&lt;p&gt;Ne reste plus que votre contrôleur qui doit savoir comment faire le pont entre
+les deux. Il faut aller chercher tous les livres en base de données.
+Le code Rails est très simple :&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;@livres = Livre.all&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans une application réelle bien sûr, on a davantage de contraintes comme
+de faire de la pagination : si vous avez plus d’une centaine de livres,
+il est inutile et lourd de tout mettre sur une page et on proposera de les
+voir par pages de 20 à 100 livres à la fois.&lt;/p&gt;
+
+&lt;p&gt;Cependant, on s’expose au problème N+1 : à chaque ligne de votre Vue,
+on a un objet livre duquel on voudrait connaître l’auteur. Rails va
+alors faire la requête. Au lieu d’avoir fait 1 requête, vous en faites N.&lt;/p&gt;
+
+&lt;p&gt;Si l’on savait que l’on aurait besoin des Auteurs, on peut le demander
+directement à la base de données via une jointure, qui se code ainsi :&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;@livres = Livre.joins(:auteur)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Et la métaphore ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Si ce sujet semble obscur, voici ce que ferait votre première version
+de code : moi, le contrôleur, dois appeler au téléphone une bibliothécaire,
+le modèle, qui s’occupera de parler avec son archiviste, la base de donnés,
+qui est gardien de toutes les données dans sa bibliothèque.&lt;/p&gt;
+
+&lt;p&gt;Chaque connexion à la base de donnée est une coup de fil différent.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Bonjour, je souhaiterais la liste de tous les livres.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;L’archiviste compile sa liste, présente à la bibliothécaire un paquet
+de fiches, et comme je ne suis pas très doué avec leur jargon relationnel,
+le modèle me convertit tout cela en un tableau d’objets Ruby : on peut
+se dire que c’est un classeur de fiches qui sont simples à lire pour moi.&lt;/p&gt;
+
+&lt;p&gt;Avec la satisfaction du devoir accompli, je vous donne la liasse de
+feuilles correspondant à mes livres. Vous représentez la vue et vous
+devez présenter le tout pour l’afficher à votre client.&lt;/p&gt;
+
+&lt;p&gt;À chaque fiche de livre, vous voyez le numéro de la fiche auteur, mais rien de plus.
+Ruby on Rails n’a pas été chercher les auteurs par défaut, sinon quelle serait
+la limite ? Aller chercher aussi leurs éditeurs, les commentaires de tous les
+emprunteurs sur chacun des livres, l’historique de la bibliothèque ?
+Rails n’a pas été chercher tout cela, ce serait faire trop de travail dans votre dos
+et vous ne comprendriez pas qu’il soit si lent pour quelques titres de livres.&lt;/p&gt;
+
+&lt;p&gt;Il se trouve que vous avez directement accès au numéro de la bibliothécaire,
+et elle va rappeler l’archiviste, car vous lui demandez :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Bonjour, je souhaiterais avoir le nom de l’auteur numéro 37.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Brève recherche… Il s’agit de Molière.&lt;/p&gt;
+
+&lt;p&gt;Puis la seconde d’après, on remet la machine en branle pour demander :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Bonjour, je souhaiterais avoir le nom de l’auteur numéro 81.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Cette fois c’est Edmond Rostand.&lt;/p&gt;
+
+&lt;p&gt;Et ainsi de suite… pas très efficace.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Que fait alors cette jointure ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;La jointure est le simple moyen de demander à l’archiviste :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Bonjour, je souhaiterais avoir la liste des livres et de leurs auteurs respectifs.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Il travaillera un tout petit peu plus, mais c’est son métier et il est
+très efficace. De plus, on évite le surcoût dû aux nombreux appels :
+composer, attendre au bout du fil que l’archiviste réponde à la bibliothécaire…&lt;/p&gt;
+
+&lt;p&gt;Sans compter les politesses “bonjour, merci, au revoir” qui ne sont
+d’ailleurs pas très différentes de la manière dont se déroule le
+protocole de communication entre votre code et votre base de données.&lt;/p&gt;
+
+&lt;p&gt;Quand l’archiviste a fini son travail, il me donnera une liasse
+un peu plus épaisse, avec les fiches des auteurs incluses.
+Lorsque je vous donne la liasse, vous avez absolument tout ce qu’il vous
+faut pour travailler, vous ne rappelez même pas la bibliothécaire,
+et tout le monde est content de travailler efficacement en respectant
+l’architecture prévue, à savoir que moi seul le contrôleur devrait pouvoir
+appeler le modèle.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Et voilà !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;La leçon est de faire comme dans la vraie vie :
+restez clair et courtois, n’oubliez pas les jointures,
+et n’embêtez personne avec des dizaines de coups de fil rapprochés :)&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Un peu de méta :&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Bien sûr j’accepte les critiques sur cet épisode et les idées pour les
+suivants sur twitter : @zen_m4&lt;/p&gt;
+
+&lt;p&gt;Après un épisode 1 technique, un épisode 2 conceptuel, un épisode 3 sur Ruby et Rails,
+je vaus peut-être faire un épisode 4 philosophique, et tenter d’alterner sur ces quatre
+catégories.&lt;/p&gt;
+
+&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
+</description>
+        <pubDate>Sun, 07 Feb 2016 15:45:00 +0100</pubDate>
+        <link>http://zenm4.net/meta/2016/02/07/003.html</link>
+        <guid isPermaLink="true">http://zenm4.net/meta/2016/02/07/003.html</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>002. Cache-Cache</title>

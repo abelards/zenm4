@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique." />
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique." />
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <h1><a href="/">&#9775; Zen M-4</a></h1>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <h1 class="post-title">003. Les requêtes N+1</h1>
+    <h4>Aller chercher des infos associées sans jointure
+      <br /><em>c'est comme</em><br />poser des questions N fois au lieu d'une seule
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/245854246&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="http://www.jeveuxapprendreruby.fr/">jeveuxapprendreruby.fr</a>
+        <p>Ressources pour apprendre Ruby - en français si possible</p>
+      </li>
+    
+      <li><a href="http://maitre-du-monde.fr/web_primer/fr/">Web Primer Rails FR</a>
+        <p>Vue d'ensemble & vocabulaire - Web et MVC</p>
+      </li>
+    
+      <li><a href="http://www.gnurou.org/writing/smartquestionsfr">Smart Questions FR</a>
+        <p>De la bonne manière de poser les questions</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Bonjour, bienvenue pour l’épisode 3, plus proche de mon quotidien de Rubyiste,
+sur un oubli classique dans Rails <b>les requêtes N+1</b>, un des premiers
+symptômes à vérifier quand votre application est trop lente.</p>
+
+<p>Je n’aime lâcher personne dans un domaine complètement inconnu, on va
+commencer par une introduction superficielle à Rails et ActiveRecord,
+merci comme toujours de me pardonner quelques inexactitudes qui ne sont
+là que pour éviter la confusion.</p>
+
+<p><b>Ruby on Rails / MVC</b></p>
+
+<p>Le framework Ruby on Rails a été conçu pour faire des applications Web avec
+une architecture MVC, Modèle-Vue-Contrôleur. On ne rentrera pas ici dans les
+détails mais vous pourrez trouver de nombreuses ressources sur Internet et
+dans les liens de cet épisode :
+<a href="http://www.jeveuxapprendreruby.fr/">jeveuxapprendreruby.fr</a>
+et mon <a href="http://maitre-du-monde.fr/web_primer/fr/">“Web Primer”</a>,
+une vue d’ensemble et liste de vocabulaire sur un grand nombre de concepts
+utilisés dans l’architecture Web et la conception MVC.</p>
+
+<p><b>ActiveRecord et ORM</b></p>
+
+<p>Là encore, le but n’est pas de tout détailler. ActiveRecord est à la fois
+le nom d’un concept architectural et le nom de son implémentation en Ruby
+pour Rails.</p>
+
+<p>Le principe est que l’on travaille dans un langage objet, Ruby, et que
+l’on souhaite travailler avec des données venant d’une base de données
+relationnelles.</p>
+
+<p>Rails a identifié des besoins courants, des choses que les développeurs
+résolvent toujours de la même manière, et souhaite donc vous les fournir
+directement sans une ligne de code : c’est sa philosophie
+“Convention over Configuration”.</p>
+
+<p>Cette couche logicielle s’appelle ORM “Object-Relational Mapping”, c’est
+à dire correspondance Objet - Relationnel. Elle a des avantages bien sûr,
+mais aussi évidemment des défauts, dont celui de cacher les difficultés.</p>
+
+<p><b>Quel piège ?</b></p>
+
+<p>Il est extrêmement simple en Ruby on Rails de créer des pages de référentiel,
+et par exemple une liste d’Auteurs et une liste de Livres. Quand on affiche
+la liste des Livres, on souhaite probablement afficher dans une colonne le
+nom de l’auteur, et que ce soit un lien vers la fiche détaillée de l’auteur.</p>
+
+<p>Votre modèle fait quelques lignes (déclaration des champs et associations),
+votre vue est un HTML avec des balises pour exécuter du code Rails, qui se
+base sur la présence d’une variable @livres correctement remplie.</p>
+
+<p>Ne reste plus que votre contrôleur qui doit savoir comment faire le pont entre
+les deux. Il faut aller chercher tous les livres en base de données.
+Le code Rails est très simple :</p>
+
+<p><code>@livres = Livre.all</code></p>
+
+<p>Dans une application réelle bien sûr, on a davantage de contraintes comme
+de faire de la pagination : si vous avez plus d’une centaine de livres,
+il est inutile et lourd de tout mettre sur une page et on proposera de les
+voir par pages de 20 à 100 livres à la fois.</p>
+
+<p>Cependant, on s’expose au problème N+1 : à chaque ligne de votre Vue,
+on a un objet livre duquel on voudrait connaître l’auteur. Rails va
+alors faire la requête. Au lieu d’avoir fait 1 requête, vous en faites N.</p>
+
+<p>Si l’on savait que l’on aurait besoin des Auteurs, on peut le demander
+directement à la base de données via une jointure, qui se code ainsi :</p>
+
+<p><code>@livres = Livre.joins(:auteur)</code></p>
+
+<p><b>Et la métaphore ?</b></p>
+
+<p>Si ce sujet semble obscur, voici ce que ferait votre première version
+de code : moi, le contrôleur, dois appeler au téléphone une bibliothécaire,
+le modèle, qui s’occupera de parler avec son archiviste, la base de donnés,
+qui est gardien de toutes les données dans sa bibliothèque.</p>
+
+<p>Chaque connexion à la base de donnée est une coup de fil différent.</p>
+
+<blockquote>
+  <p>“Bonjour, je souhaiterais la liste de tous les livres.”</p>
+</blockquote>
+
+<p>L’archiviste compile sa liste, présente à la bibliothécaire un paquet
+de fiches, et comme je ne suis pas très doué avec leur jargon relationnel,
+le modèle me convertit tout cela en un tableau d’objets Ruby : on peut
+se dire que c’est un classeur de fiches qui sont simples à lire pour moi.</p>
+
+<p>Avec la satisfaction du devoir accompli, je vous donne la liasse de
+feuilles correspondant à mes livres. Vous représentez la vue et vous
+devez présenter le tout pour l’afficher à votre client.</p>
+
+<p>À chaque fiche de livre, vous voyez le numéro de la fiche auteur, mais rien de plus.
+Ruby on Rails n’a pas été chercher les auteurs par défaut, sinon quelle serait
+la limite ? Aller chercher aussi leurs éditeurs, les commentaires de tous les
+emprunteurs sur chacun des livres, l’historique de la bibliothèque ?
+Rails n’a pas été chercher tout cela, ce serait faire trop de travail dans votre dos
+et vous ne comprendriez pas qu’il soit si lent pour quelques titres de livres.</p>
+
+<p>Il se trouve que vous avez directement accès au numéro de la bibliothécaire,
+et elle va rappeler l’archiviste, car vous lui demandez :</p>
+
+<blockquote>
+  <p>“Bonjour, je souhaiterais avoir le nom de l’auteur numéro 37.”</p>
+</blockquote>
+
+<p>Brève recherche… Il s’agit de Molière.</p>
+
+<p>Puis la seconde d’après, on remet la machine en branle pour demander :</p>
+
+<blockquote>
+  <p>“Bonjour, je souhaiterais avoir le nom de l’auteur numéro 81.”</p>
+</blockquote>
+
+<p>Cette fois c’est Edmond Rostand.</p>
+
+<p>Et ainsi de suite… pas très efficace.</p>
+
+<p><b>Que fait alors cette jointure ?</b></p>
+
+<p>La jointure est le simple moyen de demander à l’archiviste :</p>
+
+<blockquote>
+  <p>“Bonjour, je souhaiterais avoir la liste des livres et de leurs auteurs respectifs.”</p>
+</blockquote>
+
+<p>Il travaillera un tout petit peu plus, mais c’est son métier et il est
+très efficace. De plus, on évite le surcoût dû aux nombreux appels :
+composer, attendre au bout du fil que l’archiviste réponde à la bibliothécaire…</p>
+
+<p>Sans compter les politesses “bonjour, merci, au revoir” qui ne sont
+d’ailleurs pas très différentes de la manière dont se déroule le
+protocole de communication entre votre code et votre base de données.</p>
+
+<p>Quand l’archiviste a fini son travail, il me donnera une liasse
+un peu plus épaisse, avec les fiches des auteurs incluses.
+Lorsque je vous donne la liasse, vous avez absolument tout ce qu’il vous
+faut pour travailler, vous ne rappelez même pas la bibliothécaire,
+et tout le monde est content de travailler efficacement en respectant
+l’architecture prévue, à savoir que moi seul le contrôleur devrait pouvoir
+appeler le modèle.</p>
+
+<p><b>Et voilà !</b></p>
+
+<p>La leçon est de faire comme dans la vraie vie :
+restez clair et courtois, n’oubliez pas les jointures,
+et n’embêtez personne avec des dizaines de coups de fil rapprochés :)</p>
+
+<p><b>Un peu de méta :</b></p>
+
+<p>Bien sûr j’accepte les critiques sur cet épisode et les idées pour les
+suivants sur twitter : @zen_m4</p>
+
+<p>Après un épisode 1 technique, un épisode 2 conceptuel, un épisode 3 sur Ruby et Rails,
+je vaus peut-être faire un épisode 4 philosophique, et tenter d’alterner sur ces quatre
+catégories.</p>
+
+<p>Merci et à bientôt !</p>
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : Un succès par jour</h4>
+    <p>Pour garder la motivation, une réussite par jour.</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : Petits Pas</h4>
+    <p>Job, GitHub, Duolingo, Seinfeld Method : ne cassez pas la chaîne !</p>
+  </div>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+  </body>
+
+</html>
