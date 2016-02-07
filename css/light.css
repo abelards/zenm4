@@ -18,6 +18,15 @@ body {
   margin: auto;
 }
 
+/*
+.concept  { border-left: 1px solid #7F7; }
+.deep 	  { border-left: 1px solid #77F; }
+.tech 	  { border-left: 1px solid #FF7; }
+.rails	  { border-left: 1px solid #F77; }
+.philo 	  { border-left: 1px solid #7FF; }
+.business { border-left: 1px solid #F7F; }
+*/
+
 header, article, .title, .block, ul.post-list {
   width: 100%;
   min-width: 250px;
