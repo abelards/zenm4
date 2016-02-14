@@ -1,14 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Zen M-4</title>
+    <title>Zen M-4 : Zen Metaphor</title>
     <description>Comprendre le dev Web par des métaphores.
 </description>
     <link>http://zenm4.net/</link>
     <atom:link href="http://zenm4.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 07 Feb 2016 11:19:54 +0100</pubDate>
-    <lastBuildDate>Sun, 07 Feb 2016 11:19:54 +0100</lastBuildDate>
+    <language>fr-fr</language>
+    <copyright>&#169; Sylvain Abélard</copyright>
+    <itunes:subtitle>Chaque semaine une image simple pour comprendre quelque chose qui n&#39;aurait jamais dû être compliqué dans le développement informatique.</itunes:subtitle>
+    <itunes:author>Sylvain Abélard</itunes:author>
+    <itunes:summary>Chaque semaine une image simple pour comprendre quelque chose qui n&#39;aurait jamais dû être compliqué dans le développement informatique.</itunes:summary>
+    <itunes:owner>
+      <itunes:name>Sylvain Abélard</itunes:name>
+      <itunes:email>sylvain.abelard+zenm4@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="http://www.zenm4.net/img/zenm4.png" />
+    <itunes:category text="Technology">
+    <pubDate>Sun, 14 Feb 2016 19:12:57 +0100</pubDate>
+    <lastBuildDate>Sun, 14 Feb 2016 19:12:57 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>004. Priorité CSS</title>
+        <description>&lt;p&gt;Bonjour, bienvenue pour l’épisode 4 !&lt;/p&gt;
+
+&lt;p&gt;Beaucoup de gens y compris des devs expérimentés ont des soucis de CSS.
+Il y a l’attitude défaitiste qui dit que vous n’y arriverez jamais,
+il y a l’attitude “pas mon problème” qui refile le bébé à quelqu’un d’autre,
+et il y a l’attitude snob qui méprise carrément le problème.
+… et bien sûr il y a l’attitude qui consiste à tester, à apprendre, et à livrer de la valeur à ses utilisateurs et ses clients :)&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;OK, c’est dur&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est vrai que ce n’est pas simple.
+De manière générale, HTML et CSS c’est dur.&lt;/p&gt;
+
+&lt;p&gt;Il y a eu des tas de normes qui s’empilent les unes sur les autres,
+mais le vrai souci était la variété des navigateurs qui ne gèraient
+pas tout pareil.&lt;/p&gt;
+
+&lt;p&gt;Ça va un peu mieux et ça va me permettre de ne pas vous parler des
+astuces IE6, difficiles à contourner mais qu’on connaissait bien, ou
+IE7, un peu mieux a priori mais que finalement on connaissait moins.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Pourquoi c’est dur ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;L’intention est louable : on veut séparer la forme et le fond.&lt;/p&gt;
+
+&lt;p&gt;Vous avez un contenu HTML, que j’aime visualiser comme des boîtes dans
+des boîtes dans des boîtes… etc.&lt;/p&gt;
+
+&lt;p&gt;On souhaite garder les informations d’affichage à côté pour pouvoir
+changer de design sans changer le code, et vice-versa.&lt;/p&gt;
+
+&lt;p&gt;On veut alors ajouter des informations sur ce que représentent ces
+boîtes, essentiellement son tag, sa classe, et son identifiant.&lt;/p&gt;
+
+&lt;p&gt;À partir de tout cela, vous faites un autre fichier, une CSS pour
+Cascading Style Sheets, Feuille de Style qui s’appliquent en Cascade
+(pour une fois qu’on a un nom explicite !) qui contient une liste de
+règles, des directives CSS.&lt;/p&gt;
+
+&lt;p&gt;Elles sont toutes à prendre en compte, mais pas aussi séquentiellement
+que du code où il y a un ordre précis, mais plutôt “toutes ensembles”.&lt;/p&gt;
+
+&lt;p&gt;C’est comme si tout le monde venait parler en même temps dans une conversation !&lt;/p&gt;
+
+&lt;p&gt;Du coup la moindre règle modifie les autres, ce que l’on appelle des
+“effets de bord”, et c’est exactement ce qu’on essaie d’éviter de
+faire quand on code.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Comment faire du sens dans ce bruit ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans la vraie vie, quand vous avez des gens qui parlent ensemble,
+quand vous avez plusieurs consignes au travail qui semblent en conflit,
+vous rangez aussi par priorités.&lt;/p&gt;
+
+&lt;p&gt;Imaginez : on vous dit un jour de traiter tous les dossiers d’une
+certaine manière, mais s’ils sont bleus d’une autre.
+On vous dit que si un dossier traîne depuis trop longtemps, il est prioritaire.
+Que si le client est VIP, c’est prioritaire.
+Que si le patron le veut de suite, c’est ultra prioritaire.&lt;/p&gt;
+
+&lt;p&gt;Qu’est-ce que vous faites ? Comme tout le monde : quand tout est
+prioritaire, rien n’est prioritaire, et vous tentez de retrouver un
+ordre décent dans tout cela.&lt;/p&gt;
+
+&lt;p&gt;(D’ailleurs petite parenthèse : c’est pour cela que je refuse
+d’utiliser la directive CSS &lt;code&gt;!important&lt;/code&gt; et que je ne la recommande pas.)&lt;/p&gt;
+
+&lt;p&gt;On s’arrête, on réfléchit, et on décide qu’on traitera le dossier du
+patron en premier, puis les VIP, puis les anciens, puis les dossiers
+normaux, qui passent en bas de la pile.&lt;/p&gt;
+
+&lt;p&gt;La règle de priorisation CSS marche pareil : qui le dit, quand est-ce
+qu’on le dit, mais surtout à propos de quoi on le dit.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Qui parle quand ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Certaines pages Web n’ont pas d’information CSS.
+Elles sont très rares, mais il y a bien une information qui existe :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;quand vous écrivez une page HTML pure avec des titres H1 et H2, ils sont grands et en gras&lt;/li&gt;
+  &lt;li&gt;quand vous mettez une liste OL ou UL, ses éléments sont en retrait et avec un chiffre ou une puce&lt;/li&gt;
+  &lt;li&gt;quand vous utilisez une balise P pour paragraphe, il y a un espace vide autour (padding)&lt;/li&gt;
+  &lt;li&gt;les liens non visités sont bleus, les visités sont violets&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On voit qu’il existe une CSS par défaut du navigateur, mais c’est la moins importante de toutes.&lt;/p&gt;
+
+&lt;p&gt;Ensuite, vous pouvez utiliser des CSS que vous importez via @import, link, ou dans le header,
+ou en ouvrant des balises &lt;style&gt; dans le corps de la page (mais ce n&#39;est pas propre)
+C&#39;est le deuxième niveau de priorité. Au sein de ce même niveau de priorité, celui qui parle
+le dernier a raison.&lt;/style&gt;&lt;/p&gt;
+
+&lt;p&gt;Enfin, vous pouvez utiliser le style “inline” (écrit directement dans
+le HTML sur l’attribut style de l’élément, mais ce n’est vraiment pas
+propre) : c’est le dernier à parler, il est exactement là où vous
+voulez l’appliquer, on considère que c’est celui qui écrase tout le
+reste et qui aura raison au final.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Qui parle de quoi ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;On a cinq manière d’identifier des éléments HTML, cinq sélecteurs
+disponibles dans nos règles CSS :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;l’élément, ou le tag, c’est le type de boîte HTML (DIV par exemple)&lt;/li&gt;
+  &lt;li&gt;la classe, précédée par un point, quelque chose que vous pouvez ajouter pour noter la
+similarité entre plusieurs éléments (sur mes dossiers, la couleur
+rouge ou bleu, écrit au marqueur ou au stylo, le fait que ce soit un
+client VIP…)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;l’identifiant, précédé par un dièse, quand le dossier est nommé (le cas de Mr Tartempion)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;des pseudo-sélecteurs, avec des symboles “deux points”&lt;/li&gt;
+  &lt;li&gt;et des sélecteurs par attributs (avec des crochets) depuis CSS3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Si vous utilisez ces deux derniers vous savez un peu comment ça
+marche, alors je vais me concentrer sur les bases : élément, classe,
+identifiant.  En plus, on peut les enchaîner : tous les dossiers bleus
+à condition qu’ils soient dans une armoire, voire expressément les
+dossiers bleus dans une armoire bleue.&lt;/p&gt;
+
+&lt;p&gt;L’élément vaut un point : &lt;code&gt;UL LI A&lt;/code&gt; vaut alors trois points.
+Une classe vaut dix points : &lt;code&gt;UL.menu&lt;/code&gt; ou &lt;code&gt;.menu LI&lt;/code&gt; valent onze points.
+L’identifiant vaut cent points.&lt;/p&gt;
+
+&lt;p&gt;On donne ainsi une “prime à la précision” : plus le sélecteur est précis,
+plus votre règle monte en priorité, et plus c’est elle qui aura raison.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Qui dit quoi ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Enfin, on sait de quoi vous parler, mais il faut savoir quoi faire dessus.
+Vous listez des propriétés CSS que vous voulez appliquer.&lt;/p&gt;
+
+&lt;p&gt;Certaines s’appliqueront à tous ses enfants (toutes les boîtes dans
+cette boîte), d’autres non.  Et tout finit par s’appliquer en même
+temps ! Dans la vraie vie, un humain l’oublierait probablement, mais
+pas un ordinateur : si une règle très peu prioritaire dit d’écrire en vert
+et toutes les règles plus prioritaires ne changent que la taille et les bordures
+de l’élément, le texte est toujours vert.&lt;/p&gt;
+
+&lt;p&gt;Si vous voulez changer cela, vous allez réécrire cette propriété plus
+tard, prendre la précédence sur ce qui a été dit avant.&lt;/p&gt;
+
+&lt;p&gt;On dit que le droit est le métier des exceptions, mais le
+développement aussi : je vous demande de faire un certain traitement,
+sauf dans tel cas, mais sauf dans tel cas encore plus précis, auquel
+cas on réécrit encore par dessus les deux règles moins importantes.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Boni&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;On vient de voir que c’est un sujet complexe. Il y a de plus en plus
+d’outils pour vous aider, c’est bien, et de pratiques à apprendre, ce
+qui peut porter à confusion et ajoute à la complexité ambiante. Je
+voulais garder l’épisode “low-tech” pour ne perdre personne et parce
+que je crois qu’il y a de la valeur dans les bases et l’historique.&lt;/p&gt;
+
+&lt;p&gt;J’avais parlé d’un épisode philosophique, l’écriture n’est pas venue
+aussi naturellement que je pensais, je le garde au chaud pour plus tard.
+De même j’hésite à faire des épisodes business, ce qui sort clairement
+de la ligne annoncée mais qui a également beaucoup de valeur.&lt;/p&gt;
+
+&lt;p&gt;De plus, à mon sens, on ne peut se contenter de faire son job,
+il y a toujours de vastes considérations à prendre en compte autour
+de votre périmètre précis, que ce soit pour progresser, pour maximiser
+les opportunités, ou pour deviner ce qui va vous tomber dessus et
+anticiper un peu.&lt;/p&gt;
+
+&lt;p&gt;Bref, n’hésitez pas, je suis ouvert aux commentaires sur Twitter @zen_m4 :)&lt;/p&gt;
+
+&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>004. Priorité CSS</itunes:subtitle>
+	<itunes:summary>004. Priorité CSS</itunes:summary>
+	<itunes:image href="http://www.zenm4.net/img/zenm4.png" />
+	<!-- <enclosure url="http://zenm4.net" length="10000" type="audio/mpeg" />
+	<itunes:duration></itunes:duration> -->
+
+        <pubDate>Sun, 14 Feb 2016 15:45:00 +0100</pubDate>
+        <link>http://zenm4.net/meta/2016/02/14/004.html</link>
+        <guid isPermaLink="true">http://zenm4.net/meta/2016/02/14/004.html</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>003. Les requêtes N+1</title>
@@ -171,6 +373,13 @@ catégories.&lt;/p&gt;
 
 &lt;p&gt;Merci et à bientôt !&lt;/p&gt;
 </description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>003. Les requêtes N+1</itunes:subtitle>
+	<itunes:summary>003. Les requêtes N+1</itunes:summary>
+	<itunes:image href="http://www.zenm4.net/img/zenm4.png" />
+	<!-- <enclosure url="http://zenm4.net" length="10000" type="audio/mpeg" />
+	<itunes:duration></itunes:duration> -->
+
         <pubDate>Sun, 07 Feb 2016 15:45:00 +0100</pubDate>
         <link>http://zenm4.net/meta/2016/02/07/003.html</link>
         <guid isPermaLink="true">http://zenm4.net/meta/2016/02/07/003.html</guid>
@@ -310,6 +519,13 @@ qui puisse vous arriver c’est d’apprendre des choses dans l’intervalle !)&
 
 &lt;p&gt;Merci et à bientôt !&lt;/p&gt;
 </description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>002. Cache-Cache</itunes:subtitle>
+	<itunes:summary>002. Cache-Cache</itunes:summary>
+	<itunes:image href="http://www.zenm4.net/img/zenm4.png" />
+	<!-- <enclosure url="http://zenm4.net" length="10000" type="audio/mpeg" />
+	<itunes:duration></itunes:duration> -->
+
         <pubDate>Sun, 31 Jan 2016 15:45:00 +0100</pubDate>
         <link>http://zenm4.net/meta/2016/01/31/002.html</link>
         <guid isPermaLink="true">http://zenm4.net/meta/2016/01/31/002.html</guid>
@@ -400,6 +616,13 @@ Il ne devrait plus y avoir de C dans zenm4.&lt;/p&gt;
 
 &lt;p&gt;Merci et à bientôt !&lt;/p&gt;
 </description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>001. Liste chaînée</itunes:subtitle>
+	<itunes:summary>001. Liste chaînée</itunes:summary>
+	<itunes:image href="http://www.zenm4.net/img/zenm4.png" />
+	<!-- <enclosure url="http://zenm4.net" length="10000" type="audio/mpeg" />
+	<itunes:duration></itunes:duration> -->
+
         <pubDate>Sun, 24 Jan 2016 15:45:00 +0100</pubDate>
         <link>http://zenm4.net/meta/2016/01/24/001.html</link>
         <guid isPermaLink="true">http://zenm4.net/meta/2016/01/24/001.html</guid>
@@ -479,6 +702,13 @@ Je suis encore en train de déterminer le format du podcast.&lt;/p&gt;
 &lt;p&gt;Merci et à bientôt !&lt;/p&gt;
 
 </description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>000. man zenm4</itunes:subtitle>
+	<itunes:summary>000. man zenm4</itunes:summary>
+	<itunes:image href="http://www.zenm4.net/img/zenm4.png" />
+	<!-- <enclosure url="http://zenm4.net" length="10000" type="audio/mpeg" />
+	<itunes:duration></itunes:duration> -->
+
         <pubDate>Sun, 17 Jan 2016 15:45:00 +0100</pubDate>
         <link>http://zenm4.net/meta/2016/01/17/000.html</link>
         <guid isPermaLink="true">http://zenm4.net/meta/2016/01/17/000.html</guid>
