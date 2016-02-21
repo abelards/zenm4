@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique." />
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique." />
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/000/">000. man zenm4</a></span>
+      &mdash;
+      <span><a href="/002/">002. Cache-Cache</a> &#x21fe;</span>
+    </p>
+
+    <h1 class="post-title">001. Liste chaînée</h1>
+    <h4>Variables, pointeurs, liste chaînée
+      <br /><em>c'est comme</em><br />contacter quelqu'un par téléphone
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/243520005&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="http://thecodelesscode.com">The Codeless Code</a>
+        <p>Koans Zen sur le développement -- fables, histoires et énigmes</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Bonjour, bienvenue pour ce premier épisode de zenm4 :</p>
+
+<p><b>Les listes chaînées</b><br />
+Pour cet épisode pilote, parlons d’un point douloureux du langage C.</p>
+
+<p>Le C a un avantage pédagogique : comme il vous donne à peine assez
+d’outils pour travailler, vous êtes obligés de tout faire vous-mêmes
+et d’apprendre comment marche ce qu’il y a “en dessous” (système, C, UNIX).</p>
+
+<p>Lors de l’apprentissage du C, un des premiers blocages que je vois
+souvent et qui impressionne les gens est celui de la liste
+chaînée. Cela fait appel à des concepts simples mais qui à ce
+moment-là de l’apprentissage sont souvent confus : les mélanger, c’est
+la catastrophe.</p>
+
+<p><b>Une variable</b></p>
+
+<p>Une variable est une boîte, ou une étiquette.
+On y range des choses qu’on récupère plus tard en “rappelant” le nom qu’on avait utilisé.
+Quand on y range autre chose, on “oublie”, perd, écrase ce qu’il y avait.</p>
+
+<p>Dans certains langages, ces boîtes sont typées : on ne peut y mettre
+que des couteaux, ou que des fourchettes. Dans d’autres, pas de contraintes.</p>
+
+<p><em>Attention : Cette approximation du type est grossière et largement fausse !</em></p>
+
+<p><b>Un pointeur</b></p>
+
+<p>Un pointeur c’est comme un numéro de téléphone. Personne n’a jamais
+confondu le numéro avec la personne, alors pourquoi avoir peur dès que
+ça parle de code ? En C, avec<br />
+<code class="highlighter-rouge">int valeur = 42;</code><br />
+<code class="highlighter-rouge">int* pointeur = &amp;valeur</code><br /></p>
+
+<p>Vous avez le nombre 42 dans <code class="highlighter-rouge">valeur</code>, rangé à l’adresse mémoire
+<code class="highlighter-rouge">&amp;valeur</code>.  Le pointeur <code class="highlighter-rouge">pointeur</code> est le numéro de téléphone, et
+<code class="highlighter-rouge">*pointeur</code> son contenu : quand on regarde la valeur de <code class="highlighter-rouge">pointeur</code> on
+n’a qu’un numéro, mais quand on regarde <code class="highlighter-rouge">*pointeur</code> on retombe sur le
+contenu : <code class="highlighter-rouge">42</code>.</p>
+
+<p><em>ERRATUM (<a href="https://twitter.com/vdwxv">@vdwxv</a>) :
+je dis “chiffre” mais il faut bien sûr comprendre “nombre”.</em></p>
+
+<p><b>Une liste chaînée</b></p>
+
+<p>Vous souhaitez maintenant contacter Dave. Vous n’avez pas son numéro,
+mais vous savez que quelqu’un dans le cercle d’amis l’a. Vous appelez
+Alice, qui a le numéro de Bob, qui a celui de Carole, qui a celui de
+Dave.</p>
+
+<p>Vous pouvez maintenant parler à Dave.</p>
+
+<p>Bien sûr, je ne parle ici que des chaînons. Le principe d’une liste
+c’est que vous rangez quelque chose dedans : vous vous préparez alors
+à travailler sur une structure qui a une “charge utile”, par exemple
+le livre que vous avez prêté, et bien sûr le lien vers la prochaine
+personne à qui elle aurait pu prêter votre livre.</p>
+
+<p>Pour récupérer votre livre, vous allez donc appeler Alice, qui ne l’a
+plus car elle l’a prêté à Bob, qui l’a prêté à Carole etc. Au bout
+d’un moment, la recherche s’arrête : soit vous trouvez que Dave a le
+livre, soit il ne l’a pas mais ne sait plus qui appeler, et la
+recherche a échoué.</p>
+
+<p><b>Ces sujets sont-ils complexes ? Pas pires qu’autre chose.</b><br /></p>
+
+<p>Le langage humain est complexe, et pourtant peu de gens se trompent.
+Quand on dit l’Élysée : c’est une adresse, un palais, le siège du
+pouvoir exécutif français, le président… on mélange tout cela et
+pourtant tout le monde comprend.</p>
+
+<p>Alors, le code, c’est compliqué ?</p>
+
+<p><b>Prenez soin de vous, soyez heureux !</b><br />
+Et pour vivre heureux, ne faisons plus de C.
+Il ne devrait plus y avoir de C dans zenm4.</p>
+
+<p>Merci et à bientôt !</p>
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : la santé</h4>
+    <p>bien s'asseoir, bien manger, bien s'hydrater</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : Growth Mindset</h4>
+    <p>vous pouvez tout apprendre -- opposé à Fixed Mindset : vous avez une intelligence limitée</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/000/">000. man zenm4</a></span>
+    &mdash;
+    <span>
+	<a href="/002/">002. Cache-Cache</a> &#x21fe;</span>
+    </p>
+    <p>
+      2016-01-24 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+  </body>
+
+</html>

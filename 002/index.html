@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique." />
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique." />
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/001/">001. Liste chaînée</a></span>
+      &mdash;
+      <span><a href="/003/">003. Les requêtes N+1</a> &#x21fe;</span>
+    </p>
+
+    <h1 class="post-title">002. Cache</h1>
+    <h4>Le cache, à tous ses niveaux,
+      <br /><em>c'est comme</em><br />avoir un carnet d'adresses et pas redemander
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/244601628&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="http://hpmor.com">HPMOR</a>
+        <p>Harry Potter et les Méthodes de la Rationalité</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Bonjour, bienvenue pour l’épisode 2, sur <b>le cache</b>.</p>
+
+<p>Commençons par un adage connu de Phil Karlton :</p>
+
+<blockquote>
+  <p>“Il n’y a que deux choses compliquées en informatique : invalider le cache et nommer les choses.”</p>
+</blockquote>
+
+<p>Bien utiliser le cache est complexe, mais le concept est simple.</p>
+
+<p><b>Un carnet d’adresses</b></p>
+
+<p>Dans le dernier (et premier) épisode sur les listes chaînées,
+pour retrouver mon ami Dave, je devais appeler Alice puis Bob puis Carol.
+Beaucoup de gens dérangés pour pas grand-chose.</p>
+
+<p>On peut apporter une solution très simple : garder un carnet d’adresses.
+Je note le numéro de Dave, et peut-être même celui de Bob et Carol.</p>
+
+<p>À chaque fois que je voudrai appeler Dave, je l’aurai directement en
+ligne sans déranger personne : je viens d’inventer le cache !</p>
+
+<p><b>Le cache est mort, vive le cache !</b></p>
+
+<p>Le problème bien sûr, c’est quand Dave change de numéro : plus moyen de le joindre !</p>
+
+<p>On peut voir trois problèmes immédiats :
+le premier, c’est quand le numéro n’est pas attribué.
+Pas de Dave, fin de l’histoire.
+Si je n’ai pas d’autre moyen de le contacter, c’est fichu.</p>
+
+<p><b>Mauvais destinataire</b></p>
+
+<p>Le deuxième est peut-être pire : le numéro a été réattribué entre temps.
+En fonction de votre phrase d’accroche, les conséquences sont variables.</p>
+
+<p>Si je commence par des familiarités, c’est embarrassant mais pas bien dangereux.
+Si j’envoie le numéro de ma carte bleue ou autre donnée sensible, c’est dramatique.</p>
+
+<p>Imaginons maintenant que j’envoie un SMS à ce numéro, “OK pour ce soir”.
+Je supposais que Dave allait réserver des places de cinéma et venir à 20h, personne.
+Dommage.</p>
+
+<p><b>Parenthèse : chez le mauvais destinataire</b></p>
+
+<p>Petite digression : imaginons maintenant que la personne d’en face, disons Bernard,
+était elle aussi en train d’attendre un SMS de confirmation, et dans sa précipitation
+n’a pas vérifié la source du message, et répond “OK”.</p>
+
+<p>Non seulement j’ai maintenant une grande confiance que Dave sera au cinéma,
+et c’est toujours aussi faux, mais en plus Bernard aura fait quelque chose,
+disons réserver deux autres places pour un autre film, en pensant que cela
+venait d’un autre ami.</p>
+
+<p>Au moins nous serons deux à avoir l’air bête, mais c’est une piètre consolation.</p>
+
+<p>La morale de l’histoire, c’est qu’il faut être clair quand on communique :
+si les humains peuvent se faire avoir,
+les ordinateurs qui sont très bêtes ne risquent pas de faire mieux.</p>
+
+<p><b>La chaîne est rompue</b></p>
+
+<p>Le troisième problème du cache, c’est que la chaîne est rompue.</p>
+
+<p>Je faisais bien confiance à Alice pour me passer Dave, peut-être que
+quelqu’un me demandait à moi le numéro de Dave. Je ne l’appelle pas
+à chaque fois que je passe son numéro pour vérifier que c’est encore
+le bon : mon cache est corrompu.</p>
+
+<p><b>Expiration du cache</b></p>
+
+<p>La solution serait que Dave prévienne quand il change de numéro de téléphone.
+Celui qui sait que la donnée a changé, ici Dave, devrait prévenir ceux qui
+gardent ses données en cache, ici moi… encore faut-il que Dave sache qui cache.</p>
+
+<p>Quitte à ne pas savoir, il pourrait demander à ses amis les plus proches
+de répandre la nouvelle. C’est peut-être faisable, peut-être pas,
+compliqué certainement, mais en tout cas dans l’intervalle
+il y a des gens qui ont l’ancien numéro.</p>
+
+<p><b>Parenthèse : redirect</b></p>
+
+<p>Dans la vraie vie, vous pourriez imaginer des parades subtiles : Dave
+a un deuxième téléphone qu’il garde sur lui et pendant un temps, Dave
+répond aux deux numéros, et rappelle à chacun qu’il faut utiliser le
+nouveau numéro, ou met en place un répondeur automatique, voire
+plus simplement un renvoi d’appel.</p>
+
+<p>Voilà, ça n’avait rien à voir avec le cache,
+mais vous venez de comprendre les redirections :)</p>
+
+<p><b>Du cache partout</b></p>
+
+<p>Vous voyez que la recette est simple, l’idée vient facilement à n’importe qui.
+On a du cache partout dans notre vie, et dans nos logiciels.</p>
+
+<p>Dans le cas qui m’intéresse, une appli Web Ruby on Rails, on a du cache à tous les niveaux :</p>
+
+<ul>
+  <li>votre base de données met des requêtes et donnés en cache</li>
+  <li>Rails a plusieurs systèmes de cache (sur ses vues et partials etc)</li>
+  <li>votre serveur applicatif ou serveur web également (a minima sur les fichiers)</li>
+  <li>toute configuration que vous mettez en bonus, par exemple un reverse-proxy comme Varnish dont c’est exactement le job</li>
+  <li>parfois le proxy de votre connexion Internet peut le faire aussi. Imaginons un réseau d’entreprise où tout le monde va sur la page d’un site d’actu : il peut le mettre en cache si c’est le même (en HTTPS il ne le saura pas ; chacun connecté sur son compte, le cache serait abusif aussi ; mais bon vous avez l’idée)</li>
+  <li>et on vous a probablement déjà demandé de “vider le cache de votre navigateur” qui applique lui aussi ce genre de techniques pour ne pas tout re-télécharger à chaque fois !</li>
+</ul>
+
+<p>Voilà, dans un domaine particulier, j’ai pu citer six endroits où l’on met habituellement un cache.</p>
+
+<p>Le problème est que tous ces caches sont appelés… “le cache”.</p>
+
+<p><b>Cache de noeuds</b></p>
+
+<p>C’est pourquoi je recommande de “désambiguiser” : utiliser le même nom pour
+des choses différentes ? Non merci, faites-vous préciser et précisez-le.</p>
+
+<p>(À l’opposé, des noms différents pour la même chose, c’est moins dangereux
+mais ça peut souvent être un signe d’ambiguïté à lever. Essayez, le pire
+qui puisse vous arriver c’est d’apprendre des choses dans l’intervalle !)</p>
+
+<p><b>Et voilà !</b></p>
+
+<p>Vous venez de comprendre pourquoi l’invalidation du cache, c’est difficile !</p>
+
+<p>J’accepte les critiques sur cet épisode et les idées pour les suivants sur twitter : @zen_m4</p>
+
+<p>Merci et à bientôt !</p>
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : la santé mentale</h4>
+    <p>éviter la panique, voir des amis, appeler la famille, consulter au besoin.</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : Ambiguïté</h4>
+    <p>L'ordinateur punit l'ambiguïté. Les humains aussi.</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/001/">001. Liste chaînée</a></span>
+    &mdash;
+    <span>
+	<a href="/003/">003. Les requêtes N+1</a> &#x21fe;</span>
+    </p>
+    <p>
+      2016-01-31 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+  </body>
+
+</html>
