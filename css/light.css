@@ -12,6 +12,9 @@ body {
  margin: 0;
 }
 
+#logo { width: 150px; height: 150px; float: left; }
+.home { clear: both; }
+
 .page {
   width: 100%;
   max-width: 60em;
@@ -102,9 +105,9 @@ p.help { text-align: left; }
 
 .post-header .post-meta, .c, .more { text-align: center; }
 
-footer, .footnotes { border-top: 1px dotted #999; margin-top: 2em; }
+.footnotes { border-top: 1px dotted #999; margin-top: 2em; }
 
-footer { padding: 1em; }
+footer { padding: 1em; clear: both; }
 footer ul, footer li { padding-top: 0.25em; margin: 0; }
 footer h4 { display: inline; }
 footer .related-meta { font-size: 80%; }
@@ -172,6 +175,7 @@ ul.post-list { margin-left: auto; margin-right: auto; }
 }
 
 @media screen and (max-width:450px) {
+ #logo { width: 100px; height: 100px; padding-left: 5px; }
  h2 { text-align: center; }
  .txt { display: none; }
  .short { display: inline; }

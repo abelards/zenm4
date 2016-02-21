@@ -17,12 +17,186 @@
     </itunes:owner>
     <itunes:image href="http://www.zenm4.net/img/zenm4.png" />
     <itunes:category text="Technology">
-    <pubDate>Sun, 14 Feb 2016 19:12:57 +0100</pubDate>
-    <lastBuildDate>Sun, 14 Feb 2016 19:12:57 +0100</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Sun, 21 Feb 2016 13:06:50 +0100</pubDate>
+    <lastBuildDate>Sun, 21 Feb 2016 13:06:50 +0100</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
     
       <item>
-        <title>004. Priorité CSS</title>
+        <title>Combien ça coûte</title>
+        <description>&lt;p&gt;Bonjour, bienvenue pour l’épisode 5 et premier épisode business !&lt;/p&gt;
+
+&lt;p&gt;Parler business est un peu plus loin de la ligne éditoriale
+technique de ce podcast, mais 100% dans la ligne des questions
+que j’ai et auxquelles je réponds très souvent.
+De plus dans mes communautés Ruby, Rails et Web c’est un
+sujet clé car tout le monde semble vouloir devenir entrepreneur.&lt;/p&gt;
+
+&lt;p&gt;Je partais sur une métaphore avec la voiture, mais j’en ai écrit assez pour
+presque trois épisodes, du coup je vais parler uniquement de l’étape achat aujourd’hui.&lt;/p&gt;
+
+&lt;p&gt;Alors voici quelques rappels (forcément incomplets mais on pourra étendre
+la discussion si ça vous intéresse) sur l’achat de logiciels B2B, c’est
+à dire par des entreprises, et pas du B2C, par des particuliers.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Quel véhicule pour quel besoin ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;La plupart des voitures suffiront pour un transport de quelques personnes, bagages et meubles.&lt;/p&gt;
+
+&lt;p&gt;Pourtant on peut acheter des voitures individuelles ou familiales ;
+on n’a pas les mêmes besoins pour faire des courses ou un déménagement.&lt;/p&gt;
+
+&lt;p&gt;Là encore, beaucoup de logiciels sont suffisamment adaptables pour
+aller un peu au-delà de leurs usages de départ : pour nous ce serait
+l’adaptation d’un logiciel sur étagère, ou d’aller un tout petit peu
+plus loin que prévu en tenue de charge ou en volumétrie par exemple.&lt;/p&gt;
+
+&lt;p&gt;Mais parfois on ne peut plus tricher : il faut un camion voire un
+convoi exceptionnel, ou à l’inverse le poids, la vitesse limite et
+le prix font que votre camion est l’outil le moins pratique
+pour ce que vous vouliez faire.&lt;/p&gt;
+
+&lt;p&gt;Il semble tout à fait normal de choisir un logiciel en fonction du
+besoin le plus attendu, et les clients dont on se moque facilement
+qui demandent à “pouvoir tout faire plus tard quand ils voudront”
+sans rien prévoir n’aurait jamais fait cette erreur d’appréciation
+en achetant un véhicule.&lt;/p&gt;
+
+&lt;p&gt;De même il n’y a pas de mal pour le vendeur à chercher à connaître
+votre budget assez tôt : on craint certes que le vendeur vous propose
+uniquement des voitures de luxe au lieu d’une berline, mais des heures
+d’explications à comparer toutes les berlines pour voir au final un
+budget qui vous condamne au vélo ou au métro, n’est pas très productif.&lt;/p&gt;
+
+&lt;p&gt;[NOTE : ça a parfois des avantages de se libérer des contraintes,
+par exemple monétaires : on pourra vous proposer un chauffeur ou de
+prendre l’avion, ce qu’on se serait interdit avec un budget “normal”,
+et à l’inverse s’imposer des contraintes, comme éviter de considérer
+l’avion, peut gagner du temps et… débloquer la créativité !]&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Pareil ou différent ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Il n’y a pas de honte non plus à choisir dans le haut de gamme ou bas
+de gamme, et vous verrez qu’au final les raisons de l’achat sont
+souvent similaires : soit un besoin très étudié, soit… comme tout
+le monde, un achat impulsif pour impressionner les copains.
+Oui, ça existe dans le monde du logiciel, mais je ne donnerai pas de noms ;)&lt;/p&gt;
+
+&lt;p&gt;La leçon plus pragmatique à tirer quand vous faites ce choix :
+il y a un coût à ne pas faire comme les autres (par exemple choisir
+l’électrique ou le GPL quand les stations et les expertises sont
+encore rares), mais il y a aussi un coût à faire comme tout le
+monde, car vous ne pourrez pas être franchement différent du
+concurrent si vous avez le même véhicule, alors que vous pourriez
+jouer sur vos forces si vous aviez un scooter et lui un camion.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Quel genre d’achat ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Parlons budget. Sur une voiture, il y a de très nombreuses
+variables sur lesquelles on s’imagine pouvoir intervenir facilement :
+payer comptant ou récurrent, c’est le choix du plan de financement ;
+payer sa voiture en leasing, c’est le SaaS (Software as a Service)
+sauf qu’à la fin il ne vous appartiendra jamais…&lt;/p&gt;
+
+&lt;p&gt;… et quelque part votre obligation d’innover et continuer la R&amp;amp;D
+c’est de s’assurer que régulièrement, vos clients souhaiteront passer
+aux nouveaux produits qui sont tellement mieux que les anciens.
+[Attention aux coûts de transition]&lt;/p&gt;
+
+&lt;p&gt;Achat impulsif ou longue recherche ? Idem, chaque personne ou entreprise
+peut décider de faire l’achat d’un logiciel A, et fera tout pour, ou au contraire
+lister ses fonctionnalités souhaitées X, Y et Z et chercher ensuite le produit
+qui correspondra le mieux à ses attentes.&lt;/p&gt;
+
+&lt;p&gt;Illusion des métriques ? Là encore, les vendeurs vont faire une compétition
+à grand renfort de 3, 5, 7 places, V6, V8 et autres options de motorisation,
+nombre d’options et grand renfort de superlatifs comme “suréquipée”.
+Au final on vous jette de la poudre aux yeux alors que votre besoin était
+soit de faire attention à la consommation (quand les chiffres annoncés sont
+exacts) soit, pour reprendre les mots légendaires du cahier des charges de
+la 2CV : “transporter 4 passagers et 50kg de patates”.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Coûts cachés et transition&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Ça semble étrange de faire du logiciel neuf ou d’occasion ? C’est
+pourtant le choix de beaucoup d’équipes pour savoir si elles vont
+adapter un ancien logiciel ou lancer une refonte, et les arguments
+sont similaires : “repartir de zéro” (en oubliant qu’on aura plein
+d’habitudes à réapprendre), “ajouter une rustine” (en oubliant qu’on
+est parfois au-delà de tout espoir).&lt;/p&gt;
+
+&lt;p&gt;En prime on oublie les périodes de transition : la période sans voiture
+si la nouvelle arrive un peu tard, et parfois presque pire la période
+avec deux voitures (mais toujours un seul parking), les rendez-vous
+à la préfecture pour la carte grise, les changements d’assurance…&lt;/p&gt;
+
+&lt;p&gt;Dans le logiciel comme dans la vraie vie, ceux qui l’ont vécu plusieurs
+fois sont plus prévoyants que ceux qui le vivent pour la première fois,
+c’est un biais à connaître.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Les dangers de la métaphore&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Mais attention : la métaphore nous permet de comprendre rapidement la
+situation et se poser de nouvelles questions en considérant plusieurs
+angles, qui semblent évidents dans l’image et qu’on aurait oublié dans
+le cas réel.&lt;/p&gt;
+
+&lt;p&gt;La métaphore a toutefois ses limites, même si elle reste utile pour
+qu’on puisse se poser la question à chaque fois : est-ce que ma
+comparaison a toujours du sens ou est-ce que c’est justement le moment
+de raisonner par opposition.&lt;/p&gt;
+
+&lt;p&gt;Ici, la plus grande erreur des patrons, RH, managers… est de croire
+que toutes les voitures sont identiques. Que l’on peut les ranger par
+marque, modèle, caractéristiques et qu’elles se valent.&lt;/p&gt;
+
+&lt;p&gt;Pour un bête produit physique, ça marche, et on va pouvoir utiliser un
+process achat genre achat de gros et négociation pour faire baisser le prix.
+Pour un métier cognitif et des personnes, ça semble illusoire.&lt;/p&gt;
+
+&lt;p&gt;Mais on peut rattraper cette erreur : il est impossible de comparer
+des développeurs et même des humains à des voitures neuves. On arrive
+chacun avec son historique, on est donc tous (désolé la connotation
+n’est pas voulue) des voitures d’occasion : on peut et on doit
+chercher vos forces et faiblesses (vous devriez en parler en entretien).&lt;/p&gt;
+
+&lt;p&gt;De même, un changement dans l’équipe a forcément des conséquences.
+Il est de votre devoir de mettre un maximum en place pour minimiser
+les risques (tests, documentation etc) mais remplacer un membre
+d’équipe a forcément plus de conséquences que remplacer une pièce
+ou changer de voiture.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Et voilà !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous voilà un peu mieux armé pour comprendre les achats de logiciel B2B.
+Je garde un prochain épisode avec la même métaphore, ou comme disait
+&lt;a href=&quot;https://twitter.com/Phairupegiont&quot;&gt;@Phairupegiont&lt;/a&gt; sur Twitter,
+la méta-métaphore, pour parler non des achats mais du métier de développeur
+et des interactions avec votre manager… ou à l’inverse avec votre équipe.&lt;/p&gt;
+
+&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Le coût d&#39;un logiciel c'est comme le coût d&#39;une voiture
+	</itunes:subtitle>
+	<itunes:summary>
+	  Le coût d&#39;un logiciel c'est comme le coût d&#39;une voiture
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/seedling.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/248148209-zenm4-005-zen-metaphor-achat-vente-de-logiciels-b2b.m4a" length="44000" type="audio/mp4" />
+	<itunes:duration></itunes:duration> -->
+
+        <pubDate>Sun, 21 Feb 2016 12:00:00 +0100</pubDate>
+        <link>http://zenm4.net/005/</link>
+        <guid isPermaLink="true">http://zenm4.net/005/</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
+    
+      <item>
+        <title>Priorité des règles CSS</title>
         <description>&lt;p&gt;Bonjour, bienvenue pour l’épisode 4 !&lt;/p&gt;
 
 &lt;p&gt;Beaucoup de gens y compris des devs expérimentés ont des soucis de CSS.
@@ -88,7 +262,7 @@ prioritaire, rien n’est prioritaire, et vous tentez de retrouver un
 ordre décent dans tout cela.&lt;/p&gt;
 
 &lt;p&gt;(D’ailleurs petite parenthèse : c’est pour cela que je refuse
-d’utiliser la directive CSS &lt;code&gt;!important&lt;/code&gt; et que je ne la recommande pas.)&lt;/p&gt;
+d’utiliser la directive CSS &lt;code class=&quot;highlighter-rouge&quot;&gt;!important&lt;/code&gt; et que je ne la recommande pas.)&lt;/p&gt;
 
 &lt;p&gt;On s’arrête, on réfléchit, et on décide qu’on traitera le dossier du
 patron en premier, puis les VIP, puis les anciens, puis les dossiers
@@ -146,8 +320,8 @@ identifiant.  En plus, on peut les enchaîner : tous les dossiers bleus
 à condition qu’ils soient dans une armoire, voire expressément les
 dossiers bleus dans une armoire bleue.&lt;/p&gt;
 
-&lt;p&gt;L’élément vaut un point : &lt;code&gt;UL LI A&lt;/code&gt; vaut alors trois points.
-Une classe vaut dix points : &lt;code&gt;UL.menu&lt;/code&gt; ou &lt;code&gt;.menu LI&lt;/code&gt; valent onze points.
+&lt;p&gt;L’élément vaut un point : &lt;code class=&quot;highlighter-rouge&quot;&gt;UL LI A&lt;/code&gt; vaut alors trois points.
+Une classe vaut dix points : &lt;code class=&quot;highlighter-rouge&quot;&gt;UL.menu&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;.menu LI&lt;/code&gt; valent onze points.
 L’identifiant vaut cent points.&lt;/p&gt;
 
 &lt;p&gt;On donne ainsi une “prime à la précision” : plus le sélecteur est précis,
@@ -197,15 +371,19 @@ anticiper un peu.&lt;/p&gt;
 &lt;p&gt;Merci et à bientôt !&lt;/p&gt;
 </description>
 	<itunes:author>Sylvain Abélard</itunes:author>
-	<itunes:subtitle>004. Priorité CSS</itunes:subtitle>
-	<itunes:summary>004. Priorité CSS</itunes:summary>
-	<itunes:image href="http://www.zenm4.net/img/zenm4.png" />
-	<!-- <enclosure url="http://zenm4.net" length="10000" type="audio/mpeg" />
+	<itunes:subtitle>
+	  Composer des règles CSS et en connaître la priorité c'est comme travailler avec des règles qui s&#39;empilent et se contredisent (consignes, lois...)
+	</itunes:subtitle>
+	<itunes:summary>
+	  Composer des règles CSS et en connaître la priorité c'est comme travailler avec des règles qui s&#39;empilent et se contredisent (consignes, lois...)
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/sakura.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/247008181-zenm4-004-zen-metaphor-priorite-des-regles-css.m4a" length="54200" type="audio/mp4" />
 	<itunes:duration></itunes:duration> -->
 
         <pubDate>Sun, 14 Feb 2016 15:45:00 +0100</pubDate>
-        <link>http://zenm4.net/meta/2016/02/14/004.html</link>
-        <guid isPermaLink="true">http://zenm4.net/meta/2016/02/14/004.html</guid>
+        <link>http://zenm4.net/004/</link>
+        <guid isPermaLink="true">http://zenm4.net/004/</guid>
         
         
         <category>meta</category>
@@ -213,7 +391,7 @@ anticiper un peu.&lt;/p&gt;
       </item>
     
       <item>
-        <title>003. Les requêtes N+1</title>
+        <title>Les requêtes N+1</title>
         <description>&lt;p&gt;Bonjour, bienvenue pour l’épisode 3, plus proche de mon quotidien de Rubyiste,
 sur un oubli classique dans Rails &lt;b&gt;les requêtes N+1&lt;/b&gt;, un des premiers
 symptômes à vérifier quand votre application est trop lente.&lt;/p&gt;
@@ -268,7 +446,7 @@ base sur la présence d’une variable @livres correctement remplie.&lt;/p&gt;
 les deux. Il faut aller chercher tous les livres en base de données.
 Le code Rails est très simple :&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;@livres = Livre.all&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@livres = Livre.all&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Dans une application réelle bien sûr, on a davantage de contraintes comme
 de faire de la pagination : si vous avez plus d’une centaine de livres,
@@ -282,7 +460,7 @@ alors faire la requête. Au lieu d’avoir fait 1 requête, vous en faites N.&lt
 &lt;p&gt;Si l’on savait que l’on aurait besoin des Auteurs, on peut le demander
 directement à la base de données via une jointure, qui se code ainsi :&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;@livres = Livre.joins(:auteur)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@livres = Livre.joins(:auteur)&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;b&gt;Et la métaphore ?&lt;/b&gt;&lt;/p&gt;
 
@@ -374,15 +552,19 @@ catégories.&lt;/p&gt;
 &lt;p&gt;Merci et à bientôt !&lt;/p&gt;
 </description>
 	<itunes:author>Sylvain Abélard</itunes:author>
-	<itunes:subtitle>003. Les requêtes N+1</itunes:subtitle>
-	<itunes:summary>003. Les requêtes N+1</itunes:summary>
-	<itunes:image href="http://www.zenm4.net/img/zenm4.png" />
-	<!-- <enclosure url="http://zenm4.net" length="10000" type="audio/mpeg" />
+	<itunes:subtitle>
+	  Aller chercher des infos associées sans jointure c'est comme poser des questions N fois au lieu d&#39;une seule
+	</itunes:subtitle>
+	<itunes:summary>
+	  Aller chercher des infos associées sans jointure c'est comme poser des questions N fois au lieu d&#39;une seule
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/bamboo.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/245854246-zenm4-003-zen-metaphor-requetes-n1.m4a" length="53000" type="audio/mp4" />
 	<itunes:duration></itunes:duration> -->
 
         <pubDate>Sun, 07 Feb 2016 15:45:00 +0100</pubDate>
-        <link>http://zenm4.net/meta/2016/02/07/003.html</link>
-        <guid isPermaLink="true">http://zenm4.net/meta/2016/02/07/003.html</guid>
+        <link>http://zenm4.net/003/</link>
+        <guid isPermaLink="true">http://zenm4.net/003/</guid>
         
         
         <category>meta</category>
@@ -390,7 +572,7 @@ catégories.&lt;/p&gt;
       </item>
     
       <item>
-        <title>002. Cache-Cache</title>
+        <title>Cache</title>
         <description>&lt;p&gt;Bonjour, bienvenue pour l’épisode 2, sur &lt;b&gt;le cache&lt;/b&gt;.&lt;/p&gt;
 
 &lt;p&gt;Commençons par un adage connu de Phil Karlton :&lt;/p&gt;
@@ -520,15 +702,19 @@ qui puisse vous arriver c’est d’apprendre des choses dans l’intervalle !)&
 &lt;p&gt;Merci et à bientôt !&lt;/p&gt;
 </description>
 	<itunes:author>Sylvain Abélard</itunes:author>
-	<itunes:subtitle>002. Cache-Cache</itunes:subtitle>
-	<itunes:summary>002. Cache-Cache</itunes:summary>
-	<itunes:image href="http://www.zenm4.net/img/zenm4.png" />
-	<!-- <enclosure url="http://zenm4.net" length="10000" type="audio/mpeg" />
+	<itunes:subtitle>
+	  Le cache, à tous ses niveaux, c'est comme avoir un carnet d&#39;adresses et pas redemander
+	</itunes:subtitle>
+	<itunes:summary>
+	  Le cache, à tous ses niveaux, c'est comme avoir un carnet d&#39;adresses et pas redemander
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/macha.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/244601628-zenm4-002-zen-metaphor-cache-cache.m4a" length="40500" type="audio/mp4" />
 	<itunes:duration></itunes:duration> -->
 
         <pubDate>Sun, 31 Jan 2016 15:45:00 +0100</pubDate>
-        <link>http://zenm4.net/meta/2016/01/31/002.html</link>
-        <guid isPermaLink="true">http://zenm4.net/meta/2016/01/31/002.html</guid>
+        <link>http://zenm4.net/002/</link>
+        <guid isPermaLink="true">http://zenm4.net/002/</guid>
         
         
         <category>meta</category>
@@ -536,7 +722,7 @@ qui puisse vous arriver c’est d’apprendre des choses dans l’intervalle !)&
       </item>
     
       <item>
-        <title>001. Liste chaînée</title>
+        <title>Liste chaînée</title>
         <description>&lt;p&gt;Bonjour, bienvenue pour ce premier épisode de zenm4 :&lt;/p&gt;
 
 &lt;p&gt;&lt;b&gt;Les listes chaînées&lt;/b&gt;&lt;br /&gt;
@@ -568,14 +754,14 @@ que des couteaux, ou que des fourchettes. Dans d’autres, pas de contraintes.&l
 &lt;p&gt;Un pointeur c’est comme un numéro de téléphone. Personne n’a jamais
 confondu le numéro avec la personne, alors pourquoi avoir peur dès que
 ça parle de code ? En C, avec&lt;br /&gt;
-&lt;code&gt;int valeur = 42;&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;int* pointeur = &amp;amp;valeur&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;int valeur = 42;&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;int* pointeur = &amp;amp;valeur&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Vous avez le nombre 42 dans &lt;code&gt;valeur&lt;/code&gt;, rangé à l’adresse mémoire
-&lt;code&gt;&amp;amp;valeur&lt;/code&gt;.  Le pointeur &lt;code&gt;pointeur&lt;/code&gt; est le numéro de téléphone, et
-&lt;code&gt;*pointeur&lt;/code&gt; son contenu : quand on regarde la valeur de &lt;code&gt;pointeur&lt;/code&gt; on
-n’a qu’un numéro, mais quand on regarde &lt;code&gt;*pointeur&lt;/code&gt; on retombe sur le
-contenu : &lt;code&gt;42&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Vous avez le nombre 42 dans &lt;code class=&quot;highlighter-rouge&quot;&gt;valeur&lt;/code&gt;, rangé à l’adresse mémoire
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;valeur&lt;/code&gt;.  Le pointeur &lt;code class=&quot;highlighter-rouge&quot;&gt;pointeur&lt;/code&gt; est le numéro de téléphone, et
+&lt;code class=&quot;highlighter-rouge&quot;&gt;*pointeur&lt;/code&gt; son contenu : quand on regarde la valeur de &lt;code class=&quot;highlighter-rouge&quot;&gt;pointeur&lt;/code&gt; on
+n’a qu’un numéro, mais quand on regarde &lt;code class=&quot;highlighter-rouge&quot;&gt;*pointeur&lt;/code&gt; on retombe sur le
+contenu : &lt;code class=&quot;highlighter-rouge&quot;&gt;42&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;ERRATUM (&lt;a href=&quot;https://twitter.com/vdwxv&quot;&gt;@vdwxv&lt;/a&gt;) :
 je dis “chiffre” mais il faut bien sûr comprendre “nombre”.&lt;/em&gt;&lt;/p&gt;
@@ -617,15 +803,19 @@ Il ne devrait plus y avoir de C dans zenm4.&lt;/p&gt;
 &lt;p&gt;Merci et à bientôt !&lt;/p&gt;
 </description>
 	<itunes:author>Sylvain Abélard</itunes:author>
-	<itunes:subtitle>001. Liste chaînée</itunes:subtitle>
-	<itunes:summary>001. Liste chaînée</itunes:summary>
-	<itunes:image href="http://www.zenm4.net/img/zenm4.png" />
-	<!-- <enclosure url="http://zenm4.net" length="10000" type="audio/mpeg" />
+	<itunes:subtitle>
+	  Variables, pointeurs, liste chaînée c'est comme contacter quelqu&#39;un par téléphone
+	</itunes:subtitle>
+	<itunes:summary>
+	  Variables, pointeurs, liste chaînée c'est comme contacter quelqu&#39;un par téléphone
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/tree.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/243520005-zenm4-001-zen-metaphor-liste-chainee.m4a" length="32700" type="audio/mp4" />
 	<itunes:duration></itunes:duration> -->
 
         <pubDate>Sun, 24 Jan 2016 15:45:00 +0100</pubDate>
-        <link>http://zenm4.net/meta/2016/01/24/001.html</link>
-        <guid isPermaLink="true">http://zenm4.net/meta/2016/01/24/001.html</guid>
+        <link>http://zenm4.net/001/</link>
+        <guid isPermaLink="true">http://zenm4.net/001/</guid>
         
         
         <category>meta</category>
@@ -633,7 +823,7 @@ Il ne devrait plus y avoir de C dans zenm4.&lt;/p&gt;
       </item>
     
       <item>
-        <title>000. man zenm4</title>
+        <title>man ZenM4</title>
         <description>&lt;p&gt;Bienvenue à l’épisode zéro de zenm4 !&lt;/p&gt;
 
 &lt;p&gt;&lt;b&gt;Qu’est-ce que c’est,&lt;/b&gt; d’où ça vient, où ça va ?&lt;br /&gt;
@@ -703,15 +893,19 @@ Je suis encore en train de déterminer le format du podcast.&lt;/p&gt;
 
 </description>
 	<itunes:author>Sylvain Abélard</itunes:author>
-	<itunes:subtitle>000. man zenm4</itunes:subtitle>
-	<itunes:summary>000. man zenm4</itunes:summary>
-	<itunes:image href="http://www.zenm4.net/img/zenm4.png" />
-	<!-- <enclosure url="http://zenm4.net" length="10000" type="audio/mpeg" />
+	<itunes:subtitle>
+	  Zen META-four : qu&#39;est-ce que c&#39;est, où ça va
+	</itunes:subtitle>
+	<itunes:summary>
+	  Zen META-four : qu&#39;est-ce que c&#39;est, où ça va
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/zenm4_logo.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/242392059-zenm4-000-zen-metaphor-pisode-z-ro.mp3" length="10100" type="audio/mp4" />
 	<itunes:duration></itunes:duration> -->
 
         <pubDate>Sun, 17 Jan 2016 15:45:00 +0100</pubDate>
-        <link>http://zenm4.net/meta/2016/01/17/000.html</link>
-        <guid isPermaLink="true">http://zenm4.net/meta/2016/01/17/000.html</guid>
+        <link>http://zenm4.net/000/</link>
+        <guid isPermaLink="true">http://zenm4.net/000/</guid>
         
         
         <category>meta</category>
