@@ -196,7 +196,13 @@ ul.post-list li, .post-header .post-meta {
 }
 ul.post-list h3 { float: left; }
 ul.post-list li p { clear: both; font-size: 90%; }
-ul.post-list .post-meta { float: right; padding: 0.5em 0.25em 0 0; }
+ul.post-list .post-meta {
+  float: right;
+  padding: 0.5em 0.25em 0 0;
+  font-size: 80%;
+  font-family: Quicksand;
+  color: #999;
+}
 ul.post-list .tagline {
 	clear:both;
 padding: 0; margin: 0;
@@ -207,7 +213,7 @@ ul.post-list li li { margin: 2px; border: none; }
 ul.post-list li li:hover { border-top: none; border-bottom: none; }
 
 /* hovers */
-ul.post-list:hover .post-meta { color: #000; }
+// ul.post-list:hover .post-meta { color: #000; }
 .menu, ul.post-list li:hover {
         color: #222;
 //	border-top: 1px solid #6ED6FA;
@@ -227,6 +233,14 @@ ul.post-list:hover .post-meta { color: #000; }
 a.ext:hover { background: white; text-decoration: underline; }
 
 blockquote { border-left: 1px solid #7Eb530; }
+
+p.quote { padding: 0 0 0 0.5em; color: #444444; margin: 0 0 0 0.5em; }
+p.quote::before { content: "«\00A0"; color: gray; }
+p.quote::after  { content: '\00A0»'; color: gray; }
+.quotes { margin: 0 0.5em; }
+.quotes .author { float: right; margin-bottom: 1em; }
+.quotes .source { clear: both; font-size: 90%; }
+.quotes ul.post-list .post-meta.topics { float: left; padding: 0 0 0 2em; }
 
 #tags {
        display: flex;
