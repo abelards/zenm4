@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="stylesheet" href="/css/sharingbuttonsio.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://zenm4.net" />
+  <meta property="og:title" content="Zen Metaphor" />
+  <meta property="og:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <meta property="og:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta property="og:locale" content="fr-FR" />
+  <meta property="og:updated_time" content="2016-02-23" />
+  <meta property="og:rich_attachment" content="true" />
+
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/005/">005. Combien ça coûte ?</a></span>
+      &mdash;
+      
+    </p>
+
+    <h1 class="post-title">006. Le Vide, l'Unité, et l'Infini</h1>
+    <h4>Ne pas savoir sur combien d'objets on travaille
+      <br /><em>c'est comme</em><br />ne pas savoir où l'on est ni où on va.
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/249386231&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="http://ruby-doc.org/core-2.3.0/Array.html">Array</a>
+        <p>(tableau)</p>
+      </li>
+    
+      <li><a href="http://ruby-doc.org/core-2.3.0/Hash.html">Hash</a>
+        <p>(dictionnaire)</p>
+      </li>
+    
+      <li><a href="http://ruby-doc.org/core-2.3.0/Enumerable.html">Enumerable</a>
+        <p>(tout ce qui contient plusieurs éléments)</p>
+      </li>
+    
+      <li><a href="http://bost.ocks.org/mike/algorithms/">Visual Algorithms</a>
+        <p>Encore plus d'algos visuels : tri, mélange, labyrinthes</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Bonjour, bienvenue pour l’épisode 6, l’épisode philosophie.</p>
+
+<p>Pas de métaphore principale à filer tout le long de l’épisode,
+parce qu’à chaque fois que je trouvais une formulation, elle
+semblait aussitôt évidente ou idiote. Mais commençons.</p>
+
+<p>Pour moi, il y a trois “quantités” en informatique, que vous
+trouverez à la fois dans votre code, vos bases de données, et
+même votre design et vos aspects métier :</p>
+
+<ul>
+  <li><b>0.</b> rien du tout</li>
+  <li><b>1.</b> une chose</li>
+  <li><b>N.</b> une liste d’éléments</li>
+</ul>
+
+<p>Quand on parle d’une chose, on doit souvent envisager qu’elle soit présente ou absente.
+Quand on parle d’une liste, elle peut bien sûr être vide ou contenir un seul élément,
+plusieurs éléments, voire… une infinité.</p>
+
+<p><b>Questions pièges et découverte du métier</b></p>
+
+<p>À titre personnel et professionnel, ces nuances m’ont beaucoup aidé à
+communiquer, et parfois soulever des problèmes ou proposer des solutions.
+Ce sont des recettes et astuces que j’essaie de ne jamais oublier.</p>
+
+<p>Quand on vous parle d’une seule chose, demandez s’il y en a aucune ou plusieurs.</p>
+
+<p>Imaginez qu’on vous montre un prototype d’interface et qu’on vous dise
+“et ici on affiche l’adresse du client”. Essayez toujours d’envisager les cas :</p>
+
+<ul>
+  <li>
+    <p>du client qui n’a pas d’adresse connue
+(ça vous aidera à gérer les cas des NPAI, des incontactables, des données invalides)</p>
+  </li>
+  <li>
+    <p>du client qui a plusieurs adresses
+(ça vous aidera à parler des déménagements, des résidences secondaires… et des données en doublon !)</p>
+  </li>
+</ul>
+
+<p><b>Le Code et l’unité</b></p>
+
+<p>Les structures de code de presque tous les langages usuels reflètent cela :
+les <code class="highlighter-rouge">if then else</code> parlent d’un prédicat vrai ou faux,
+les variables peuvent être vides ou remplies,
+quand on a un objet dans une variable, on peut aller chercher une propriété
+ou appeler une méthode sur cet objet, et ça peut marcher ou non.</p>
+
+<p>Dans tous ces cas-là, on parle du cas “UN” où il y a une chose au départ,
+une méthode à appliquer, et une chose à l’arrivée (fut-elle une liste).</p>
+
+<p>On commence en général à enseigner cette façon de voir dans les tout premiers
+paragraphes et cours d’algo ou de code : les variables et les structures de
+contrôle.</p>
+
+<p><b>Le Code et la Pluralité</b></p>
+
+<p>Juste après, vient l’une des constructions les plus importantes :
+les listes, les boucles, etc.</p>
+
+<p>Dans tous ces cas-là, on parle du cas où “N” éléments au départ,
+mais à l’arrivée, on peut vouloir plein de choses différentes.</p>
+
+<p>Par exemple, sur “N” éléments, voulez-vous :
+* compter ce nombre d’éléments (et on retrouve les cas intéressants 0, 1 ou N)</p>
+
+<ul>
+  <li>conserver une liste à l’arrivée, transformée d’une certaine manière :
+    <ul>
+      <li>les trier (renvoyer la même liste mais rangée différemment)</li>
+      <li>appliquer à tous les éléments le même traitement (appliquer une remise, une taxe)</li>
+      <li>conserver ou retirer uniquement les éléments selon une certaine règle (publiés ou non par exemple)</li>
+    </ul>
+  </li>
+  <li>avoir un seul résultat, comme
+    <ul>
+      <li>voir le premier ou dernier élément (selon un certain critère)</li>
+      <li>agréger : faire un traitement de groupe pour ressortir un résultat (une somme par exemple)</li>
+    </ul>
+  </li>
+  <li>travailler avec plusieurs listes pour
+    <ul>
+      <li>les “additionner”, disons plutôt faire l’union des deux listes</li>
+      <li>ressortir la liste des éléments communs, ou différents de ces listes</li>
+      <li>faire un traitement se basant sur plusieurs listes, par exemple le <code class="highlighter-rouge">zip</code>
+qui prend, comme une fermeture éclair (“zip”) le 1er élément de la liste A
+et de la liste B pour travailler sur cette paire, puis le 2e de chaque
+et ainsi de suite…
+Bien sûr ce dernier cas a autant de variantes que vous voulez, mais à part <code class="highlighter-rouge">zip</code>
+ça commence à devenir très dur d’en parler dans un podcast.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Et les structures de données de base de tant de langages sont alors
+- le tableau (qui associe un élément à un nombre, sa position dans le tableau)
+- le dictionnaire, souvent appelé Hash (qui associe un élément “clé” à un élément “valeur”)
+et parfois des structures plus exotiques, qui vont proposer différentes propriétés.</p>
+
+<p>Dans mon univers de Rubyiste, je recommande toujours de lire
+intégralement les pages de documentation de
+<a href="http://ruby-doc.org/core-2.3.0/Array.html">Array</a>,
+<a href="http://ruby-doc.org/core-2.3.0/Hash.html">Hash</a> et
+<a href="http://ruby-doc.org/core-2.3.0/Enumerable.html">Enumerable</a>,
+qui aideront à faire de vous meilleur développeur, capable d’utiliser au
+bon moment le bon outil de base. Mais chaque langage a les siens.</p>
+
+<p><b>La base de données</b></p>
+
+<p>Je vais passer rapidement sur la base de donnés, qui a aussi ces constructions,
+et sur chacune de vos requêtes vous allez vous retrouver à prendre le premier,
+le dernier, trier dans un sens ou l’autre, compter les nombre d’éléments qui
+sont dans un certain cas, limiter vos recherches pour prendre seulement les 10
+ou 100 premiers, proposer une pagination en BDD ou dans votre interface…</p>
+
+<p><b>Expérience utilisateur, ergonomie, métier…</b></p>
+
+<p>Pour recentrer tout cela et ressortir du code, revenons aux questions pièges.</p>
+
+<p>On a vu au début de l’épisode qu’elles peuvent lancer une discussion
+sur le métier et les cas à gérer, donc dessiner le périmètre de votre
+travail, des évolutions très ou peu probables (je dis peu probable car
+je ne vous crois presque jamais quand vous me dites “impossible, ça
+n’arrivera jamais”) et donc d’une possible architecture logicielle.</p>
+
+<p>Ça marche aussi sur des écrans ou dessins, et pour l’ergonomie :
+devant une belle image de votre future appli, dessinée avec un cas
+moyen ou idéal en tête, il est très utile de poser ce genre de questions.
+Et si on a plus ou moins d’informations ? Et si on doit caler une
+liste de plusieurs numéros de téléphone au lieu d’un seul ?</p>
+
+<p>Bref, n’hésitez pas à utiliser cette technique à fond, pour l’instant
+je n’ai perdu que très peu de temps cumulé à envisager des cas tordus,
+qu’on a très vite identifiés comme “inutiles, à voir plus tard,
+à voir tout de suite”, ou “critiques”.</p>
+
+<p><b>Expression</b></p>
+
+<p>Pour finir, on ne fait que répéter que le code est une activité
+humaine et la qualité principale d’un ingénieur, la communication.
+Dijkstra disait que la qualité principale d’un programmeur est
+une excellente maîtrise de sa langue natale.
+“À part un léger goût pour les mathématiques,” disait-il,
+ce dont personnellement je ne suis même pas sûr.</p>
+
+<p>J’ai longtemps été pédant sur la langue française, allant jusqu’à
+dire qu’un mail avec trop de fautes était éliminatoire. Je n’en
+suis plus là, même si écrire un français correct est une marque
+de respect et d’attention, et qu’un mail plein de fautes note
+un manque de l’un et/ou de l’autre. Prenez vos responsabilités.</p>
+
+<p>Ce que je tiens à dire sur le sujet, en revanche, c’est que
+je reste attentif aux fautes d’accord. Oui, c’est aussi simple
+que mettre ou oublier des S au pluriel : car si quand vous
+écrivez, vous ne savez même pas si vous parlez d’un ou de
+plusieurs objets, comment voulez-vous programmer correctement ?
+Et même plus fondamental : comment voulez-vous raisonner correctement ?</p>
+
+<p>Bref : zéro, Un, ou Plusieurs. Ne perdez jamais cela de vue.</p>
+
+<p><b>Ruby on Rails et les associations</b></p>
+
+<p>Et voilà, c’est tout pour aujourd’hui !
+Autant j’étais peu inspiré par la philosophie la dernière fois,
+autant j’ai écrit aujourd’hui de quoi faire deux épisodes et j’ai dû couper.</p>
+
+<p>Alors, prochain épisode : les associations dans Rails.</p>
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : Cas idéal, cas d'erreurs</h4>
+    <p>Pensez et faites penser aux cas hors du cas idéal.</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : FOMO</h4>
+    <p>Fear Of Missing Out -- la peur de 'rater un truc'.</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/005/">005. Combien ça coûte ?</a></span>
+    &mdash;
+    
+    </p>
+    <p>
+      2016-02-29 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+  </body>
+
+</html>
