@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="stylesheet" href="/css/sharingbuttonsio.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://zenm4.net" />
+  <meta property="og:title" content="Zen Metaphor" />
+  <meta property="og:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <meta property="og:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta property="og:locale" content="fr-FR" />
+  <meta property="og:updated_time" content="2016-02-23" />
+  <meta property="og:rich_attachment" content="true" />
+
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/006/">006. Le Vide, l'Unité, et l'Infini</a></span>
+      &mdash;
+      
+    </p>
+
+    <h1 class="post-title">007. Les associations dans Ruby on Rails</h1>
+    <h4>Les associations dans ActiveRecord
+      <br /><em>c'est comme</em><br />dans les diagrammes UML et les BDD relationnelles.
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/250558766&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="https://fr.wikipedia.org/wiki/Cartes_CRC">Cartes CRC</a>
+        <p>Des cartes pour modéliser votre système : Classe, Responsabilité, Collaboration.</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Bonjour, voici l’épisode 7, sur les associations dans Rails.
+Il fait suite à l’épisode 6, où je vous recommande de toujours
+considérer la cardinalité de ce dont vous parlez : 0, 1 ou N.</p>
+
+<p>En pratique c’est aussi ce que vous trouverez dans un diagramme
+UML ou dans vos bases de données : associations 1 à 0 ou 1, 1 à 1,
+1 à N et N à N. Plus qu’un épisode de métaphore, c’est un épisode
+qui sert de “pont” entre trois domaines : UML, SQL relationnel,
+et ActiveRecord qui est l’ORM de Ruby on Rails.</p>
+
+<p>Là encore, il y a une introduction à Rails et ActiveRecord
+dans <a href="/003/">l’épisode 3 sur les requêtes N+1</a>,
+que je vous recommande si vous êtes perdus.</p>
+
+<p><b>Le cas de l’association </b></p>
+
+<p>L’ORM, c’est la correspondance entre des objets Ruby et des
+données dans une base de données.</p>
+
+<p>On fait une correspondance entre une table et une classe,
+un champ dans une table et une propriété de l’objet,
+et un enregistrements de la table avec une instance d’objet.</p>
+
+<p>L’enjeu de la modélisation objet est de représenter un
+modèle pratique et utilisable de la réalité (à défaut
+d’être exact), et une des méthodes les plus connues (je ne
+dis pas les seules ni que la norme précise est respectée)
+est le diagramme de classes de la norme UML.</p>
+
+<p>Quant aux bases de données relationnelles, elles sont
+souvent représentées par quelque chose approchant les
+diagrammes entité-relations, les MCD de Merise ou plus
+simplement… les schémas de bases de données.</p>
+
+<p>Dans Ruby on Rails également, on a la possibilité de
+décrire des associations entre objets.</p>
+
+<p><b>Note sur l’anglais</b>
+Je parlerai de code en anglais avec un énorme accent français,
+parce que ça fait une différence entre le code et le commentaire ;
+pour retrouver les mêmes mots dans mes exemples que dans la
+documentation ou sur StackOverflow, et parce que le code Ruby et Rails
+est presque aussi facile à lire que des phrases anglaises.</p>
+
+<p>On peut débattre de “faut-il coder en français ou en anglais”,
+mais mon but n’est pas de vous forcer à faire quoi que ce soit :
+dans votre équipe, dans votre projet, trouvez votre propre équilibre.</p>
+
+<p><b>Has Many</b></p>
+
+<p>L’association 1-N, que Rails nomme Has Many.
+Par exemple, un panier a beaucoup d’articles :
+<code class="highlighter-rouge">Cart Has Many Articles</code>.</p>
+
+<p>À l’inverse, un article ne peut être que dans un seul panier.
+C’est l’association Belongs To : <code class="highlighter-rouge">Articles Belongs To Cart</code>.</p>
+
+<p>En base de données, ActiveRecord s’attend à trouver la colonne
+<code class="highlighter-rouge">cart_id</code> dans la table <code class="highlighter-rouge">articles</code>, et un <code class="highlighter-rouge">id</code> dans la table <code class="highlighter-rouge">carts</code>.
+Vous pouvez sortir de ces conventions, mais lisez bien la doc
+d’ActiveRecord pour apprendre à le faire proprement.</p>
+
+<p>ActiveRecord vous donnera plein de méthodes utiles :
+<code class="highlighter-rouge">cart.articles</code> pour avoir un tableau des articles du panier,
+<code class="highlighter-rouge">cart.articles=</code> pour enregistrer ces articles dans le panier,
+<code class="highlighter-rouge">cart.article_ids</code> pour les identifiants.</p>
+
+<p>De l’autre côté, <code class="highlighter-rouge">article.cart</code>, <code class="highlighter-rouge">article.cart=</code>, <code class="highlighter-rouge">article.cart_id</code>.</p>
+
+<p><b>Note sur l’enregistrement</b></p>
+
+<p>Attention, il est important de noter que tout ce que vous faites ici
+c’est travailler sur des objets Ruby. Rien n’est enregistré.
+Il y a trois étapes :</p>
+
+<ul>
+  <li>
+    <p>aller chercher les données en base et en faire des objets
+<em>avec un where, find, ou une méthode d’accès comme <code class="highlighter-rouge">@cart.goods</code></em></p>
+  </li>
+  <li>
+    <p>travailler sur lesdits objets
+<em>avec tous les traitements Ruby et Rails que vous voulez</em></p>
+  </li>
+  <li>
+    <p>enregistrer tout cela dans la base de données
+<em>si vous avez fait des changements, il faut les sauvegarder</em></p>
+  </li>
+</ul>
+
+<p>Si vous modifiez des objets Ruby, tant que vous n’avez pas sauvé
+vos objets Ruby en base, seul le bout de code qui est allé les
+chercher (et les bouts de code auxquels il les a donnés) sont au
+courant des modifications. Si quelqu’un d’autre va chercher les
+infos en base, il ne voit pas les changements.</p>
+
+<p><b>HABTM</b></p>
+
+<p>Il y a aussi l’association N-N, que Rails nomme
+Has And Belongs To Many, HABTM pour faire court.</p>
+
+<p>Par exemple, une personne peut posséder plusieurs logements.
+Vous pouvez n’être propriétaire de rien du tout (<code class="highlighter-rouge">[]</code>),
+d’un seul (<code class="highlighter-rouge">[:home]</code>), et certains peuvent en avoir énormément
+(<code class="highlighter-rouge">[:home, :beach_house, :ski_house, :fishing_house]</code>).</p>
+
+<p>Mais si votre client souhaite pouvoir noter qu’une maison a
+plusieurs propriétaires, et non un seul, 1-N (Has Many) ne suffit pas.
+Il faut passer à N-N (HABTM).</p>
+
+<p>La table Owner ne contient pas d’ID de House
+(sur un formulaire papier, on écrirait maison 1, maison 2, maison 3….
+impossible de savoir combien on devrait en prévoir, et que d’espace
+gaspillé !), pas plus que la table House ne contient d’ID de Owner.</p>
+
+<p>Mais il y aura en BDD une table dite de jointure, parce qu’elle
+fait le lien entre les données des deux tables.
+Rails l’appellera <code class="highlighter-rouge">Houses_Owners</code>, et cette table contiendra une clé
+<code class="highlighter-rouge">house_id</code> et une clé <code class="highlighter-rouge">owner_id</code> contenant les identifiants
+respectifs de House et Owner.
+Il y aura ensuite autant d’enregistrement que de
+“liens de possession” entre une maison et un propriétaire.</p>
+
+<p>Les méthodes utiles seront les mêmes, <code class="highlighter-rouge">owner.houses</code>, <code class="highlighter-rouge">owner.houses=</code>, <code class="highlighter-rouge">owner.house_ids</code> et réciproquement <code class="highlighter-rouge">house.owners</code>, <code class="highlighter-rouge">house.owners=</code> et
+<code class="highlighter-rouge">house.owner_ids</code>.</p>
+
+<p><b>Has-Many Through</b></p>
+
+<p>Mais on sait seulement qu’il y a un lien ! On n’a pas d’information
+sur la nature ou les conditions de ce lien.
+Si vous voulez que cette association porte des informations, l’idée
+de la jointure est bonne. Poussons-la plus loin.</p>
+
+<p>Faites un objet qui relie les deux et dans lequel vous rangez les
+informations de ladite relation, puis des Has-Many vers cet objet.</p>
+
+<p>Par exemple pour une location de voiture <code class="highlighter-rouge">Person Has Many Rentals</code>
+et <code class="highlighter-rouge">Car Has Many Rentals</code>. Ainsi chaque Rental sait retrouver
+la bonne voiture, son locataire, et tout ce que vous voudriez
+ajouter, comme : les dates et heures de début et fin de location,
+le prix appliqué, des infos variées etc.</p>
+
+<p>Rails proposera un dernier confort dans ce cas, les Has Many Through,
+ici <code class="highlighter-rouge">Person Has Many Cars Through Rentals</code>, qui veut dire
+“on peut retrouver toutes les voitures d’un client,
+à condition d’aller les chercher à travers son historique de locations”,
+et vous pourrez alors avoir les deux méthodes utiles
+<code class="highlighter-rouge">person.cars</code> et <code class="highlighter-rouge">person.car_ids</code> à disposition.
+Je ne pourrais pas vous donner de <code class="highlighter-rouge">person.cars=</code> car il faudrait
+alors renseigner tous les objets Rental entre deux.</p>
+
+<p><b>Has-One</b></p>
+
+<p>Enfin, je vous mets en garde contre les associations 1-1,
+qui sont toujours techniquement possibles, mais qui sont pour moi
+assez rares.</p>
+
+<p>En tout cas, c’est signe qu’il y a une question à poser :
+on veut dire “un chien a un maître”, <code class="highlighter-rouge">Dog Has One Master</code>…
+mais en réalité <code class="highlighter-rouge">Dog Belongs To Master</code>,
+car un maître peut avoir plusieurs chiens (là encore, 0, 1 ou N chiens)
+mais un chien ne peut pas avoir plusieurs maîtres.</p>
+
+<p>Enfin, c’est possible dans la vraie vie et mais si c’était le cas,
+vous n’auriez pas tenté d’écrire “un chien A UN maître”.</p>
+
+<p>D’autre part parce que si les informations sont si “couplées” et
+doivent aller la main dans la main, pourquoi ne pas tout mettre dans
+la même table ? Si un client peut avoir plusieurs mails, que certaines
+boîtes mail peuvent être partagées… on ne se pose aucune question,
+on laisse dans la même table email et nom du client.</p>
+
+<p>Mais quand vous avez un souci avec un Has One, je pense qu’en général
+il y aura une évolution un jour pour le transformer en Has Many :
+<code class="highlighter-rouge">Customer Has One Address</code> deviendra probablement <code class="highlighter-rouge">Customer Has Many Addresses</code>
+<code class="highlighter-rouge">PhoneNumber Has One Customer</code> plutôt <code class="highlighter-rouge">Customer Has Many PhoneNumbers</code></p>
+
+<p>Si vous êtes toujours coincés, voici mon astuce, demandez-vous :
+“puis-je avoir l’un sans l’autre ?”</p>
+
+<p>Une adresse sans maison a du sens (terrain vide),
+une adresse avec plusieurs maisons a du sens (appartements),
+une maison sans adresse n’a pas de sens (on l’a bien construite quelque part),
+une maison avec plusieurs adresses est possible mais rare (coins de rues).</p>
+
+<p>Ainsi, on part sur <code class="highlighter-rouge">Address Has One House</code>, ce qui était probablement
+l’inverse de ce que vous vous attendiez à écrire dans un raisonnement
+classique. En tout cas, j’avais pris l’exemple au hasard et
+la conclusion m’a surpris moi-même.</p>
+
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : Éditeur de texte</h4>
+    <p>Vous l'avez sur le bout des doigts ?</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : Broken Windows</h4>
+    <p>ne pas laisser de signes que le code est en désordre</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/006/">006. Le Vide, l'Unité, et l'Infini</a></span>
+    &mdash;
+    
+    </p>
+    <p>
+      2016-03-06 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+  </body>
+
+</html>

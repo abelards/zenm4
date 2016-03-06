@@ -158,6 +158,8 @@ a { color: #6BA441; text-decoration: none; font-weight: 500; }
 a:hover { color: #83BA2B; text-decoration: underline; }
 h3 a { font-weight: 700; }
 li h4 { margin-top: 0.75em; }
+h4.list { text-align: left; }
+.list a { font-weight: bold; }
 
 .help { font-size: 90%; margin-top: 1px; padding-top: 1px; }
 
