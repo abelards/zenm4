@@ -17,9 +17,222 @@
     </itunes:owner>
     <itunes:image href="http://www.zenm4.net/img/zenm4.png" />
     <itunes:category text="Technology">
-    <pubDate>Mon, 29 Feb 2016 00:31:16 +0100</pubDate>
-    <lastBuildDate>Mon, 29 Feb 2016 00:31:16 +0100</lastBuildDate>
+    <pubDate>Mon, 07 Mar 2016 00:09:36 +0100</pubDate>
+    <lastBuildDate>Mon, 07 Mar 2016 00:09:36 +0100</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Les associations dans Ruby on Rails</title>
+        <description>&lt;p&gt;Bonjour, voici l’épisode 7, sur les associations dans Rails.
+Il fait suite à l’épisode 6, où je vous recommande de toujours
+considérer la cardinalité de ce dont vous parlez : 0, 1 ou N.&lt;/p&gt;
+
+&lt;p&gt;En pratique c’est aussi ce que vous trouverez dans un diagramme
+UML ou dans vos bases de données : associations 1 à 0 ou 1, 1 à 1,
+1 à N et N à N. Plus qu’un épisode de métaphore, c’est un épisode
+qui sert de “pont” entre trois domaines : UML, SQL relationnel,
+et ActiveRecord qui est l’ORM de Ruby on Rails.&lt;/p&gt;
+
+&lt;p&gt;Là encore, il y a une introduction à Rails et ActiveRecord
+dans &lt;a href=&quot;/003/&quot;&gt;l’épisode 3 sur les requêtes N+1&lt;/a&gt;,
+que je vous recommande si vous êtes perdus.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Le cas de l’association &lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;L’ORM, c’est la correspondance entre des objets Ruby et des
+données dans une base de données.&lt;/p&gt;
+
+&lt;p&gt;On fait une correspondance entre une table et une classe,
+un champ dans une table et une propriété de l’objet,
+et un enregistrements de la table avec une instance d’objet.&lt;/p&gt;
+
+&lt;p&gt;L’enjeu de la modélisation objet est de représenter un
+modèle pratique et utilisable de la réalité (à défaut
+d’être exact), et une des méthodes les plus connues (je ne
+dis pas les seules ni que la norme précise est respectée)
+est le diagramme de classes de la norme UML.&lt;/p&gt;
+
+&lt;p&gt;Quant aux bases de données relationnelles, elles sont
+souvent représentées par quelque chose approchant les
+diagrammes entité-relations, les MCD de Merise ou plus
+simplement… les schémas de bases de données.&lt;/p&gt;
+
+&lt;p&gt;Dans Ruby on Rails également, on a la possibilité de
+décrire des associations entre objets.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Note sur l’anglais&lt;/b&gt;
+Je parlerai de code en anglais avec un énorme accent français,
+parce que ça fait une différence entre le code et le commentaire ;
+pour retrouver les mêmes mots dans mes exemples que dans la
+documentation ou sur StackOverflow, et parce que le code Ruby et Rails
+est presque aussi facile à lire que des phrases anglaises.&lt;/p&gt;
+
+&lt;p&gt;On peut débattre de “faut-il coder en français ou en anglais”,
+mais mon but n’est pas de vous forcer à faire quoi que ce soit :
+dans votre équipe, dans votre projet, trouvez votre propre équilibre.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Has Many&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;L’association 1-N, que Rails nomme Has Many.
+Par exemple, un panier a beaucoup d’articles :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Cart Has Many Articles&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;À l’inverse, un article ne peut être que dans un seul panier.
+C’est l’association Belongs To : &lt;code class=&quot;highlighter-rouge&quot;&gt;Articles Belongs To Cart&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;En base de données, ActiveRecord s’attend à trouver la colonne
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cart_id&lt;/code&gt; dans la table &lt;code class=&quot;highlighter-rouge&quot;&gt;articles&lt;/code&gt;, et un &lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt; dans la table &lt;code class=&quot;highlighter-rouge&quot;&gt;carts&lt;/code&gt;.
+Vous pouvez sortir de ces conventions, mais lisez bien la doc
+d’ActiveRecord pour apprendre à le faire proprement.&lt;/p&gt;
+
+&lt;p&gt;ActiveRecord vous donnera plein de méthodes utiles :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cart.articles&lt;/code&gt; pour avoir un tableau des articles du panier,
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cart.articles=&lt;/code&gt; pour enregistrer ces articles dans le panier,
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cart.article_ids&lt;/code&gt; pour les identifiants.&lt;/p&gt;
+
+&lt;p&gt;De l’autre côté, &lt;code class=&quot;highlighter-rouge&quot;&gt;article.cart&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;article.cart=&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;article.cart_id&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Note sur l’enregistrement&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Attention, il est important de noter que tout ce que vous faites ici
+c’est travailler sur des objets Ruby. Rien n’est enregistré.
+Il y a trois étapes :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;aller chercher les données en base et en faire des objets
+&lt;em&gt;avec un where, find, ou une méthode d’accès comme &lt;code class=&quot;highlighter-rouge&quot;&gt;@cart.goods&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;travailler sur lesdits objets
+&lt;em&gt;avec tous les traitements Ruby et Rails que vous voulez&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;enregistrer tout cela dans la base de données
+&lt;em&gt;si vous avez fait des changements, il faut les sauvegarder&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Si vous modifiez des objets Ruby, tant que vous n’avez pas sauvé
+vos objets Ruby en base, seul le bout de code qui est allé les
+chercher (et les bouts de code auxquels il les a donnés) sont au
+courant des modifications. Si quelqu’un d’autre va chercher les
+infos en base, il ne voit pas les changements.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;HABTM&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Il y a aussi l’association N-N, que Rails nomme
+Has And Belongs To Many, HABTM pour faire court.&lt;/p&gt;
+
+&lt;p&gt;Par exemple, une personne peut posséder plusieurs logements.
+Vous pouvez n’être propriétaire de rien du tout (&lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt;),
+d’un seul (&lt;code class=&quot;highlighter-rouge&quot;&gt;[:home]&lt;/code&gt;), et certains peuvent en avoir énormément
+(&lt;code class=&quot;highlighter-rouge&quot;&gt;[:home, :beach_house, :ski_house, :fishing_house]&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Mais si votre client souhaite pouvoir noter qu’une maison a
+plusieurs propriétaires, et non un seul, 1-N (Has Many) ne suffit pas.
+Il faut passer à N-N (HABTM).&lt;/p&gt;
+
+&lt;p&gt;La table Owner ne contient pas d’ID de House
+(sur un formulaire papier, on écrirait maison 1, maison 2, maison 3….
+impossible de savoir combien on devrait en prévoir, et que d’espace
+gaspillé !), pas plus que la table House ne contient d’ID de Owner.&lt;/p&gt;
+
+&lt;p&gt;Mais il y aura en BDD une table dite de jointure, parce qu’elle
+fait le lien entre les données des deux tables.
+Rails l’appellera &lt;code class=&quot;highlighter-rouge&quot;&gt;Houses_Owners&lt;/code&gt;, et cette table contiendra une clé
+&lt;code class=&quot;highlighter-rouge&quot;&gt;house_id&lt;/code&gt; et une clé &lt;code class=&quot;highlighter-rouge&quot;&gt;owner_id&lt;/code&gt; contenant les identifiants
+respectifs de House et Owner.
+Il y aura ensuite autant d’enregistrement que de
+“liens de possession” entre une maison et un propriétaire.&lt;/p&gt;
+
+&lt;p&gt;Les méthodes utiles seront les mêmes, &lt;code class=&quot;highlighter-rouge&quot;&gt;owner.houses&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;owner.houses=&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;owner.house_ids&lt;/code&gt; et réciproquement &lt;code class=&quot;highlighter-rouge&quot;&gt;house.owners&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;house.owners=&lt;/code&gt; et
+&lt;code class=&quot;highlighter-rouge&quot;&gt;house.owner_ids&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Has-Many Through&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Mais on sait seulement qu’il y a un lien ! On n’a pas d’information
+sur la nature ou les conditions de ce lien.
+Si vous voulez que cette association porte des informations, l’idée
+de la jointure est bonne. Poussons-la plus loin.&lt;/p&gt;
+
+&lt;p&gt;Faites un objet qui relie les deux et dans lequel vous rangez les
+informations de ladite relation, puis des Has-Many vers cet objet.&lt;/p&gt;
+
+&lt;p&gt;Par exemple pour une location de voiture &lt;code class=&quot;highlighter-rouge&quot;&gt;Person Has Many Rentals&lt;/code&gt;
+et &lt;code class=&quot;highlighter-rouge&quot;&gt;Car Has Many Rentals&lt;/code&gt;. Ainsi chaque Rental sait retrouver
+la bonne voiture, son locataire, et tout ce que vous voudriez
+ajouter, comme : les dates et heures de début et fin de location,
+le prix appliqué, des infos variées etc.&lt;/p&gt;
+
+&lt;p&gt;Rails proposera un dernier confort dans ce cas, les Has Many Through,
+ici &lt;code class=&quot;highlighter-rouge&quot;&gt;Person Has Many Cars Through Rentals&lt;/code&gt;, qui veut dire
+“on peut retrouver toutes les voitures d’un client,
+à condition d’aller les chercher à travers son historique de locations”,
+et vous pourrez alors avoir les deux méthodes utiles
+&lt;code class=&quot;highlighter-rouge&quot;&gt;person.cars&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;person.car_ids&lt;/code&gt; à disposition.
+Je ne pourrais pas vous donner de &lt;code class=&quot;highlighter-rouge&quot;&gt;person.cars=&lt;/code&gt; car il faudrait
+alors renseigner tous les objets Rental entre deux.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Has-One&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Enfin, je vous mets en garde contre les associations 1-1,
+qui sont toujours techniquement possibles, mais qui sont pour moi
+assez rares.&lt;/p&gt;
+
+&lt;p&gt;En tout cas, c’est signe qu’il y a une question à poser :
+on veut dire “un chien a un maître”, &lt;code class=&quot;highlighter-rouge&quot;&gt;Dog Has One Master&lt;/code&gt;…
+mais en réalité &lt;code class=&quot;highlighter-rouge&quot;&gt;Dog Belongs To Master&lt;/code&gt;,
+car un maître peut avoir plusieurs chiens (là encore, 0, 1 ou N chiens)
+mais un chien ne peut pas avoir plusieurs maîtres.&lt;/p&gt;
+
+&lt;p&gt;Enfin, c’est possible dans la vraie vie et mais si c’était le cas,
+vous n’auriez pas tenté d’écrire “un chien A UN maître”.&lt;/p&gt;
+
+&lt;p&gt;D’autre part parce que si les informations sont si “couplées” et
+doivent aller la main dans la main, pourquoi ne pas tout mettre dans
+la même table ? Si un client peut avoir plusieurs mails, que certaines
+boîtes mail peuvent être partagées… on ne se pose aucune question,
+on laisse dans la même table email et nom du client.&lt;/p&gt;
+
+&lt;p&gt;Mais quand vous avez un souci avec un Has One, je pense qu’en général
+il y aura une évolution un jour pour le transformer en Has Many :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Customer Has One Address&lt;/code&gt; deviendra probablement &lt;code class=&quot;highlighter-rouge&quot;&gt;Customer Has Many Addresses&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;PhoneNumber Has One Customer&lt;/code&gt; plutôt &lt;code class=&quot;highlighter-rouge&quot;&gt;Customer Has Many PhoneNumbers&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Si vous êtes toujours coincés, voici mon astuce, demandez-vous :
+“puis-je avoir l’un sans l’autre ?”&lt;/p&gt;
+
+&lt;p&gt;Une adresse sans maison a du sens (terrain vide),
+une adresse avec plusieurs maisons a du sens (appartements),
+une maison sans adresse n’a pas de sens (on l’a bien construite quelque part),
+une maison avec plusieurs adresses est possible mais rare (coins de rues).&lt;/p&gt;
+
+&lt;p&gt;Ainsi, on part sur &lt;code class=&quot;highlighter-rouge&quot;&gt;Address Has One House&lt;/code&gt;, ce qui était probablement
+l’inverse de ce que vous vous attendiez à écrire dans un raisonnement
+classique. En tout cas, j’avais pris l’exemple au hasard et
+la conclusion m’a surpris moi-même.&lt;/p&gt;
+
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Les associations dans ActiveRecord c'est comme dans les diagrammes UML et les BDD relationnelles.
+	</itunes:subtitle>
+	<itunes:summary>
+	  Les associations dans ActiveRecord c'est comme dans les diagrammes UML et les BDD relationnelles.
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/eventail.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/250558766-zenm4-007-zen-metaphor-les-associations-dans-ruby-on-rails.m4a" length="68300" type="audio/mp4" />
+	<itunes:duration></itunes:duration> -->
+
+        <pubDate>Sun, 06 Mar 2016 14:45:00 +0100</pubDate>
+        <link>http://zenm4.net/007/</link>
+        <guid isPermaLink="true">http://zenm4.net/007/</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>Le Vide, l&#39;Unité, et l&#39;Infini</title>
