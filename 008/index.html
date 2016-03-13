@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="stylesheet" href="/css/sharingbuttonsio.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://zenm4.net" />
+  <meta property="og:title" content="Zen Metaphor" />
+  <meta property="og:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <meta property="og:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta property="og:locale" content="fr-FR" />
+  <meta property="og:updated_time" content="2016-02-23" />
+  <meta property="og:rich_attachment" content="true" />
+
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/007/">007. Les associations dans Ruby on Rails</a></span>
+      &mdash;
+      
+    </p>
+
+    <h1 class="post-title">008. Structures de données et algos de recherche</h1>
+    <h4>Chercher et ranger en fonction de la structure de données
+      <br /><em>c'est comme</em><br />chercher un livre dans une bibliothèque en fonction du rangement
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/251711970&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="https://fr.wikipedia.org/wiki/Loi_de_Conway">La Loi de Conway-Bevan-Corcoran</a>
+        <p>Votre réponse/solution/problème ressemblera à l'organisation qui l'a créé.</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Bonjour, bienvenue dans cet épisode 8 sur les algorithmes de recherche
+et de tri de données, inséparable de cet autre sujet : les structures de données.</p>
+
+<p>Pour moi, une grande partie du travail de codeur (mais pas que de codeurs),
+surtout débutant (mais pas que), c’est de rentrer des informations,
+puis chercher des informations.</p>
+
+<p>Il y a beaucoup à dire, j’ai écrit de quoi faire deux épisodes, il y
+en aura sûrement un troisième dans les mêmes lignes plus tard.</p>
+
+<p><b>Ranger et chercher</b></p>
+
+<p>Les deux sont très liés : jeter tous vos livres n’importe où est une
+méthode de rangement incroyablement rapide, mais la recherche est
+incroyablement inefficace.</p>
+
+<p>Ranger tous vos livres par titre demande du travail, mais revenir chercher
+un livre par la suite est très rapide, si on se rappelle du titre bien sûr.</p>
+
+<p>Autre avantage : si vous n’avez pas le livre, vous voyez qu’il manque là
+où l’ordre alphabétique l’aurait placé : inutile de le chercher ailleurs,
+vous savez que vous ne le possédez pas ou l’avez prêté en ce moment.</p>
+
+<p>L’alternative, sans rangement, aurait été de regarder chacun de vos
+livres, et de vous rendre compte tout à la fin que vous ne l’avez pas.
+C’est très inefficace et frustrant.</p>
+
+<p>C’est pour cela que chacune des méthodes n’est pas objectivement
+meilleure ou moins bonne, mais les papiers scientifiques sur les
+structures de données ou algos de tri vont chercher à les évaluer en
+terme de meilleur cas, pire cas, et cas moyen.</p>
+
+<p><b>Explorer le problème</b></p>
+
+<p>Un léger problème toutefois, une série de plusieurs tomes a rarement des
+titres en ordre alphabétique, et vous devrez donc éparpiller la série dans
+votre bibliothèque.</p>
+
+<p>Nouveau problème, nouvelle solution.
+On tente un truc un peu plus malin : trier par nom d’auteur.</p>
+
+<p>C’est un avantage intéressant dont se servent les librairies et les
+bibliothèques : ranger par auteur permet souvent d’avoir des livres
+côte à côte qui soient probablement intéressants pour l’acheteur ou le
+lecteur, ne serait-ce que par thème proche ou pour ranger une série
+ensemble.</p>
+
+<p>Chaque auteur écrit plusieurs livres, enfin on l’espère pour eux. Il
+faut donc un autre critère déterminant pour classer entre eux les
+livres de l’auteur : alphabétique ou date casserait là aussi des
+séries (pour les auteurs qui écrivent plusieurs séries en parallèle),
+à vous de voir.</p>
+
+<p>Au pire, on vous force à reparcourir la section des livres d’un auteur
+du début à la fin pour savoir si le magasin possède bien tel ou tel
+exemplaire. On a perdu le côté immédiat et infaillible de l’ordre
+alphabétique pur, mais on a gagné quand même puisqu’on a restreint
+cette phase pénible à la section d’un auteur.</p>
+
+<p>Sur les milliers d’ouvrages de la librairie, vous y gagnez :
+imaginez la longueur de la section de livres qui commencent par
+“Histoire de/des/de la” ou “Méthode de/des/pour” par exemple.</p>
+
+<p>Eh oui : la nature de vos données va donc aussi influer sur le choix
+de la structure de données à choisir !</p>
+
+<p>Attention toutefois :
+il faudra trouver une astuce quand il y a plusieurs auteurs…</p>
+
+<p><b>La structure et le besoin</b></p>
+
+<p>On vient de faire un arbitrage entre la complexité de rangement à
+chaque fois qu’on ajoute ou remet un livre dans les étagères, contre
+un énorme avantage à la recherche. Si votre problème est rarement
+d’ajouter ou ranger des éléments, et plus souvent de rechercher, c’est
+un coût qu’il est intéressant de payer.</p>
+
+<p>Mais quand vous faites des logs dans votre application, vous listez
+tout ce qui se passe pour, peut-être, y chercher des informations un
+jour. On peut alors légitimement choisir l’arbitrage inverse.</p>
+
+<p>Par exemple, les journaux sont un produit radicalement différent d’un
+livre : ils contiennent des informations variées d’auteurs variés, et
+une bonne partie de ce qu’ils contiennent n’est plus aussi intéressant
+au bout d’une semaine, un mois, deux ans… Le rangement de journaux
+par date semble être le plus sensé, et empiler vos journaux les uns
+au-dessus des autres une méthode tout à fait acceptable.</p>
+
+<p><b>Conclusion</b></p>
+
+<p>Bref, ranger et rechercher : l’un impose des contraintes à l’autre, et vice-versa. 
+Même chose pour la paire structure de données et traitements :
+vous rendrez certaines choses possibles ou impossibles, tout en en rendant
+d’autres plus simples ou plus compliquées.</p>
+
+<p>C’est pour cela qu’en général aucun code ou aucun algo n’est
+mieux qu’un autre, ils sont simplement plus ou moins adaptés, et la
+clé est de connaître à la fois la nature des données, les opérations
+que l’on veut faire le plus souvent, le moins souvent, et des ordres
+de grandeur pour chaque.</p>
+
+<p><b>Pourquoi cet épisode ?</b></p>
+
+<p>C’est un sujet beaucoup enseigné en écoles et dans les livres de
+programmation, on a du mal à voir le but, et ça en bloque plus
+d’un. Heureusement, il y a des chances que vous déléguiez tout ce
+travail à la base de données, qui fait cela très bien. Pas
+d’inquiétude.</p>
+
+<p>Mais pour les rares fois où c’est votre job de choisir la base de
+données la plus adaptée, et pour les cas très fréquents où vous seriez
+tentés d’écrire des lignes de code très simples mais qui refont en
+moins bien le travail que la base de données aurait pu faire, ça me
+semble important voire nécessaire de comprendre ce qu’il y a en dessous.</p>
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : hygiène du code</h4>
+    <p>règle du boy-scout, style guide</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : Synchrone et asynchrone</h4>
+    <p>Coup de fil ou email ? Les avantages sont différents.</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/007/">007. Les associations dans Ruby on Rails</a></span>
+    &mdash;
+    
+    </p>
+    <p>
+      2016-03-13 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41077934-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  </body>
+
+</html>

@@ -17,12 +17,149 @@
     </itunes:owner>
     <itunes:image href="http://www.zenm4.net/img/zenm4.png" />
     <itunes:category text="Technology">
-    <pubDate>Mon, 07 Mar 2016 00:09:36 +0100</pubDate>
-    <lastBuildDate>Mon, 07 Mar 2016 00:09:36 +0100</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2016 22:36:22 +0100</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2016 22:36:22 +0100</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
-        <title>Les associations dans Ruby on Rails</title>
+        <title>Structures de données et algos de recherche</title>
+        <description>&lt;p&gt;Bonjour, bienvenue dans cet épisode 8 sur les algorithmes de recherche
+et de tri de données, inséparable de cet autre sujet : les structures de données.&lt;/p&gt;
+
+&lt;p&gt;Pour moi, une grande partie du travail de codeur (mais pas que de codeurs),
+surtout débutant (mais pas que), c’est de rentrer des informations,
+puis chercher des informations.&lt;/p&gt;
+
+&lt;p&gt;Il y a beaucoup à dire, j’ai écrit de quoi faire deux épisodes, il y
+en aura sûrement un troisième dans les mêmes lignes plus tard.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Ranger et chercher&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Les deux sont très liés : jeter tous vos livres n’importe où est une
+méthode de rangement incroyablement rapide, mais la recherche est
+incroyablement inefficace.&lt;/p&gt;
+
+&lt;p&gt;Ranger tous vos livres par titre demande du travail, mais revenir chercher
+un livre par la suite est très rapide, si on se rappelle du titre bien sûr.&lt;/p&gt;
+
+&lt;p&gt;Autre avantage : si vous n’avez pas le livre, vous voyez qu’il manque là
+où l’ordre alphabétique l’aurait placé : inutile de le chercher ailleurs,
+vous savez que vous ne le possédez pas ou l’avez prêté en ce moment.&lt;/p&gt;
+
+&lt;p&gt;L’alternative, sans rangement, aurait été de regarder chacun de vos
+livres, et de vous rendre compte tout à la fin que vous ne l’avez pas.
+C’est très inefficace et frustrant.&lt;/p&gt;
+
+&lt;p&gt;C’est pour cela que chacune des méthodes n’est pas objectivement
+meilleure ou moins bonne, mais les papiers scientifiques sur les
+structures de données ou algos de tri vont chercher à les évaluer en
+terme de meilleur cas, pire cas, et cas moyen.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Explorer le problème&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Un léger problème toutefois, une série de plusieurs tomes a rarement des
+titres en ordre alphabétique, et vous devrez donc éparpiller la série dans
+votre bibliothèque.&lt;/p&gt;
+
+&lt;p&gt;Nouveau problème, nouvelle solution.
+On tente un truc un peu plus malin : trier par nom d’auteur.&lt;/p&gt;
+
+&lt;p&gt;C’est un avantage intéressant dont se servent les librairies et les
+bibliothèques : ranger par auteur permet souvent d’avoir des livres
+côte à côte qui soient probablement intéressants pour l’acheteur ou le
+lecteur, ne serait-ce que par thème proche ou pour ranger une série
+ensemble.&lt;/p&gt;
+
+&lt;p&gt;Chaque auteur écrit plusieurs livres, enfin on l’espère pour eux. Il
+faut donc un autre critère déterminant pour classer entre eux les
+livres de l’auteur : alphabétique ou date casserait là aussi des
+séries (pour les auteurs qui écrivent plusieurs séries en parallèle),
+à vous de voir.&lt;/p&gt;
+
+&lt;p&gt;Au pire, on vous force à reparcourir la section des livres d’un auteur
+du début à la fin pour savoir si le magasin possède bien tel ou tel
+exemplaire. On a perdu le côté immédiat et infaillible de l’ordre
+alphabétique pur, mais on a gagné quand même puisqu’on a restreint
+cette phase pénible à la section d’un auteur.&lt;/p&gt;
+
+&lt;p&gt;Sur les milliers d’ouvrages de la librairie, vous y gagnez :
+imaginez la longueur de la section de livres qui commencent par
+“Histoire de/des/de la” ou “Méthode de/des/pour” par exemple.&lt;/p&gt;
+
+&lt;p&gt;Eh oui : la nature de vos données va donc aussi influer sur le choix
+de la structure de données à choisir !&lt;/p&gt;
+
+&lt;p&gt;Attention toutefois :
+il faudra trouver une astuce quand il y a plusieurs auteurs…&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;La structure et le besoin&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;On vient de faire un arbitrage entre la complexité de rangement à
+chaque fois qu’on ajoute ou remet un livre dans les étagères, contre
+un énorme avantage à la recherche. Si votre problème est rarement
+d’ajouter ou ranger des éléments, et plus souvent de rechercher, c’est
+un coût qu’il est intéressant de payer.&lt;/p&gt;
+
+&lt;p&gt;Mais quand vous faites des logs dans votre application, vous listez
+tout ce qui se passe pour, peut-être, y chercher des informations un
+jour. On peut alors légitimement choisir l’arbitrage inverse.&lt;/p&gt;
+
+&lt;p&gt;Par exemple, les journaux sont un produit radicalement différent d’un
+livre : ils contiennent des informations variées d’auteurs variés, et
+une bonne partie de ce qu’ils contiennent n’est plus aussi intéressant
+au bout d’une semaine, un mois, deux ans… Le rangement de journaux
+par date semble être le plus sensé, et empiler vos journaux les uns
+au-dessus des autres une méthode tout à fait acceptable.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Conclusion&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Bref, ranger et rechercher : l’un impose des contraintes à l’autre, et vice-versa. 
+Même chose pour la paire structure de données et traitements :
+vous rendrez certaines choses possibles ou impossibles, tout en en rendant
+d’autres plus simples ou plus compliquées.&lt;/p&gt;
+
+&lt;p&gt;C’est pour cela qu’en général aucun code ou aucun algo n’est
+mieux qu’un autre, ils sont simplement plus ou moins adaptés, et la
+clé est de connaître à la fois la nature des données, les opérations
+que l’on veut faire le plus souvent, le moins souvent, et des ordres
+de grandeur pour chaque.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Pourquoi cet épisode ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est un sujet beaucoup enseigné en écoles et dans les livres de
+programmation, on a du mal à voir le but, et ça en bloque plus
+d’un. Heureusement, il y a des chances que vous déléguiez tout ce
+travail à la base de données, qui fait cela très bien. Pas
+d’inquiétude.&lt;/p&gt;
+
+&lt;p&gt;Mais pour les rares fois où c’est votre job de choisir la base de
+données la plus adaptée, et pour les cas très fréquents où vous seriez
+tentés d’écrire des lignes de code très simples mais qui refont en
+moins bien le travail que la base de données aurait pu faire, ça me
+semble important voire nécessaire de comprendre ce qu’il y a en dessous.&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Chercher et ranger en fonction de la structure de données c'est comme chercher un livre dans une bibliothèque en fonction du rangement
+	</itunes:subtitle>
+	<itunes:summary>
+	  Chercher et ranger en fonction de la structure de données c'est comme chercher un livre dans une bibliothèque en fonction du rangement
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/lotus.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/251711970-zenm4-008-zen-metaphor-structures-de-donnees-et-algos-de-recherche.m4a" length="44400" type="audio/mp4" />
+	<itunes:duration></itunes:duration> -->
+
+        <pubDate>Sun, 13 Mar 2016 14:45:00 +0100</pubDate>
+        <link>http://zenm4.net/008/</link>
+        <guid isPermaLink="true">http://zenm4.net/008/</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
+    
+      <item>
+        <title>Les associations dans Rails</title>
         <description>&lt;p&gt;Bonjour, voici l’épisode 7, sur les associations dans Rails.
 Il fait suite à l’épisode 6, où je vous recommande de toujours
 considérer la cardinalité de ce dont vous parlez : 0, 1 ou N.&lt;/p&gt;
