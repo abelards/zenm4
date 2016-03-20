@@ -17,9 +17,134 @@
     </itunes:owner>
     <itunes:image href="http://www.zenm4.net/img/zenm4.png" />
     <itunes:category text="Technology">
-    <pubDate>Sun, 13 Mar 2016 22:36:22 +0100</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2016 22:36:22 +0100</lastBuildDate>
+    <pubDate>Sun, 20 Mar 2016 22:19:32 +0100</pubDate>
+    <lastBuildDate>Sun, 20 Mar 2016 22:19:32 +0100</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Indexation</title>
+        <description>&lt;p&gt;Bonjour, bienvenue dans cet épisode 9 sur l’indexation dans les bases
+de données. C’était l’étape logique juste après l’épisode 8 sur la
+manière de ranger et rechercher des données.&lt;/p&gt;
+
+&lt;p&gt;On parlait dans l’épisode précédent de ranger des livres, et d’aller
+les chercher. Les seuls outils pour cela étaient un ensemble d’étagères
+et quelques règles non écrites. J’aime bien chercher les règles non
+écrites : c’est ce qui permet de tout clarifier, et parfois de tout
+remettre en cause pour créer de nouvelles opportunités.&lt;/p&gt;
+
+&lt;p&gt;1) On voulait donner un ordre, mais lequel ? On supposait que la
+personne qui range ses livres ne se pose pas la question, ou plutôt
+qu’elle a une réponse toute faite : probablement de haut en bas du
+meuble, de gauche à droite par étagère.&lt;/p&gt;
+
+&lt;p&gt;Si c’est vous qui savez, qui rangez et qui cherchez, ça marche, mais
+bien sûr il faut prévenir les autres personnes qui pourraient vouloir
+le faire aussi, sinon ils ne trouvent pas le livre (dommage) voire
+pire : ils “cassent” votre rangement avec des livres en désordre, avec
+le coût en performance qu’on a vu.&lt;/p&gt;
+
+&lt;p&gt;2) On se basait sur le fait que la seule information est la tranche
+du livre, avec titre et auteur. Mais on n’est pas obligés. On peut
+faire un papier qu’on scotche à côté de notre étagère pour expliquer
+le système de rangement.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Enrichir la structure&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Et là encore, les bibliothèques existent depuis longtemps et ont tenté
+plein de bonnes idées, pour finir par s’accorder sur un standard.&lt;/p&gt;
+
+&lt;p&gt;Les allées sont rangées par thèmes, qui ont des sous-catégories,
+on colle à chaque livre une référence unique… et on souhaite
+toutefois que ce soit facile à naviguer quel que soit la manière
+dont nos lecteurs veulent aborder le problème.&lt;/p&gt;
+
+&lt;p&gt;On ne peut ranger nos livres physiquement que d’une façon, alors
+on a recours à une “structure” encore plus complexe mais plus
+astucieuse : ajouter en plus des étagères de livres des fiches ou
+dossiers, permettant de retrouver référence et section en fonction
+de votre question.&lt;/p&gt;
+
+&lt;p&gt;Un catalogue va lister tous les livres par ordre alphabétique du nom
+des auteurs. Quand un livre a trois auteurs, il sera présent trois
+fois dans ce catalogue et ce n’est pas grave parce que ces trois
+lignes mèneront vers la même référence, et donc un seul exemplaire
+physique du livre.&lt;/p&gt;
+
+&lt;p&gt;Sur les tonnes de livres et les millions de pages cumulées des
+ouvrages, vous venez d’ajouter trois lignes, même pas une feuille A4,
+pour simplifier la vie de tous vos lecteurs.&lt;/p&gt;
+
+&lt;p&gt;On a fait une structure plus complexe mais plus puissante.
+Et tant qu’on y est, on va faire un catalogue par titre, un par
+éditeur, un par date, et des entrées par sujets pour pouvoir
+répondre aux lecteurs qui cherchent des livres à la croisée des
+sujets, comme histoire et religion, science et bande dessinée, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Indexation&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Ces catalogues papier ont un nom : maintenant presque tout est
+informatisé, mais avant on appelait ça des index. Et c’est tellement
+utile que de nombreux livres de référence ont aussi un ou plusieurs
+index permettant de retrouver le contenu dans le livre.&lt;/p&gt;
+
+&lt;p&gt;Index est un mot que vous avez peut-être déjà entendu au sujet des
+bases de données, j’y consacrerai peut-être un épisode mais a priori
+vous avez déjà compris comment ça marche, et surtout vous venez de
+comprendre pourquoi un index est souvent très bien (pratique pour la
+recherche), mais qu’il a toujours un coût (écrire et mettre le
+catalogue à jour), et que parfois on choisit de ne pas payer ce coût
+car ça n’a pas assez d’utilité, par exemple, de faire un catalogue de
+livres en fonction des prénoms des personnages principaux et
+secondaires.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Un mot sur la suite&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;On a balayé la plupart des catégories d’épisodes que je voulais faire :
+un concept très abstrait mais utile (&lt;a href=&quot;/002/&quot;&gt;002. le cache&lt;/a&gt;),
+un sujet simple mais plein de pièges à démystifier
+(&lt;a href=&quot;/004/&quot;&gt;004. la priorité des règles CSS&lt;/a&gt;),
+un sujet business (&lt;a href=&quot;/005/&quot;&gt;005. achats IT B2B&lt;/a&gt;),
+de la philosophie (&lt;a href=&quot;/006/&quot;&gt;006. le Vide, l’Unité et l’Infini&lt;/a&gt;),
+et quelques pièges ou astuces dans Ruby on Rails
+(&lt;a href=&quot;/003/&quot;&gt;003. les requêtes N+1&lt;/a&gt; et &lt;a href=&quot;/007/&quot;&gt;007. les associations&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Avec &lt;a href=&quot;/001/&quot;&gt;001. listes chaînées&lt;/a&gt; et 
+&lt;a href=&quot;/008/&quot;&gt;008. structures de données et algos de recherche&lt;/a&gt;
+je vise à dédramatiser un sujet souvent inquiétant dans les
+premières années d’école d’informatique ou d’apprentissage en solo
+dans les livres ou sur Internet. Dans la vraie vie vous utiliserez
+rarement les listes chaînées mais plutôt une bibliothèque ou
+les constructions de votre langage de programmation.
+Bref c’est bon pour la culture, et pour donner des idées, mais 
+je trouve très dommage qu’il y ait des barrières à l’entrée
+alors qu’on pourrait tout de suite commencer à apprendre sur des
+projets plus amusants.&lt;/p&gt;
+
+&lt;p&gt;Pour la suite, je vais essayer de tourner sur ce genre de sujets,
+je suis preneur de vos retours sur twitter
+&lt;a href=&quot;https://twitter.com/zen_m4&quot;&gt;.
+Merci et à bientôt !&lt;/a&gt;&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Un index en base de données c'est comme un index dans une bibliothèque
+	</itunes:subtitle>
+	<itunes:summary>
+	  Un index en base de données c'est comme un index dans une bibliothèque
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/uml_king.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/253676618-zenm4-009-zen-metaphor-indexation.m4a" length="45400" type="audio/mp4" />
+	<itunes:duration></itunes:duration> -->
+
+        <pubDate>Sun, 20 Mar 2016 14:45:00 +0100</pubDate>
+        <link>http://zenm4.net/009/</link>
+        <guid isPermaLink="true">http://zenm4.net/009/</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>Structures de données et algos de recherche</title>

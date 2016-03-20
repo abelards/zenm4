@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="stylesheet" href="/css/sharingbuttonsio.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://zenm4.net" />
+  <meta property="og:title" content="Zen Metaphor" />
+  <meta property="og:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <meta property="og:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta property="og:locale" content="fr-FR" />
+  <meta property="og:updated_time" content="2016-02-23" />
+  <meta property="og:rich_attachment" content="true" />
+
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/008/">008. Structures de données et algos de tri</a></span>
+      &mdash;
+      
+    </p>
+
+    <h1 class="post-title">009. Indexation</h1>
+    <h4>Un index en base de données
+      <br /><em>c'est comme</em><br />un index dans une bibliothèque
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/253676618&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="http://www.sorting-algorithms.com/">Sorting Algorithms</a>
+        <p>Comment fonctionnent nos algos de tris les plus courants ?</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Bonjour, bienvenue dans cet épisode 9 sur l’indexation dans les bases
+de données. C’était l’étape logique juste après l’épisode 8 sur la
+manière de ranger et rechercher des données.</p>
+
+<p>On parlait dans l’épisode précédent de ranger des livres, et d’aller
+les chercher. Les seuls outils pour cela étaient un ensemble d’étagères
+et quelques règles non écrites. J’aime bien chercher les règles non
+écrites : c’est ce qui permet de tout clarifier, et parfois de tout
+remettre en cause pour créer de nouvelles opportunités.</p>
+
+<p>1) On voulait donner un ordre, mais lequel ? On supposait que la
+personne qui range ses livres ne se pose pas la question, ou plutôt
+qu’elle a une réponse toute faite : probablement de haut en bas du
+meuble, de gauche à droite par étagère.</p>
+
+<p>Si c’est vous qui savez, qui rangez et qui cherchez, ça marche, mais
+bien sûr il faut prévenir les autres personnes qui pourraient vouloir
+le faire aussi, sinon ils ne trouvent pas le livre (dommage) voire
+pire : ils “cassent” votre rangement avec des livres en désordre, avec
+le coût en performance qu’on a vu.</p>
+
+<p>2) On se basait sur le fait que la seule information est la tranche
+du livre, avec titre et auteur. Mais on n’est pas obligés. On peut
+faire un papier qu’on scotche à côté de notre étagère pour expliquer
+le système de rangement.</p>
+
+<p><b>Enrichir la structure</b></p>
+
+<p>Et là encore, les bibliothèques existent depuis longtemps et ont tenté
+plein de bonnes idées, pour finir par s’accorder sur un standard.</p>
+
+<p>Les allées sont rangées par thèmes, qui ont des sous-catégories,
+on colle à chaque livre une référence unique… et on souhaite
+toutefois que ce soit facile à naviguer quel que soit la manière
+dont nos lecteurs veulent aborder le problème.</p>
+
+<p>On ne peut ranger nos livres physiquement que d’une façon, alors
+on a recours à une “structure” encore plus complexe mais plus
+astucieuse : ajouter en plus des étagères de livres des fiches ou
+dossiers, permettant de retrouver référence et section en fonction
+de votre question.</p>
+
+<p>Un catalogue va lister tous les livres par ordre alphabétique du nom
+des auteurs. Quand un livre a trois auteurs, il sera présent trois
+fois dans ce catalogue et ce n’est pas grave parce que ces trois
+lignes mèneront vers la même référence, et donc un seul exemplaire
+physique du livre.</p>
+
+<p>Sur les tonnes de livres et les millions de pages cumulées des
+ouvrages, vous venez d’ajouter trois lignes, même pas une feuille A4,
+pour simplifier la vie de tous vos lecteurs.</p>
+
+<p>On a fait une structure plus complexe mais plus puissante.
+Et tant qu’on y est, on va faire un catalogue par titre, un par
+éditeur, un par date, et des entrées par sujets pour pouvoir
+répondre aux lecteurs qui cherchent des livres à la croisée des
+sujets, comme histoire et religion, science et bande dessinée, etc.</p>
+
+<p><b>Indexation</b></p>
+
+<p>Ces catalogues papier ont un nom : maintenant presque tout est
+informatisé, mais avant on appelait ça des index. Et c’est tellement
+utile que de nombreux livres de référence ont aussi un ou plusieurs
+index permettant de retrouver le contenu dans le livre.</p>
+
+<p>Index est un mot que vous avez peut-être déjà entendu au sujet des
+bases de données, j’y consacrerai peut-être un épisode mais a priori
+vous avez déjà compris comment ça marche, et surtout vous venez de
+comprendre pourquoi un index est souvent très bien (pratique pour la
+recherche), mais qu’il a toujours un coût (écrire et mettre le
+catalogue à jour), et que parfois on choisit de ne pas payer ce coût
+car ça n’a pas assez d’utilité, par exemple, de faire un catalogue de
+livres en fonction des prénoms des personnages principaux et
+secondaires.</p>
+
+<p><b>Un mot sur la suite</b></p>
+
+<p>On a balayé la plupart des catégories d’épisodes que je voulais faire :
+un concept très abstrait mais utile (<a href="/002/">002. le cache</a>),
+un sujet simple mais plein de pièges à démystifier
+(<a href="/004/">004. la priorité des règles CSS</a>),
+un sujet business (<a href="/005/">005. achats IT B2B</a>),
+de la philosophie (<a href="/006/">006. le Vide, l’Unité et l’Infini</a>),
+et quelques pièges ou astuces dans Ruby on Rails
+(<a href="/003/">003. les requêtes N+1</a> et <a href="/007/">007. les associations</a>).</p>
+
+<p>Avec <a href="/001/">001. listes chaînées</a> et 
+<a href="/008/">008. structures de données et algos de recherche</a>
+je vise à dédramatiser un sujet souvent inquiétant dans les
+premières années d’école d’informatique ou d’apprentissage en solo
+dans les livres ou sur Internet. Dans la vraie vie vous utiliserez
+rarement les listes chaînées mais plutôt une bibliothèque ou
+les constructions de votre langage de programmation.
+Bref c’est bon pour la culture, et pour donner des idées, mais 
+je trouve très dommage qu’il y ait des barrières à l’entrée
+alors qu’on pourrait tout de suite commencer à apprendre sur des
+projets plus amusants.</p>
+
+<p>Pour la suite, je vais essayer de tourner sur ce genre de sujets,
+je suis preneur de vos retours sur twitter
+<a href="https://twitter.com/zen_m4">.
+Merci et à bientôt !</a></p>
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : Aimez votre problème, pas votre solution !</h4>
+    <p>Aimez suffisamment pour tenir le coup, mais acceptez de changer d'avis.</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : Kata (Code Katas)</h4>
+    <p>Entraînement. Pratique z (en groupe ?) l'analyse et réécriture de code.</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/008/">008. Structures de données et algos de tri</a></span>
+    &mdash;
+    
+    </p>
+    <p>
+      2016-03-20 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41077934-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  </body>
+
+</html>
