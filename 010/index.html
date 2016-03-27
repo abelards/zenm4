@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="stylesheet" href="/css/sharingbuttonsio.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://zenm4.net" />
+  <meta property="og:title" content="Zen Metaphor" />
+  <meta property="og:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <meta property="og:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta property="og:locale" content="fr-FR" />
+  <meta property="og:updated_time" content="2016-02-23" />
+  <meta property="og:rich_attachment" content="true" />
+
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/009/">009. Indexation dans une base de données</a></span>
+      &mdash;
+      
+    </p>
+
+    <h1 class="post-title">010. </h1>
+    <h4>Les méthodes each, map, inject
+      <br /><em>c'est comme</em><br />prendre des feuilles pour lire et remettre, changer, agréger
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="https://us.pycon.org/2013/about/code-of-conduct/">PyCon Code of Conduct</a>
+        <p></p>
+      </li>
+    
+      <li><a href="http://berlincodeofconduct.org/fr/">Berlin Code of Conduct</a>
+        <p></p>
+      </li>
+    
+      <li><a href="http://contributor-covenant.org/">Contributor Covenant</a>
+        <p></p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Épisode 10 sur des traitements classiques sur les listes.
+En Ruby on appelle ça Enumerable, mais heureusement les mots
+sont partagés dans la plupart des bibliothèques et langages.</p>
+
+<p>Traitons d’abord quelques oublis classiques de débutants
+(et d’étourderies d’experts aussi, ne vous sentez pas ridicules
+quand ça vous arrive, c’est le jeu) sur des listes et “boucles”.</p>
+
+<p><b><code class="highlighter-rouge">each</code> et les itérations</b></p>
+
+<p>Imaginez-vous dans un emploi qui traite des dossiers un par un.
+Votre méthode de travail est de prendre des fiches, et les traiter.
+Partons sur un tableau nommé <code class="highlighter-rouge">a</code> et contenant les chiffres de 1 à 5.
+<code class="highlighter-rouge">a = [1,2,3,4,5] # ou (1..5).to_a</code></p>
+
+<p>Traiter, ça peut vouloir dire prendre une feuille, noter quelque
+chose ailleurs, et les remettre exactement à leur place.
+C’est ce que fait <code class="highlighter-rouge">each</code> : le code <code class="highlighter-rouge">b = a.each{|x| x * 2}</code>
+met effectivement un tableau dans <code class="highlighter-rouge">b</code>, mais <code class="highlighter-rouge">[1,2,3,4,5]</code>
+et non pas <code class="highlighter-rouge">[2,4,6,8,10]</code>.</p>
+
+<p><b><code class="highlighter-rouge">map</code> et les pièges sémantiques</b></p>
+
+<p>Traiter, ça peut vouloir dire prendre un dossier <code class="highlighter-rouge">a</code>,
+ouvrir un nouveau dossier vierge, et mettre dans ce nouveau
+dossier le résultat de votre travail.</p>
+
+<p>Le piège, c’est qu’après vous pouvez tout aussi bien mettre
+une nouvelle étiquette <code class="highlighter-rouge">b</code> sur ce nouveau dossier, ou
+voler l’étiquette du dossier <code class="highlighter-rouge">a</code> pour la coller sur ce
+nouveau dossier.</p>
+
+<p>Pire encore, vous pouvez travailler soit avec des photocopies
+de chacune des feuilles de <code class="highlighter-rouge">a</code>, soit modifier physiquement
+chacune des feuilles : vous avez mis du surligneur, déchiré
+un coupon, écrit sur la fiche ou mis un tampon ?
+Impossible de retrouver la feuille de départ dans l’état de départ !</p>
+
+<p>En terme de code, ces trois options donneraient cela :</p>
+
+<p><code class="highlighter-rouge">b = a.map {|x| x * 2}</code>, qui renvoie bien <code class="highlighter-rouge">[2,4,6,8,10]</code>
+et le stocke dans <code class="highlighter-rouge">b</code>, sans aucunement déranger le tableau <code class="highlighter-rouge">a</code>.</p>
+
+<p><code class="highlighter-rouge">a = a.map {|x| x * 2}</code> a travaillé sur une copie de <code class="highlighter-rouge">a</code>
+(sans la nommer) puis finit par lui recoller l’étiquette <code class="highlighter-rouge">a</code> dessus.
+On ne parle pas des informations de départ : en ayant redonné
+l’étiquette au nouveau dossier, on n’a pas vraiment prévu de moyen
+d’aller chercher les anciennes informations.</p>
+
+<p><code class="highlighter-rouge">['bonjour', 'au revoir'].map{|x| x.upcase!}</code> a vraiment modifié
+le contenu, chacune des chaînes de caractères du tableau.
+On note d’ailleurs que par convention, les Rubyistes mettront un
+point d’exclamation à la fin des noms de méthodes “destructrices”,
+c’est à dire qui changent le contenu de départ.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>str = "Bonjour" # =&gt; "Bonjour"   # valeur de départ
+str.upcase      # =&gt; "BONJOUR"   # ça n'est pas la même donnée
+str             # =&gt; "Bonjour"   # on n'a pas touché à str
+str.upcase!     # =&gt; "BONJOUR"   # on a mis en majuscule et on altère str
+str             # =&gt; "BONJOUR"   # str a été modifiée
+</code></pre>
+</div>
+
+<p><b>Traitement “en place”</b></p>
+
+<p>Pareillement pour les dossiers, si je veux trier mon dossier <code class="highlighter-rouge">a</code>
+je n’ai pas forcément envie de préparer un nouveau dossier pour
+conserver les valeurs triées, et jouer ensuite avec les étiquettes.</p>
+
+<p>Je peux vouloir simplement dire que tout se fait dans le tableau <code class="highlighter-rouge">a</code>
+et que je n’ai pas besoin de faire de copies. Ça s’appelle un
+traitement “in-place” et la plupart des rubyistes vont le faire
+avec des méthodes finissant par des points d’exclamation.</p>
+
+<p>On n’en voit pas dans <code class="highlighter-rouge">Enumerable</code>, mais on voit beaucoup de paires
+dans la classe <code class="highlighter-rouge">Array</code> : <code class="highlighter-rouge">sort</code> et <code class="highlighter-rouge">sort!</code>, <code class="highlighter-rouge">rotate</code>, <code class="highlighter-rouge">reverse</code>, <code class="highlighter-rouge">uniq</code>…</p>
+
+<p><b>D’une liste à un seul résultat</b></p>
+
+<p>Je pense qu’il faudra un autre épisode pour toutes ces super fonctions.
+En attendant, il y a une classe entière de besoins à voir.</p>
+
+<p>Imaginez que votre travail c’est de prendre une liste de fiches,
+et de ressortir un seul nombre : la somme des paiements,
+ou le nombre de mauvais payeurs par exemple.</p>
+
+<p>Cette méthode a trois noms.
+Ruby l’appelle <code class="highlighter-rouge">reduce</code> : on “réduit” les N fiches à 1 résultat.</p>
+
+<p>Ruby l’appelle aussi <code class="highlighter-rouge">inject</code> : on “injecte” la valeur zéro,
+puis on va regarder chaque fiche pour ajouter la somme d’argent
+de LA fiche au total “temporaire” et ainsi de suite.
+Par exemple, 50 + 100 + 25 + 20 + 5 : vous avez probablement fait
+l’addition étape par étape.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[50, 100, 25, 20, 5].inject(0) {|somme, obj| somme + obj}
+[100, 25, 20, 5].inject(50) {|somme, obj| somme + obj}
+[25, 20, 5].inject(150) {|somme, obj| somme + obj}
+[20, 5].inject(175) {|somme, obj| somme + obj}
+[5].inject(195) {|somme, obj| somme + obj}
+# =&gt; 200
+</code></pre>
+</div>
+
+<p>Le troisième nom n’est pas très utilisé en Ruby, mais dans le reste
+des langages : <code class="highlighter-rouge">fold</code>. Il applique le résultat étape par étape, comme
+on vient de voir.
+J’aime bien l’image que ce mot donne : si vous avez déjà vu de vieilles
+imprimantes avec des piles de papier qui se pliaient et dépliaient,
+c’est vraiment pour moi l’acte de replier une très longue liste de
+pages en un accordéon qui prend moins de place et affiche en bas
+le résultat voulu.</p>
+
+<p><b>That’s all folks!</b></p>
+
+<p>Et bien voilà, c’est déjà assez long pour cette fois !
+Mon but n’est pas franchement de vous lire la doc Ruby à
+voix haute, donc allez lire
+<a href="http://ruby-doc.org/core-2.3.0/Enumerable.html">Enumerable</a>,
+<a href="http://ruby-doc.org/core-2.3.0/Array.html">Array</a>,
+<a href="http://ruby-doc.org/core-2.3.0/Hash.html">Hash</a>,
+et aussi <a href="http://ruby-doc.org/core-2.3.0/String.html">String</a>,
+les opérations sur les chaînes de caractères, pour faire bonne mesure,
+mais peut-être que je ferai un épisode “rappel” sur quelques-unes de
+ces méthodes un de ces jours.</p>
+
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : Formation aux premiers secours</h4>
+    <p>Protéger, alerter, secourir</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : ETL</h4>
+    <p>Extract Transform Load</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/009/">009. Indexation dans une base de données</a></span>
+    &mdash;
+    
+    </p>
+    <p>
+      2016-03-27 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41077934-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  </body>
+
+</html>
