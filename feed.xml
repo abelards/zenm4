@@ -17,9 +17,158 @@
     </itunes:owner>
     <itunes:image href="http://www.zenm4.net/img/zenm4.png" />
     <itunes:category text="Technology">
-    <pubDate>Sun, 20 Mar 2016 22:19:32 +0100</pubDate>
-    <lastBuildDate>Sun, 20 Mar 2016 22:19:32 +0100</lastBuildDate>
+    <pubDate>Mon, 28 Mar 2016 16:30:55 +0200</pubDate>
+    <lastBuildDate>Mon, 28 Mar 2016 16:30:55 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Itérations</title>
+        <description>&lt;p&gt;Épisode 10 sur des traitements classiques sur les listes.
+En Ruby on appelle ça Enumerable, mais heureusement les mots
+sont partagés dans la plupart des bibliothèques et langages.&lt;/p&gt;
+
+&lt;p&gt;Traitons d’abord quelques oublis classiques de débutants
+(et d’étourderies d’experts aussi, ne vous sentez pas ridicules
+quand ça vous arrive, c’est le jeu) sur des listes et “boucles”.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;each&lt;/code&gt; et les itérations&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Imaginez-vous dans un emploi qui traite des dossiers un par un.
+Votre méthode de travail est de prendre des fiches, et les traiter.
+Partons sur un tableau nommé &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; et contenant les chiffres de 1 à 5.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;a = [1,2,3,4,5] # ou (1..5).to_a&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Traiter, ça peut vouloir dire prendre une feuille, noter quelque
+chose ailleurs, et les remettre exactement à leur place.
+C’est ce que fait &lt;code class=&quot;highlighter-rouge&quot;&gt;each&lt;/code&gt; : le code &lt;code class=&quot;highlighter-rouge&quot;&gt;b = a.each{|x| x * 2}&lt;/code&gt;
+met effectivement un tableau dans &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;, mais &lt;code class=&quot;highlighter-rouge&quot;&gt;[1,2,3,4,5]&lt;/code&gt;
+et non pas &lt;code class=&quot;highlighter-rouge&quot;&gt;[2,4,6,8,10]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt; et les pièges sémantiques&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Traiter, ça peut vouloir dire prendre un dossier &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;,
+ouvrir un nouveau dossier vierge, et mettre dans ce nouveau
+dossier le résultat de votre travail.&lt;/p&gt;
+
+&lt;p&gt;Le piège, c’est qu’après vous pouvez tout aussi bien mettre
+une nouvelle étiquette &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt; sur ce nouveau dossier, ou
+voler l’étiquette du dossier &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; pour la coller sur ce
+nouveau dossier.&lt;/p&gt;
+
+&lt;p&gt;Pire encore, vous pouvez travailler soit avec des photocopies
+de chacune des feuilles de &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;, soit modifier physiquement
+chacune des feuilles : vous avez mis du surligneur, déchiré
+un coupon, écrit sur la fiche ou mis un tampon ?
+Impossible de retrouver la feuille de départ dans l’état de départ !&lt;/p&gt;
+
+&lt;p&gt;En terme de code, ces trois options donneraient cela :&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;b = a.map {|x| x * 2}&lt;/code&gt;, qui renvoie bien &lt;code class=&quot;highlighter-rouge&quot;&gt;[2,4,6,8,10]&lt;/code&gt;
+et le stocke dans &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;, sans aucunement déranger le tableau &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;a = a.map {|x| x * 2}&lt;/code&gt; a travaillé sur une copie de &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;
+(sans la nommer) puis finit par lui recoller l’étiquette &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; dessus.
+On ne parle pas des informations de départ : en ayant redonné
+l’étiquette au nouveau dossier, on n’a pas vraiment prévu de moyen
+d’aller chercher les anciennes informations.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[&#39;bonjour&#39;, &#39;au revoir&#39;].map{|x| x.upcase!}&lt;/code&gt; a vraiment modifié
+le contenu, chacune des chaînes de caractères du tableau.
+On note d’ailleurs que par convention, les Rubyistes mettront un
+point d’exclamation à la fin des noms de méthodes “destructrices”,
+c’est à dire qui changent le contenu de départ.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;str = &quot;Bonjour&quot; # =&amp;gt; &quot;Bonjour&quot;   # valeur de départ
+str.upcase      # =&amp;gt; &quot;BONJOUR&quot;   # ça n&#39;est pas la même donnée
+str             # =&amp;gt; &quot;Bonjour&quot;   # on n&#39;a pas touché à str
+str.upcase!     # =&amp;gt; &quot;BONJOUR&quot;   # on a mis en majuscule et on altère str
+str             # =&amp;gt; &quot;BONJOUR&quot;   # str a été modifiée
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;b&gt;Traitement “en place”&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Pareillement pour les dossiers, si je veux trier mon dossier &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;
+je n’ai pas forcément envie de préparer un nouveau dossier pour
+conserver les valeurs triées, et jouer ensuite avec les étiquettes.&lt;/p&gt;
+
+&lt;p&gt;Je peux vouloir simplement dire que tout se fait dans le tableau &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;
+et que je n’ai pas besoin de faire de copies. Ça s’appelle un
+traitement “in-place” et la plupart des rubyistes vont le faire
+avec des méthodes finissant par des points d’exclamation.&lt;/p&gt;
+
+&lt;p&gt;On n’en voit pas dans &lt;code class=&quot;highlighter-rouge&quot;&gt;Enumerable&lt;/code&gt;, mais on voit beaucoup de paires
+dans la classe &lt;code class=&quot;highlighter-rouge&quot;&gt;Array&lt;/code&gt; : &lt;code class=&quot;highlighter-rouge&quot;&gt;sort&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;sort!&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;rotate&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;reverse&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;uniq&lt;/code&gt;…&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;D’une liste à un seul résultat&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Je pense qu’il faudra un autre épisode pour toutes ces super fonctions.
+En attendant, il y a une classe entière de besoins à voir.&lt;/p&gt;
+
+&lt;p&gt;Imaginez que votre travail c’est de prendre une liste de fiches,
+et de ressortir un seul nombre : la somme des paiements,
+ou le nombre de mauvais payeurs par exemple.&lt;/p&gt;
+
+&lt;p&gt;Cette méthode a trois noms.
+Ruby l’appelle &lt;code class=&quot;highlighter-rouge&quot;&gt;reduce&lt;/code&gt; : on “réduit” les N fiches à 1 résultat.&lt;/p&gt;
+
+&lt;p&gt;Ruby l’appelle aussi &lt;code class=&quot;highlighter-rouge&quot;&gt;inject&lt;/code&gt; : on “injecte” la valeur zéro,
+puis on va regarder chaque fiche pour ajouter la somme d’argent
+de LA fiche au total “temporaire” et ainsi de suite.
+Par exemple, 50 + 100 + 25 + 20 + 5 : vous avez probablement fait
+l’addition étape par étape.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[50, 100, 25, 20, 5].inject(0) {|somme, obj| somme + obj}
+[100, 25, 20, 5].inject(50) {|somme, obj| somme + obj}
+[25, 20, 5].inject(150) {|somme, obj| somme + obj}
+[20, 5].inject(175) {|somme, obj| somme + obj}
+[5].inject(195) {|somme, obj| somme + obj}
+# =&amp;gt; 200
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Le troisième nom n’est pas très utilisé en Ruby, mais dans le reste
+des langages : &lt;code class=&quot;highlighter-rouge&quot;&gt;fold&lt;/code&gt;. Il applique le résultat étape par étape, comme
+on vient de voir.
+J’aime bien l’image que ce mot donne : si vous avez déjà vu de vieilles
+imprimantes avec des piles de papier qui se pliaient et dépliaient,
+c’est vraiment pour moi l’acte de replier une très longue liste de
+pages en un accordéon qui prend moins de place et affiche en bas
+le résultat voulu.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;That’s all folks!&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Et bien voilà, c’est déjà assez long pour cette fois !
+Mon but n’est pas franchement de vous lire la doc Ruby à
+voix haute, donc allez lire
+&lt;a href=&quot;http://ruby-doc.org/core-2.3.0/Enumerable.html&quot;&gt;Enumerable&lt;/a&gt;,
+&lt;a href=&quot;http://ruby-doc.org/core-2.3.0/Array.html&quot;&gt;Array&lt;/a&gt;,
+&lt;a href=&quot;http://ruby-doc.org/core-2.3.0/Hash.html&quot;&gt;Hash&lt;/a&gt;,
+et aussi &lt;a href=&quot;http://ruby-doc.org/core-2.3.0/String.html&quot;&gt;String&lt;/a&gt;,
+les opérations sur les chaînes de caractères, pour faire bonne mesure,
+mais peut-être que je ferai un épisode “rappel” sur quelques-unes de
+ces méthodes un de ces jours.&lt;/p&gt;
+
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Les méthodes each, map, inject c'est comme prendre des feuilles pour lire et remettre, changer, agréger
+	</itunes:subtitle>
+	<itunes:summary>
+	  Les méthodes each, map, inject c'est comme prendre des feuilles pour lire et remettre, changer, agréger
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/gong.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/-zenm4-010-zen-metaphor-iterations.m4a" length="44300" type="audio/mp4" />
+	<itunes:duration></itunes:duration> -->
+
+        <pubDate>Sun, 27 Mar 2016 15:45:00 +0200</pubDate>
+        <link>http://zenm4.net/010/</link>
+        <guid isPermaLink="true">http://zenm4.net/010/</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>Indexation</title>
@@ -1483,96 +1632,6 @@ Il ne devrait plus y avoir de C dans zenm4.&lt;/p&gt;
         <pubDate>Sun, 24 Jan 2016 15:45:00 +0100</pubDate>
         <link>http://zenm4.net/001/</link>
         <guid isPermaLink="true">http://zenm4.net/001/</guid>
-        
-        
-        <category>meta</category>
-        
-      </item>
-    
-      <item>
-        <title>man ZenM4</title>
-        <description>&lt;p&gt;Bienvenue à l’épisode zéro de zenm4 !&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Qu’est-ce que c’est,&lt;/b&gt; d’où ça vient, où ça va ?&lt;br /&gt;
-C’est &lt;b&gt;un podcast court français avec une métaphore par semaine&lt;/b&gt;.&lt;br /&gt;
-Avec des thèmes variés autour du code, du développement web et informatique.
-Ça ira des listes chaînées aux tris, des jointures SQL au concept de cache,
-de la sécurite au déploiement.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Ces thèmes sont-ils complexes ? Souvent oui, mais pas forcément.&lt;/b&gt;&lt;br /&gt;
-En tout cas, avec suffisamment de billes pour comprendre les enjeux,
-les solutions possibles et leurs compromis, on peut raisonner
-efficacement sur des sujets complexes, et c’est ce que je veux faire.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;D’où ça vient ?&lt;/b&gt;&lt;br /&gt;
-Du langage &lt;a href=&quot;https://www.ruby-lang.org/fr/&quot;&gt;Ruby&lt;/a&gt;, du meetup &lt;a href=&quot;https://rubyparis.org/&quot;&gt;ParisRB&lt;/a&gt;,
-de l’initiative &lt;a href=&quot;http://railsgirls.com/&quot;&gt;RailsGirls&lt;/a&gt; hebdomadaire à Paris,
-de la lecture de &lt;a href=&quot;http://thecodelesscode.com/case/100?lang=fr&amp;amp;trans=abelards&quot;&gt;The Codeless Code&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Où ça va ?&lt;/b&gt;&lt;br /&gt;
-C’est une expérience, qui se veut SMART : simple, réalisable, limitée dans le temps.
-Je veux la lancer avec un effort minimal qui me donnera des compétences et des leçons pour la suite.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Avantages attendus&lt;/b&gt;&lt;br /&gt;
-&lt;b&gt;Si ça aide des gens, j’estime que j’aurai réussi.&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Avantages possibles&lt;/b&gt;&lt;br /&gt;
-Si l’essai se transforme, je serais ravi s’il pouvait poser les bases
-pour un podcast un peu plus long (c’est dur de faire court !) de discussions,
-si l’on pouvait faire soit intervenir des invités, soit donner le lead et
-un podcast dédié aux apprenantes de RailsGirls Paris hedbomadaire.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Risques&lt;/b&gt;&lt;br /&gt;
-Si ça rate, les risques de l’initiative sont extrêmement faibles :&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;que ça ne dure pas par manque de temps (dommage)&lt;/li&gt;
-  &lt;li&gt;que ça ne trouve pas son audience (trop dur, j’ai perdu moins de 10€ de nom de domaine)&lt;/li&gt;
-  &lt;li&gt;que le format soit trop complexe pour poster du code (à la voix)&lt;/li&gt;
-  &lt;li&gt;que je n’aie pas le temps et la motivation de faire la transcription texte (j’en suis sûr)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Il y aura bien sûr des risques si ça marche :&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;que ça soit faux (je vais éviter quand même)&lt;/li&gt;
-  &lt;li&gt;que ça soit inexact (ça va forcément arriver en simplifiant)&lt;/li&gt;
-  &lt;li&gt;que je me fasse troller parce que je n’ai pas parlé de tous les cas (je peux encaisser)&lt;/li&gt;
-  &lt;li&gt;que j’aie l’air ridicule avec les leçons de sagesse et le thème Zen (je peux encaisser aussi)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;b&gt;Questions&lt;/b&gt;&lt;br /&gt;
-Je suis encore en train de déterminer le format du podcast.&lt;/p&gt;
-
-&lt;p&gt;Ce qui est sûr : une métaphore du jour, et un lien du jour.&lt;/p&gt;
-
-&lt;p&gt;Ce qui est moins sûr :&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;l’exercice du jour : &lt;em&gt;codez un cellular automaton, un convertisseur, golf, rewriting…&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;le conseil du jour : &lt;em&gt;soyez en bonne santé, lisez, appellez famille et proches, asseyez-vous correctement, restez curieux…&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;le koan du jour : &lt;em&gt;(ne sera probablement pas choisi) le dev est-il un un combattant ? un jardinier ? architecte ? rêveur ? négociateur ? écrivain ?&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;le mot du jour : &lt;em&gt;sérendipité, par exemple&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;le mot anglais du jour : &lt;em&gt;(peut-être fusionné avec le mot du jour) restlessness, grit, growth mindset…&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
-
-</description>
-	<itunes:author>Sylvain Abélard</itunes:author>
-	<itunes:subtitle>
-	  Zen META-four : qu&#39;est-ce que c&#39;est, où ça va
-	</itunes:subtitle>
-	<itunes:summary>
-	  Zen META-four : qu&#39;est-ce que c&#39;est, où ça va
-	</itunes:summary>
-	<itunes:image href="http://zenm4.net/img/zenm4_logo.png" />
-	<enclosure url="http://feeds.soundcloud.com/stream/242392059-zenm4-000-zen-metaphor-pisode-z-ro.mp3" length="10100" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
-
-        <pubDate>Sun, 17 Jan 2016 15:45:00 +0100</pubDate>
-        <link>http://zenm4.net/000/</link>
-        <guid isPermaLink="true">http://zenm4.net/000/</guid>
         
         
         <category>meta</category>
