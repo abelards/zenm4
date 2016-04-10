@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="stylesheet" href="/css/sharingbuttonsio.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://zenm4.net" />
+  <meta property="og:title" content="Zen Metaphor" />
+  <meta property="og:description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+  <meta property="og:image" content="http://zenm4.net/img/zenm4.png" />
+  <meta property="og:locale" content="fr-FR" />
+  <meta property="og:updated_time" content="2016-02-23" />
+  <meta property="og:rich_attachment" content="true" />
+
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/010/">010. Itérations</a></span>
+      &mdash;
+      
+    </p>
+
+    <h1 class="post-title">011. À l'attaque !</h1>
+    <h4>La sécurité numérique face à une attaque
+      <br /><em>c'est comme</em><br />la sécurité physique : probabilité, détection, coût total
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/258353685&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP</a>
+        <p>Les dix vulnérabilités les plus importantes dans les applis Web</p>
+      </li>
+    
+      <li><a href="https://www.youtube.com/channel/UCttFnyoHp4TdsTj1wcVs44A">YouTube ParisRB</a>
+        <p>Vidéos des meetups, et LiveStream tous les 1ers mardis du mois</p>
+      </li>
+    
+      <li><a href="http://parisrb-slack-invite.herokuapp.com/">Slack ParisRB</a>
+        <p>Communauté Slack ParisRB</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Récemment à ParisRB, nous avons eu des présentations sur la sécurité.
+<a href="https://twitter.com/@DorianLupu">Dorian</a> et
+<a href="https://twitter.com/@jbaviat">Jean-Baptiste</a>
+se sont gentiment proposer de continuer avec une série régulière.</p>
+
+<p>Tout d’abord je rappelle aux curieux que nous réussissons depuis
+janvier à transmettre les meetups en live sur la chaîne YouTube
+<a href="https://www.youtube.com/channel/UCttFnyoHp4TdsTj1wcVs44A">ParisRB</a>
+et que nous avons un
+<a href="http://parisrb-slack-invite.herokuapp.com/">Slack</a>
+qui vous permet de réagir durant l’événement et poser des questions.</p>
+
+<p>La sécurité c’est bien joli mais il est difficile de comprendre
+pourquoi un code javascript <code class="highlighter-rouge">alert('pwn3d!')</code> est une faille.</p>
+
+<p>Plus que jamais je ne suis pas un expert mais je vise à vulgariser
+et démystifier ces sujets : je ne suis pas un dentiste, mais je peux
+quand même vous expliquer comment vous brosser les dents.</p>
+
+<p><b>Acceptez les difficultés</b></p>
+
+<p>Car au niveau de la plupart des développeurs, c’est bien de ça
+qu’il s’agit : une forme d’hygiène. Avec les bonnes habitudes,
+et dans une équipe un peu complète, on évite un maximum de problèmes.
+Dans les cas rares où vous avez des besoins très précis,
+vous serez au courant avant et vous prendrez vos dispositions.</p>
+
+<p>Le monde de la sécurité peut rebuter pour plusieurs aspects.
+Tout d’abord ça fait peur, et plus que tout autre domaine on a
+peur de ne jamais être à la hauteur : le sujet est vaste, plein
+de jargon et de technicité, et comme dans le jeu des gendarmes
+et des voleurs c’est un jeu d’attaques et contre-attaques, et
+on a toujours l’impression d’avoir une étape de retard.</p>
+
+<p>Ça fait aussi de vous quelqu’un d’extrêmement parano, jusque
+dans la vraie vie. Et pire, comme “la sécurité d’une chaîne
+est celle de son maillon le plus faible”, et personne ne veut
+être le maillon faible.</p>
+
+<p><b>L’approche par le risque</b></p>
+
+<p>Là encore j’ai a priori de quoi faire un épisode complet sur chaque
+type de faille, mais on va commencer par des généralités.
+Parlons de la sécurité de votre habitation, et désolé si ça vous
+empêche de dormir ce soir :)</p>
+
+<p>Le premier postulat c’est que tout change et rien n’est certain :
+“le risque zéro n’existe pas”. On va protéger sa maison contre les
+cambrioleurs, mais pas contre une attaque au camion bélier ou au
+lance-roquettes. Les banques et data-centers, eux, peuvent et
+devraient s’en inquiéter.</p>
+
+<p>L’idée est dissuader l’attaquant avant même qu’il tente de rentrer
+chez vous : trop long, trop compliqué, pour des gains incertains.</p>
+
+<p><b>Analyse de comportements</b></p>
+
+<p>Des études disent qu’une bonne porte et de bonnes fenêtres font
+fuir la majorité des cambrioleurs : plus le temps passe et plus
+ils font de bruit, plus ils ont de chances que vous reveniez,
+ou qu’un passant les remarque.</p>
+
+<p>Avec cette approche, une des clés de votre système, ce n’est pas
+d’être totalement imperméable, mais que toute attaque soit aussi
+difficile, et longue, et bruyante que possible.</p>
+
+<p>C’est comme avoir des caméras de surveillance : ça n’empêche pas
+le crime d’avoir lieu, mais ça augmente les chances de détection
+et de retrouver des traces pour punir le coupable.
+Aucune protection, mais de la dissuasion.</p>
+
+<p>Dans vos systèmes, en tant que développeur, vous êtes de toutes façons
+déjà parti pour tout tracer et analyser : pour votre reporting,
+votre chef, votre curiosité, votre business, avoir des idées de ce qui
+est important et ce qui l’est moins…</p>
+
+<p>Il suffit de rajouter l’aspect sécurité à cette question : qu’est-ce
+qui consitue un comportement normal, et qu’est-ce qui sort de la norme ?
+Mettez en place un système d’analyse et d’alerte, vous ne serez jamais
+déçus d’être prévenu d’une situation anormale : appli cassée, serveur KO,
+réseau coupé… et intrusion en cours.</p>
+
+<p><b>Et tant pis pour le voisin !</b></p>
+
+<p>On dit parfois que si vous êtes dans un groupe poursuivi par un lion affamé,
+il n’y a pas besoin de courir plus vite que le lion, mais plus vite que la
+personne la plus lente du groupe.</p>
+
+<p>C’est pareil : si votre porte ou votre site ne sont pas ultra sécurisés,
+on souhaite au moins qu’ils soient plus difficiles à pirater que celui du
+voisin. On suppose les attaquants ne sont pas totalement idiots et se
+reporteront sur la cible la plus facile.</p>
+
+<p><b>Le coût total</b></p>
+
+<p>Tout cela coûte de l’argent à mettre en place et à regarder en permanence.
+Il y a de nouveau un équilibre à trouver entre la prévention, la réaction
+(qu’est-ce que ça vous coûte de couper puis de réparer), et ce qu’une attaque
+vous aura coûté entretemps en business perdu.</p>
+
+<p>Dans la vraie vie on peut tout à fait mettre des assurances, vous en avez
+une sur votre logement, et sur votre business, que vous négociez en fonction
+de votre budget, des risques et des coûts.</p>
+
+<p>Bon, ça remplit déjà un épisode, on verra plus tard pour l’explication
+des méthodes elles-mêmes comme les injections.
+J’imagine que vous avez de quoi réfléchir, et que vous ne serez pas surpris
+d’apprendre que la plupart des fans de sécurité que je connais sont aussi
+très intéressés par la sécurité physique des locaux, et notamment les serrures.</p>
+
+<p>Dormez bien !</p>
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : SPOF</h4>
+    <p>Single Point Of Failure</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : MTBF / MTTR</h4>
+    <p>Mean Time Before Failure / Mean Time To Recovery</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/010/">010. Itérations</a></span>
+    &mdash;
+    
+    </p>
+    <p>
+      2016-04-10 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41077934-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  </body>
+
+</html>
