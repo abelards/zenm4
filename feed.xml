@@ -17,9 +17,143 @@
     </itunes:owner>
     <itunes:image href="http://www.zenm4.net/img/zenm4.png" />
     <itunes:category text="Technology">
-    <pubDate>Mon, 28 Mar 2016 16:30:55 +0200</pubDate>
-    <lastBuildDate>Mon, 28 Mar 2016 16:30:55 +0200</lastBuildDate>
+    <pubDate>Mon, 11 Apr 2016 00:07:07 +0200</pubDate>
+    <lastBuildDate>Mon, 11 Apr 2016 00:07:07 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>À l&#39;attaque !</title>
+        <description>&lt;p&gt;Récemment à ParisRB, nous avons eu des présentations sur la sécurité.
+&lt;a href=&quot;https://twitter.com/@DorianLupu&quot;&gt;Dorian&lt;/a&gt; et
+&lt;a href=&quot;https://twitter.com/@jbaviat&quot;&gt;Jean-Baptiste&lt;/a&gt;
+se sont gentiment proposer de continuer avec une série régulière.&lt;/p&gt;
+
+&lt;p&gt;Tout d’abord je rappelle aux curieux que nous réussissons depuis
+janvier à transmettre les meetups en live sur la chaîne YouTube
+&lt;a href=&quot;https://www.youtube.com/channel/UCttFnyoHp4TdsTj1wcVs44A&quot;&gt;ParisRB&lt;/a&gt;
+et que nous avons un
+&lt;a href=&quot;http://parisrb-slack-invite.herokuapp.com/&quot;&gt;Slack&lt;/a&gt;
+qui vous permet de réagir durant l’événement et poser des questions.&lt;/p&gt;
+
+&lt;p&gt;La sécurité c’est bien joli mais il est difficile de comprendre
+pourquoi un code javascript &lt;code class=&quot;highlighter-rouge&quot;&gt;alert(&#39;pwn3d!&#39;)&lt;/code&gt; est une faille.&lt;/p&gt;
+
+&lt;p&gt;Plus que jamais je ne suis pas un expert mais je vise à vulgariser
+et démystifier ces sujets : je ne suis pas un dentiste, mais je peux
+quand même vous expliquer comment vous brosser les dents.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Acceptez les difficultés&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Car au niveau de la plupart des développeurs, c’est bien de ça
+qu’il s’agit : une forme d’hygiène. Avec les bonnes habitudes,
+et dans une équipe un peu complète, on évite un maximum de problèmes.
+Dans les cas rares où vous avez des besoins très précis,
+vous serez au courant avant et vous prendrez vos dispositions.&lt;/p&gt;
+
+&lt;p&gt;Le monde de la sécurité peut rebuter pour plusieurs aspects.
+Tout d’abord ça fait peur, et plus que tout autre domaine on a
+peur de ne jamais être à la hauteur : le sujet est vaste, plein
+de jargon et de technicité, et comme dans le jeu des gendarmes
+et des voleurs c’est un jeu d’attaques et contre-attaques, et
+on a toujours l’impression d’avoir une étape de retard.&lt;/p&gt;
+
+&lt;p&gt;Ça fait aussi de vous quelqu’un d’extrêmement parano, jusque
+dans la vraie vie. Et pire, comme “la sécurité d’une chaîne
+est celle de son maillon le plus faible”, et personne ne veut
+être le maillon faible.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;L’approche par le risque&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Là encore j’ai a priori de quoi faire un épisode complet sur chaque
+type de faille, mais on va commencer par des généralités.
+Parlons de la sécurité de votre habitation, et désolé si ça vous
+empêche de dormir ce soir :)&lt;/p&gt;
+
+&lt;p&gt;Le premier postulat c’est que tout change et rien n’est certain :
+“le risque zéro n’existe pas”. On va protéger sa maison contre les
+cambrioleurs, mais pas contre une attaque au camion bélier ou au
+lance-roquettes. Les banques et data-centers, eux, peuvent et
+devraient s’en inquiéter.&lt;/p&gt;
+
+&lt;p&gt;L’idée est dissuader l’attaquant avant même qu’il tente de rentrer
+chez vous : trop long, trop compliqué, pour des gains incertains.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Analyse de comportements&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Des études disent qu’une bonne porte et de bonnes fenêtres font
+fuir la majorité des cambrioleurs : plus le temps passe et plus
+ils font de bruit, plus ils ont de chances que vous reveniez,
+ou qu’un passant les remarque.&lt;/p&gt;
+
+&lt;p&gt;Avec cette approche, une des clés de votre système, ce n’est pas
+d’être totalement imperméable, mais que toute attaque soit aussi
+difficile, et longue, et bruyante que possible.&lt;/p&gt;
+
+&lt;p&gt;C’est comme avoir des caméras de surveillance : ça n’empêche pas
+le crime d’avoir lieu, mais ça augmente les chances de détection
+et de retrouver des traces pour punir le coupable.
+Aucune protection, mais de la dissuasion.&lt;/p&gt;
+
+&lt;p&gt;Dans vos systèmes, en tant que développeur, vous êtes de toutes façons
+déjà parti pour tout tracer et analyser : pour votre reporting,
+votre chef, votre curiosité, votre business, avoir des idées de ce qui
+est important et ce qui l’est moins…&lt;/p&gt;
+
+&lt;p&gt;Il suffit de rajouter l’aspect sécurité à cette question : qu’est-ce
+qui consitue un comportement normal, et qu’est-ce qui sort de la norme ?
+Mettez en place un système d’analyse et d’alerte, vous ne serez jamais
+déçus d’être prévenu d’une situation anormale : appli cassée, serveur KO,
+réseau coupé… et intrusion en cours.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Et tant pis pour le voisin !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;On dit parfois que si vous êtes dans un groupe poursuivi par un lion affamé,
+il n’y a pas besoin de courir plus vite que le lion, mais plus vite que la
+personne la plus lente du groupe.&lt;/p&gt;
+
+&lt;p&gt;C’est pareil : si votre porte ou votre site ne sont pas ultra sécurisés,
+on souhaite au moins qu’ils soient plus difficiles à pirater que celui du
+voisin. On suppose les attaquants ne sont pas totalement idiots et se
+reporteront sur la cible la plus facile.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Le coût total&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Tout cela coûte de l’argent à mettre en place et à regarder en permanence.
+Il y a de nouveau un équilibre à trouver entre la prévention, la réaction
+(qu’est-ce que ça vous coûte de couper puis de réparer), et ce qu’une attaque
+vous aura coûté entretemps en business perdu.&lt;/p&gt;
+
+&lt;p&gt;Dans la vraie vie on peut tout à fait mettre des assurances, vous en avez
+une sur votre logement, et sur votre business, que vous négociez en fonction
+de votre budget, des risques et des coûts.&lt;/p&gt;
+
+&lt;p&gt;Bon, ça remplit déjà un épisode, on verra plus tard pour l’explication
+des méthodes elles-mêmes comme les injections.
+J’imagine que vous avez de quoi réfléchir, et que vous ne serez pas surpris
+d’apprendre que la plupart des fans de sécurité que je connais sont aussi
+très intéressés par la sécurité physique des locaux, et notamment les serrures.&lt;/p&gt;
+
+&lt;p&gt;Dormez bien !&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  La sécurité numérique face à une attaque c'est comme la sécurité physique : probabilité, détection, coût total
+	</itunes:subtitle>
+	<itunes:summary>
+	  La sécurité numérique face à une attaque c'est comme la sécurité physique : probabilité, détection, coût total
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/maze.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/258353685-zenm4-011-zen-metaphor-a-lattaque.m4a" length="43700" type="audio/mp4" />
+	<itunes:duration></itunes:duration> -->
+
+        <pubDate>Sun, 10 Apr 2016 15:45:00 +0200</pubDate>
+        <link>http://zenm4.net/011/</link>
+        <guid isPermaLink="true">http://zenm4.net/011/</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>Itérations</title>
@@ -1531,107 +1665,6 @@ qui puisse vous arriver c’est d’apprendre des choses dans l’intervalle !)&
         <pubDate>Sun, 31 Jan 2016 15:45:00 +0100</pubDate>
         <link>http://zenm4.net/002/</link>
         <guid isPermaLink="true">http://zenm4.net/002/</guid>
-        
-        
-        <category>meta</category>
-        
-      </item>
-    
-      <item>
-        <title>Liste chaînée</title>
-        <description>&lt;p&gt;Bonjour, bienvenue pour ce premier épisode de zenm4 :&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Les listes chaînées&lt;/b&gt;&lt;br /&gt;
-Pour cet épisode pilote, parlons d’un point douloureux du langage C.&lt;/p&gt;
-
-&lt;p&gt;Le C a un avantage pédagogique : comme il vous donne à peine assez
-d’outils pour travailler, vous êtes obligés de tout faire vous-mêmes
-et d’apprendre comment marche ce qu’il y a “en dessous” (système, C, UNIX).&lt;/p&gt;
-
-&lt;p&gt;Lors de l’apprentissage du C, un des premiers blocages que je vois
-souvent et qui impressionne les gens est celui de la liste
-chaînée. Cela fait appel à des concepts simples mais qui à ce
-moment-là de l’apprentissage sont souvent confus : les mélanger, c’est
-la catastrophe.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Une variable&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Une variable est une boîte, ou une étiquette.
-On y range des choses qu’on récupère plus tard en “rappelant” le nom qu’on avait utilisé.
-Quand on y range autre chose, on “oublie”, perd, écrase ce qu’il y avait.&lt;/p&gt;
-
-&lt;p&gt;Dans certains langages, ces boîtes sont typées : on ne peut y mettre
-que des couteaux, ou que des fourchettes. Dans d’autres, pas de contraintes.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Attention : Cette approximation du type est grossière et largement fausse !&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Un pointeur&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Un pointeur c’est comme un numéro de téléphone. Personne n’a jamais
-confondu le numéro avec la personne, alors pourquoi avoir peur dès que
-ça parle de code ? En C, avec&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;int valeur = 42;&lt;/code&gt;&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;int* pointeur = &amp;amp;valeur&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Vous avez le nombre 42 dans &lt;code class=&quot;highlighter-rouge&quot;&gt;valeur&lt;/code&gt;, rangé à l’adresse mémoire
-&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;valeur&lt;/code&gt;.  Le pointeur &lt;code class=&quot;highlighter-rouge&quot;&gt;pointeur&lt;/code&gt; est le numéro de téléphone, et
-&lt;code class=&quot;highlighter-rouge&quot;&gt;*pointeur&lt;/code&gt; son contenu : quand on regarde la valeur de &lt;code class=&quot;highlighter-rouge&quot;&gt;pointeur&lt;/code&gt; on
-n’a qu’un numéro, mais quand on regarde &lt;code class=&quot;highlighter-rouge&quot;&gt;*pointeur&lt;/code&gt; on retombe sur le
-contenu : &lt;code class=&quot;highlighter-rouge&quot;&gt;42&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;ERRATUM (&lt;a href=&quot;https://twitter.com/vdwxv&quot;&gt;@vdwxv&lt;/a&gt;) :
-je dis “chiffre” mais il faut bien sûr comprendre “nombre”.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Une liste chaînée&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Vous souhaitez maintenant contacter Dave. Vous n’avez pas son numéro,
-mais vous savez que quelqu’un dans le cercle d’amis l’a. Vous appelez
-Alice, qui a le numéro de Bob, qui a celui de Carole, qui a celui de
-Dave.&lt;/p&gt;
-
-&lt;p&gt;Vous pouvez maintenant parler à Dave.&lt;/p&gt;
-
-&lt;p&gt;Bien sûr, je ne parle ici que des chaînons. Le principe d’une liste
-c’est que vous rangez quelque chose dedans : vous vous préparez alors
-à travailler sur une structure qui a une “charge utile”, par exemple
-le livre que vous avez prêté, et bien sûr le lien vers la prochaine
-personne à qui elle aurait pu prêter votre livre.&lt;/p&gt;
-
-&lt;p&gt;Pour récupérer votre livre, vous allez donc appeler Alice, qui ne l’a
-plus car elle l’a prêté à Bob, qui l’a prêté à Carole etc. Au bout
-d’un moment, la recherche s’arrête : soit vous trouvez que Dave a le
-livre, soit il ne l’a pas mais ne sait plus qui appeler, et la
-recherche a échoué.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Ces sujets sont-ils complexes ? Pas pires qu’autre chose.&lt;/b&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Le langage humain est complexe, et pourtant peu de gens se trompent.
-Quand on dit l’Élysée : c’est une adresse, un palais, le siège du
-pouvoir exécutif français, le président… on mélange tout cela et
-pourtant tout le monde comprend.&lt;/p&gt;
-
-&lt;p&gt;Alors, le code, c’est compliqué ?&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Prenez soin de vous, soyez heureux !&lt;/b&gt;&lt;br /&gt;
-Et pour vivre heureux, ne faisons plus de C.
-Il ne devrait plus y avoir de C dans zenm4.&lt;/p&gt;
-
-&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
-</description>
-	<itunes:author>Sylvain Abélard</itunes:author>
-	<itunes:subtitle>
-	  Variables, pointeurs, liste chaînée c'est comme contacter quelqu&#39;un par téléphone
-	</itunes:subtitle>
-	<itunes:summary>
-	  Variables, pointeurs, liste chaînée c'est comme contacter quelqu&#39;un par téléphone
-	</itunes:summary>
-	<itunes:image href="http://zenm4.net/img/tree.png" />
-	<enclosure url="http://feeds.soundcloud.com/stream/243520005-zenm4-001-zen-metaphor-liste-chainee.m4a" length="32700" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
-
-        <pubDate>Sun, 24 Jan 2016 15:45:00 +0100</pubDate>
-        <link>http://zenm4.net/001/</link>
-        <guid isPermaLink="true">http://zenm4.net/001/</guid>
         
         
         <category>meta</category>
