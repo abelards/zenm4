@@ -17,9 +17,181 @@
     </itunes:owner>
     <itunes:image href="http://www.zenm4.net/img/zenm4.png" />
     <itunes:category text="Technology">
-    <pubDate>Mon, 11 Apr 2016 00:07:07 +0200</pubDate>
-    <lastBuildDate>Mon, 11 Apr 2016 00:07:07 +0200</lastBuildDate>
+    <pubDate>Sun, 17 Apr 2016 18:02:12 +0200</pubDate>
+    <lastBuildDate>Sun, 17 Apr 2016 18:02:12 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Git, ou l&#39;écriture à N cerveaux</title>
+        <description>&lt;p&gt;Bonjour, bienvenue dans l’épisode 12 sur Git.&lt;/p&gt;
+
+&lt;p&gt;Beaucoup de cours pour apprendre à coder se basent sur Git,
+et c’est très bien de viser tout de suite une bonne pratique
+qui ne va jamais cesser d’être utile. En plus, un code bien
+versionné c’est le droit de faire des erreurs et revenir en
+arrière, ce qui est parfait pour se rassurer quand on tente
+des choses nouvelles.&lt;/p&gt;
+
+&lt;p&gt;Mais cela bloque aussi les débutants : je voulais “juste”
+apprendre à coder, et voilà qu’on me gave d’outils annexes
+sans vraiment me dire pourquoi ils sont là, si on peut
+s’en passer au début, ou si on peut apprendre juste quelques
+parties et se lancer, ou qu’on doit tout savoir dès le début.&lt;/p&gt;
+
+&lt;p&gt;Du coup le but ici n’est pas de vous faire une liste des commandes
+(j’ai essayé avec l’épisode sur les itérateurs, c’est beaucoup trop
+long et pas forcément adapté en podcast, et en plus il y a déjà
+pléthore de sites et docs très bien faits) mais encore une fois de
+donner une vue d’ensemble pour dédramatiser le sujet.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;La tradition orale&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;J’aimerais rapprocher l’écriture de code (du texte à la base),
+avec quelque chose que l’humanité fait depuis très longtemps :
+raconter des histoires.&lt;/p&gt;
+
+&lt;p&gt;Dans toutes les cultures, mythes, légendes, contes se transmettent
+par tradition orale : les griots, les druides, les aedes grecs…
+et un jour tout cela se cristallise dans un ouvrage : l’épopée de
+Gilgamesh ou l’Iliade et l’Odyssée, etc.&lt;/p&gt;
+
+&lt;p&gt;Comme dans le logiciel ou le business, l’écriture dans une version
+“canonique” n’empêche pas les reprises, redécouvertes ou réinventions :
+Molière a repris énormément d’idées de ses fables chez Esope,
+pourtant il a écrit quelque chose d’original en l’adaptant à sa
+langue et à son époque.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Pourquoi versionner ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;On souhaite avoir plusieurs versions d’un logiciel qu’on écrit : soit
+parce qu’on travaille à plusieurs, soit pour faire une expérience par
+ci, une tentative par là, sans que cela ne bloque tout le monde.&lt;/p&gt;
+
+&lt;p&gt;Vous avez tenté quelque chose de trop courageux toute la journée
+de mardi ? Rien ne marche le soir ? Pas de souci : on revient à
+la version de lundi.&lt;/p&gt;
+
+&lt;p&gt;Quand on commence un long chantier sur son code, on ne veut pas le
+mettre en prod tant qu’il n’est pas fini, pourtant il faut bien que le
+logiciel avance : une urgence, un patch de sécurité, et on doit soit
+reprendre la version d’avant votre chantier, soit mettre en prod
+quelque chose qui n’est pas maîtrisé.&lt;/p&gt;
+
+&lt;p&gt;Une façon simple de faire ça était de tout copier-coller dans des
+dossiers, avec des noms plus ou moins explicites (v1, v2, backup, test…)
+mais plus on va mener de chantiers en parallèle plus ça va être
+difficile, déjà de tracer, mais ensuite de remettre ensemble à la
+fin quand le résultat est satisfaisant et “mérite” de rentrer dans
+le produit final.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Les conflits&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Bien entendu, ça arrive tout le temps. Parfois, pour avancer,
+on doit se baser sur une hypothèse différente :
+pour le métier, une découverte qui n’était pas dans le plan de base,
+une contrainte légale ou une opportunité business ;
+pour les développeurs, des contraintes ou opportunités techniques.&lt;/p&gt;
+
+&lt;p&gt;Votre code et votre base de données peuvent avoir des changements
+majeurs qui mettent une partie du système KO.
+Quand ça arrive, votre code est en conflit avec celui du voisin.&lt;/p&gt;
+
+&lt;p&gt;Par exemple, dans l’histoire du barde voisin, le personnage
+principal meurt, c’est bien plus dramatique, mais vous en aviez
+besoin dans la scène finale que vous aviez enjolivée : l’un des
+deux aspects va devoir changer, quitte à faire deux ouvrages.&lt;/p&gt;
+
+&lt;p&gt;Quand ça n’arrive pas ou très rarement… soit votre projet ne
+change plus (pas toujours bon signe) soit vous aviez une excellente
+conception ou architecture logicielle (souvent le genre de choses
+dont on se rend compte avec beaucoup d’expérience, ou a posteriori).&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Gestion de version, distribuée&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Typiquement les versions des contes de Grimm finissent mal et les
+Disney finissent bien : je ne dis pas que l’un ou l’autre a raison,
+ils ont chacun leur public, leur époque, leur succès, et sont tous
+les deux dépositaires d’une version qui est stable et se suffit à elle-même.&lt;/p&gt;
+
+&lt;p&gt;Chez les développeurs, ce serait un fork du logiciel, et chacun vivra
+sa vie complètement séparée de l’autre. On ne remet plus trop de Grimm
+dans les Disney, l’inverse à la rigueur ?&lt;/p&gt;
+
+&lt;p&gt;Ça peut être un changement de version majeure de la 1.0 à la 2.0,
+ou deux branches de la même histoire qui coexistent.&lt;/p&gt;
+
+&lt;p&gt;Mais des scénaristes qui travaillent en parallèle ?
+Tout simplement sont deux dépôts du même code, qui ont vocation
+à fusionner un jour en reprenant le meilleur de chaque.
+Régulièrement, ils s’envoient ou ils vont chercher les modifications
+de l’autre.&lt;/p&gt;
+
+&lt;p&gt;Git est prévu pour ça, pour s’échanger les différences pour que
+chacun puisse profiter des améliorations de l’autre, à condition
+d’être prêt à résoudre les conflits.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Dépôt, branche, versions, table de travail&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Du coup, Git propose énormément de commandes en fonction des
+subtilités choisies : cloner, envoyer, récupérer les dépôts ;
+expérimenter et naviguer entre plusieurs branches des possibles ;
+voir l’état de votre table de travail, jeter les brouillons
+ou intégrer les nouveaux travaux à telle ou telle branche ;
+fusionner les modifications.&lt;/p&gt;
+
+&lt;p&gt;Enfin, parfois, vous voulez présenter non seulement votre travail à
+quelqu’un, mais qu’il ne voie pas les annotations et modifications
+successives : on peut alors réécrire l’histoire des commits.&lt;/p&gt;
+
+&lt;p&gt;Là encore, ça n’est pas une opération quotidienne ou anodine :
+maîtrisez d’abord la base et vous saurez par la suite si vous voulez
+vraiment le faire, et armé de la pratique git que vous aurez eu
+entretemps, la méthode vous semblera plus claire.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Le distribué centralisé&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est compliqué d’imaginer que chacun a sa version.
+De toutes façon, un seul logiciel finira en production dans votre entreprise.
+Souvent, on va se dire qu’un des dépôts a autorité sur les autres,
+disons celui de l’entreprise ou du projet et pas celui des contributeurs.
+Au lieu de vous synchroniser avec chacun de vos collègues, vous le ferez via celui-ci.&lt;/p&gt;
+
+&lt;p&gt;Git est si populaire que de nombreux outils de développement se basent dessus :
+l’intégration continue par exemple, permet de dire “quand une nouvelle
+version est envoyée à tel endroit, lance des tests,
+et s’ils réussissent, déploie le tout en production”.
+Confort maximum, gain de temps : bel exemple d’automatisation.&lt;/p&gt;
+
+&lt;p&gt;Il existe aussi de nombreuses plateformes, publiques ou privées.
+GitHub étant devenu de fait un hébergeur majeur de projets Open Source,
+il y a de fortes chances que toutes les briques dont votre projet a besoin
+pour fonctionner soient sur GitHub. Si vous avez un outil de gestion de
+dépendances (npm pour Node, gem pour Ruby par exemple), il y a de fortes
+chances pour qu’il aille tout chercher sur GitHub.&lt;/p&gt;
+
+&lt;p&gt;Du coup, bien que Git soit conçu pour être un système distribué,
+vous venez de baser un système qui se centralise sur GitHub, et
+en cas de problème chez eux, votre projet est affecté aussi.&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Écrire et versionner son code source sous Git c'est comme l&#39;écriture des contes et la tradition orale
+	</itunes:subtitle>
+	<itunes:summary>
+	  Écrire et versionner son code source sous Git c'est comme l&#39;écriture des contes et la tradition orale
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/sunset.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/259529834-zenm4-012-zen-metaphor-git-ou-lecriture-a-plusieurs-cerveaux.m4a" length="46000" type="audio/mp4" />
+	<itunes:duration></itunes:duration> -->
+
+        <pubDate>Sun, 17 Apr 2016 15:45:00 +0200</pubDate>
+        <link>http://zenm4.net/012/</link>
+        <guid isPermaLink="true">http://zenm4.net/012/</guid>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>À l&#39;attaque !</title>
@@ -1515,156 +1687,6 @@ catégories.&lt;/p&gt;
         <pubDate>Sun, 07 Feb 2016 15:45:00 +0100</pubDate>
         <link>http://zenm4.net/003/</link>
         <guid isPermaLink="true">http://zenm4.net/003/</guid>
-        
-        
-        <category>meta</category>
-        
-      </item>
-    
-      <item>
-        <title>Cache</title>
-        <description>&lt;p&gt;Bonjour, bienvenue pour l’épisode 2, sur &lt;b&gt;le cache&lt;/b&gt;.&lt;/p&gt;
-
-&lt;p&gt;Commençons par un adage connu de Phil Karlton :&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Il n’y a que deux choses compliquées en informatique : invalider le cache et nommer les choses.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Bien utiliser le cache est complexe, mais le concept est simple.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Un carnet d’adresses&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Dans le dernier (et premier) épisode sur les listes chaînées,
-pour retrouver mon ami Dave, je devais appeler Alice puis Bob puis Carol.
-Beaucoup de gens dérangés pour pas grand-chose.&lt;/p&gt;
-
-&lt;p&gt;On peut apporter une solution très simple : garder un carnet d’adresses.
-Je note le numéro de Dave, et peut-être même celui de Bob et Carol.&lt;/p&gt;
-
-&lt;p&gt;À chaque fois que je voudrai appeler Dave, je l’aurai directement en
-ligne sans déranger personne : je viens d’inventer le cache !&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Le cache est mort, vive le cache !&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Le problème bien sûr, c’est quand Dave change de numéro : plus moyen de le joindre !&lt;/p&gt;
-
-&lt;p&gt;On peut voir trois problèmes immédiats :
-le premier, c’est quand le numéro n’est pas attribué.
-Pas de Dave, fin de l’histoire.
-Si je n’ai pas d’autre moyen de le contacter, c’est fichu.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Mauvais destinataire&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Le deuxième est peut-être pire : le numéro a été réattribué entre temps.
-En fonction de votre phrase d’accroche, les conséquences sont variables.&lt;/p&gt;
-
-&lt;p&gt;Si je commence par des familiarités, c’est embarrassant mais pas bien dangereux.
-Si j’envoie le numéro de ma carte bleue ou autre donnée sensible, c’est dramatique.&lt;/p&gt;
-
-&lt;p&gt;Imaginons maintenant que j’envoie un SMS à ce numéro, “OK pour ce soir”.
-Je supposais que Dave allait réserver des places de cinéma et venir à 20h, personne.
-Dommage.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Parenthèse : chez le mauvais destinataire&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Petite digression : imaginons maintenant que la personne d’en face, disons Bernard,
-était elle aussi en train d’attendre un SMS de confirmation, et dans sa précipitation
-n’a pas vérifié la source du message, et répond “OK”.&lt;/p&gt;
-
-&lt;p&gt;Non seulement j’ai maintenant une grande confiance que Dave sera au cinéma,
-et c’est toujours aussi faux, mais en plus Bernard aura fait quelque chose,
-disons réserver deux autres places pour un autre film, en pensant que cela
-venait d’un autre ami.&lt;/p&gt;
-
-&lt;p&gt;Au moins nous serons deux à avoir l’air bête, mais c’est une piètre consolation.&lt;/p&gt;
-
-&lt;p&gt;La morale de l’histoire, c’est qu’il faut être clair quand on communique :
-si les humains peuvent se faire avoir,
-les ordinateurs qui sont très bêtes ne risquent pas de faire mieux.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;La chaîne est rompue&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Le troisième problème du cache, c’est que la chaîne est rompue.&lt;/p&gt;
-
-&lt;p&gt;Je faisais bien confiance à Alice pour me passer Dave, peut-être que
-quelqu’un me demandait à moi le numéro de Dave. Je ne l’appelle pas
-à chaque fois que je passe son numéro pour vérifier que c’est encore
-le bon : mon cache est corrompu.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Expiration du cache&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;La solution serait que Dave prévienne quand il change de numéro de téléphone.
-Celui qui sait que la donnée a changé, ici Dave, devrait prévenir ceux qui
-gardent ses données en cache, ici moi… encore faut-il que Dave sache qui cache.&lt;/p&gt;
-
-&lt;p&gt;Quitte à ne pas savoir, il pourrait demander à ses amis les plus proches
-de répandre la nouvelle. C’est peut-être faisable, peut-être pas,
-compliqué certainement, mais en tout cas dans l’intervalle
-il y a des gens qui ont l’ancien numéro.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Parenthèse : redirect&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Dans la vraie vie, vous pourriez imaginer des parades subtiles : Dave
-a un deuxième téléphone qu’il garde sur lui et pendant un temps, Dave
-répond aux deux numéros, et rappelle à chacun qu’il faut utiliser le
-nouveau numéro, ou met en place un répondeur automatique, voire
-plus simplement un renvoi d’appel.&lt;/p&gt;
-
-&lt;p&gt;Voilà, ça n’avait rien à voir avec le cache,
-mais vous venez de comprendre les redirections :)&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Du cache partout&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Vous voyez que la recette est simple, l’idée vient facilement à n’importe qui.
-On a du cache partout dans notre vie, et dans nos logiciels.&lt;/p&gt;
-
-&lt;p&gt;Dans le cas qui m’intéresse, une appli Web Ruby on Rails, on a du cache à tous les niveaux :&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;votre base de données met des requêtes et donnés en cache&lt;/li&gt;
-  &lt;li&gt;Rails a plusieurs systèmes de cache (sur ses vues et partials etc)&lt;/li&gt;
-  &lt;li&gt;votre serveur applicatif ou serveur web également (a minima sur les fichiers)&lt;/li&gt;
-  &lt;li&gt;toute configuration que vous mettez en bonus, par exemple un reverse-proxy comme Varnish dont c’est exactement le job&lt;/li&gt;
-  &lt;li&gt;parfois le proxy de votre connexion Internet peut le faire aussi. Imaginons un réseau d’entreprise où tout le monde va sur la page d’un site d’actu : il peut le mettre en cache si c’est le même (en HTTPS il ne le saura pas ; chacun connecté sur son compte, le cache serait abusif aussi ; mais bon vous avez l’idée)&lt;/li&gt;
-  &lt;li&gt;et on vous a probablement déjà demandé de “vider le cache de votre navigateur” qui applique lui aussi ce genre de techniques pour ne pas tout re-télécharger à chaque fois !&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Voilà, dans un domaine particulier, j’ai pu citer six endroits où l’on met habituellement un cache.&lt;/p&gt;
-
-&lt;p&gt;Le problème est que tous ces caches sont appelés… “le cache”.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Cache de noeuds&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;C’est pourquoi je recommande de “désambiguiser” : utiliser le même nom pour
-des choses différentes ? Non merci, faites-vous préciser et précisez-le.&lt;/p&gt;
-
-&lt;p&gt;(À l’opposé, des noms différents pour la même chose, c’est moins dangereux
-mais ça peut souvent être un signe d’ambiguïté à lever. Essayez, le pire
-qui puisse vous arriver c’est d’apprendre des choses dans l’intervalle !)&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Et voilà !&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Vous venez de comprendre pourquoi l’invalidation du cache, c’est difficile !&lt;/p&gt;
-
-&lt;p&gt;J’accepte les critiques sur cet épisode et les idées pour les suivants sur twitter : @zen_m4&lt;/p&gt;
-
-&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
-</description>
-	<itunes:author>Sylvain Abélard</itunes:author>
-	<itunes:subtitle>
-	  Le cache, à tous ses niveaux, c'est comme avoir un carnet d&#39;adresses et pas redemander
-	</itunes:subtitle>
-	<itunes:summary>
-	  Le cache, à tous ses niveaux, c'est comme avoir un carnet d&#39;adresses et pas redemander
-	</itunes:summary>
-	<itunes:image href="http://zenm4.net/img/macha.png" />
-	<enclosure url="http://feeds.soundcloud.com/stream/244601628-zenm4-002-zen-metaphor-cache-cache.m4a" length="40500" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
-
-        <pubDate>Sun, 31 Jan 2016 15:45:00 +0100</pubDate>
-        <link>http://zenm4.net/002/</link>
-        <guid isPermaLink="true">http://zenm4.net/002/</guid>
         
         
         <category>meta</category>
