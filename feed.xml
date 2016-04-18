@@ -15,10 +15,10 @@
       <itunes:name>Sylvain Abélard</itunes:name>
       <itunes:email>sylvain.abelard+zenm4@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="http://www.zenm4.net/img/zenm4.png" />
-    <itunes:category text="Technology">
-    <pubDate>Sun, 17 Apr 2016 18:02:12 +0200</pubDate>
-    <lastBuildDate>Sun, 17 Apr 2016 18:02:12 +0200</lastBuildDate>
+    <itunes:image href="http://www.zenm4.net/img/zenm4_big.png" />
+    <itunes:category text="Technology" />
+    <pubDate>Mon, 18 Apr 2016 21:08:18 +0200</pubDate>
+    <lastBuildDate>Mon, 18 Apr 2016 21:08:18 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -182,15 +182,13 @@ en cas de problème chez eux, votre projet est affecté aussi.&lt;/p&gt;
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/sunset.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/259529834-zenm4-012-zen-metaphor-git-ou-lecriture-a-plusieurs-cerveaux.m4a" length="46000" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
+	<itunes:duration>7:40</itunes:duration>
 
         <pubDate>Sun, 17 Apr 2016 15:45:00 +0200</pubDate>
         <link>http://zenm4.net/012/</link>
         <guid isPermaLink="true">http://zenm4.net/012/</guid>
         
-        
         <category>meta</category>
-        
       </item>
     
       <item>
@@ -316,15 +314,13 @@ très intéressés par la sécurité physique des locaux, et notamment les serru
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/maze.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/258353685-zenm4-011-zen-metaphor-a-lattaque.m4a" length="43700" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
+	<itunes:duration>7:17</itunes:duration>
 
         <pubDate>Sun, 10 Apr 2016 15:45:00 +0200</pubDate>
         <link>http://zenm4.net/011/</link>
         <guid isPermaLink="true">http://zenm4.net/011/</guid>
         
-        
         <category>meta</category>
-        
       </item>
     
       <item>
@@ -465,15 +461,13 @@ ces méthodes un de ces jours.&lt;/p&gt;
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/gong.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/-zenm4-010-zen-metaphor-iterations.m4a" length="44300" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
+	<itunes:duration>7:23</itunes:duration>
 
         <pubDate>Sun, 27 Mar 2016 15:45:00 +0200</pubDate>
         <link>http://zenm4.net/010/</link>
         <guid isPermaLink="true">http://zenm4.net/010/</guid>
         
-        
         <category>meta</category>
-        
       </item>
     
       <item>
@@ -590,15 +584,13 @@ Merci et à bientôt !&lt;/a&gt;&lt;/p&gt;
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/uml_king.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/253676618-zenm4-009-zen-metaphor-indexation.m4a" length="45400" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
+	<itunes:duration>7:34</itunes:duration>
 
         <pubDate>Sun, 20 Mar 2016 14:45:00 +0100</pubDate>
         <link>http://zenm4.net/009/</link>
         <guid isPermaLink="true">http://zenm4.net/009/</guid>
         
-        
         <category>meta</category>
-        
       </item>
     
       <item>
@@ -727,15 +719,13 @@ semble important voire nécessaire de comprendre ce qu’il y a en dessous.&lt;/
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/lotus.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/251711970-zenm4-008-zen-metaphor-structures-de-donnees-et-algos-de-recherche.m4a" length="44400" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
+	<itunes:duration>7:24</itunes:duration>
 
         <pubDate>Sun, 13 Mar 2016 14:45:00 +0100</pubDate>
         <link>http://zenm4.net/008/</link>
         <guid isPermaLink="true">http://zenm4.net/008/</guid>
         
-        
         <category>meta</category>
-        
       </item>
     
       <item>
@@ -940,15 +930,13 @@ la conclusion m’a surpris moi-même.&lt;/p&gt;
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/eventail.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/250558766-zenm4-007-zen-metaphor-les-associations-dans-ruby-on-rails.m4a" length="68300" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
+	<itunes:duration>11:23</itunes:duration>
 
         <pubDate>Sun, 06 Mar 2016 14:45:00 +0100</pubDate>
         <link>http://zenm4.net/007/</link>
         <guid isPermaLink="true">http://zenm4.net/007/</guid>
         
-        
         <category>meta</category>
-        
       </item>
     
       <item>
@@ -1132,15 +1120,13 @@ autant j’ai écrit aujourd’hui de quoi faire deux épisodes et j’ai dû co
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/fuji.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/249386231-zenm4-006-zen-metaphor-le-vide-lunite-et-linfini.m4a" length="50000" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
+	<itunes:duration>8:20</itunes:duration>
 
         <pubDate>Mon, 29 Feb 2016 00:45:00 +0100</pubDate>
         <link>http://zenm4.net/006/</link>
         <guid isPermaLink="true">http://zenm4.net/006/</guid>
         
-        
         <category>meta</category>
-        
       </item>
     
       <item>
@@ -1306,15 +1292,13 @@ et des interactions avec votre manager… ou à l’inverse avec votre équipe.&
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/seedling.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/248148209-zenm4-005-zen-metaphor-achat-vente-de-logiciels-b2b.m4a" length="44000" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
+	<itunes:duration>7:20</itunes:duration>
 
         <pubDate>Sun, 21 Feb 2016 12:00:00 +0100</pubDate>
         <link>http://zenm4.net/005/</link>
         <guid isPermaLink="true">http://zenm4.net/005/</guid>
         
-        
         <category>meta</category>
-        
       </item>
     
       <item>
@@ -1501,15 +1485,13 @@ anticiper un peu.&lt;/p&gt;
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/sakura.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/247008181-zenm4-004-zen-metaphor-priorite-des-regles-css.m4a" length="54200" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
+	<itunes:duration>9:02</itunes:duration>
 
         <pubDate>Sun, 14 Feb 2016 15:45:00 +0100</pubDate>
         <link>http://zenm4.net/004/</link>
         <guid isPermaLink="true">http://zenm4.net/004/</guid>
         
-        
         <category>meta</category>
-        
       </item>
     
       <item>
@@ -1682,15 +1664,348 @@ catégories.&lt;/p&gt;
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/bamboo.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/245854246-zenm4-003-zen-metaphor-requetes-n1.m4a" length="53000" type="audio/mp4" />
-	<itunes:duration></itunes:duration> -->
+	<itunes:duration>8:50</itunes:duration>
 
         <pubDate>Sun, 07 Feb 2016 15:45:00 +0100</pubDate>
         <link>http://zenm4.net/003/</link>
         <guid isPermaLink="true">http://zenm4.net/003/</guid>
         
+        <category>meta</category>
+      </item>
+    
+      <item>
+        <title>Cache</title>
+        <description>&lt;p&gt;Bonjour, bienvenue pour l’épisode 2, sur &lt;b&gt;le cache&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;Commençons par un adage connu de Phil Karlton :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Il n’y a que deux choses compliquées en informatique : invalider le cache et nommer les choses.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Bien utiliser le cache est complexe, mais le concept est simple.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Un carnet d’adresses&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans le dernier (et premier) épisode sur les listes chaînées,
+pour retrouver mon ami Dave, je devais appeler Alice puis Bob puis Carol.
+Beaucoup de gens dérangés pour pas grand-chose.&lt;/p&gt;
+
+&lt;p&gt;On peut apporter une solution très simple : garder un carnet d’adresses.
+Je note le numéro de Dave, et peut-être même celui de Bob et Carol.&lt;/p&gt;
+
+&lt;p&gt;À chaque fois que je voudrai appeler Dave, je l’aurai directement en
+ligne sans déranger personne : je viens d’inventer le cache !&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Le cache est mort, vive le cache !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Le problème bien sûr, c’est quand Dave change de numéro : plus moyen de le joindre !&lt;/p&gt;
+
+&lt;p&gt;On peut voir trois problèmes immédiats :
+le premier, c’est quand le numéro n’est pas attribué.
+Pas de Dave, fin de l’histoire.
+Si je n’ai pas d’autre moyen de le contacter, c’est fichu.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Mauvais destinataire&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Le deuxième est peut-être pire : le numéro a été réattribué entre temps.
+En fonction de votre phrase d’accroche, les conséquences sont variables.&lt;/p&gt;
+
+&lt;p&gt;Si je commence par des familiarités, c’est embarrassant mais pas bien dangereux.
+Si j’envoie le numéro de ma carte bleue ou autre donnée sensible, c’est dramatique.&lt;/p&gt;
+
+&lt;p&gt;Imaginons maintenant que j’envoie un SMS à ce numéro, “OK pour ce soir”.
+Je supposais que Dave allait réserver des places de cinéma et venir à 20h, personne.
+Dommage.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Parenthèse : chez le mauvais destinataire&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Petite digression : imaginons maintenant que la personne d’en face, disons Bernard,
+était elle aussi en train d’attendre un SMS de confirmation, et dans sa précipitation
+n’a pas vérifié la source du message, et répond “OK”.&lt;/p&gt;
+
+&lt;p&gt;Non seulement j’ai maintenant une grande confiance que Dave sera au cinéma,
+et c’est toujours aussi faux, mais en plus Bernard aura fait quelque chose,
+disons réserver deux autres places pour un autre film, en pensant que cela
+venait d’un autre ami.&lt;/p&gt;
+
+&lt;p&gt;Au moins nous serons deux à avoir l’air bête, mais c’est une piètre consolation.&lt;/p&gt;
+
+&lt;p&gt;La morale de l’histoire, c’est qu’il faut être clair quand on communique :
+si les humains peuvent se faire avoir,
+les ordinateurs qui sont très bêtes ne risquent pas de faire mieux.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;La chaîne est rompue&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Le troisième problème du cache, c’est que la chaîne est rompue.&lt;/p&gt;
+
+&lt;p&gt;Je faisais bien confiance à Alice pour me passer Dave, peut-être que
+quelqu’un me demandait à moi le numéro de Dave. Je ne l’appelle pas
+à chaque fois que je passe son numéro pour vérifier que c’est encore
+le bon : mon cache est corrompu.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Expiration du cache&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;La solution serait que Dave prévienne quand il change de numéro de téléphone.
+Celui qui sait que la donnée a changé, ici Dave, devrait prévenir ceux qui
+gardent ses données en cache, ici moi… encore faut-il que Dave sache qui cache.&lt;/p&gt;
+
+&lt;p&gt;Quitte à ne pas savoir, il pourrait demander à ses amis les plus proches
+de répandre la nouvelle. C’est peut-être faisable, peut-être pas,
+compliqué certainement, mais en tout cas dans l’intervalle
+il y a des gens qui ont l’ancien numéro.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Parenthèse : redirect&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans la vraie vie, vous pourriez imaginer des parades subtiles : Dave
+a un deuxième téléphone qu’il garde sur lui et pendant un temps, Dave
+répond aux deux numéros, et rappelle à chacun qu’il faut utiliser le
+nouveau numéro, ou met en place un répondeur automatique, voire
+plus simplement un renvoi d’appel.&lt;/p&gt;
+
+&lt;p&gt;Voilà, ça n’avait rien à voir avec le cache,
+mais vous venez de comprendre les redirections :)&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Du cache partout&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous voyez que la recette est simple, l’idée vient facilement à n’importe qui.
+On a du cache partout dans notre vie, et dans nos logiciels.&lt;/p&gt;
+
+&lt;p&gt;Dans le cas qui m’intéresse, une appli Web Ruby on Rails, on a du cache à tous les niveaux :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;votre base de données met des requêtes et donnés en cache&lt;/li&gt;
+  &lt;li&gt;Rails a plusieurs systèmes de cache (sur ses vues et partials etc)&lt;/li&gt;
+  &lt;li&gt;votre serveur applicatif ou serveur web également (a minima sur les fichiers)&lt;/li&gt;
+  &lt;li&gt;toute configuration que vous mettez en bonus, par exemple un reverse-proxy comme Varnish dont c’est exactement le job&lt;/li&gt;
+  &lt;li&gt;parfois le proxy de votre connexion Internet peut le faire aussi. Imaginons un réseau d’entreprise où tout le monde va sur la page d’un site d’actu : il peut le mettre en cache si c’est le même (en HTTPS il ne le saura pas ; chacun connecté sur son compte, le cache serait abusif aussi ; mais bon vous avez l’idée)&lt;/li&gt;
+  &lt;li&gt;et on vous a probablement déjà demandé de “vider le cache de votre navigateur” qui applique lui aussi ce genre de techniques pour ne pas tout re-télécharger à chaque fois !&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Voilà, dans un domaine particulier, j’ai pu citer six endroits où l’on met habituellement un cache.&lt;/p&gt;
+
+&lt;p&gt;Le problème est que tous ces caches sont appelés… “le cache”.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Cache de noeuds&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est pourquoi je recommande de “désambiguiser” : utiliser le même nom pour
+des choses différentes ? Non merci, faites-vous préciser et précisez-le.&lt;/p&gt;
+
+&lt;p&gt;(À l’opposé, des noms différents pour la même chose, c’est moins dangereux
+mais ça peut souvent être un signe d’ambiguïté à lever. Essayez, le pire
+qui puisse vous arriver c’est d’apprendre des choses dans l’intervalle !)&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Et voilà !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous venez de comprendre pourquoi l’invalidation du cache, c’est difficile !&lt;/p&gt;
+
+&lt;p&gt;J’accepte les critiques sur cet épisode et les idées pour les suivants sur twitter : @zen_m4&lt;/p&gt;
+
+&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Le cache, à tous ses niveaux, c'est comme avoir un carnet d&#39;adresses et pas redemander
+	</itunes:subtitle>
+	<itunes:summary>
+	  Le cache, à tous ses niveaux, c'est comme avoir un carnet d&#39;adresses et pas redemander
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/macha.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/244601628-zenm4-002-zen-metaphor-cache-cache.m4a" length="40500" type="audio/mp4" />
+	<itunes:duration>6:45</itunes:duration>
+
+        <pubDate>Sun, 31 Jan 2016 15:45:00 +0100</pubDate>
+        <link>http://zenm4.net/002/</link>
+        <guid isPermaLink="true">http://zenm4.net/002/</guid>
         
         <category>meta</category>
+      </item>
+    
+      <item>
+        <title>Liste chaînée</title>
+        <description>&lt;p&gt;Bonjour, bienvenue pour ce premier épisode de zenm4 :&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Les listes chaînées&lt;/b&gt;&lt;br /&gt;
+Pour cet épisode pilote, parlons d’un point douloureux du langage C.&lt;/p&gt;
+
+&lt;p&gt;Le C a un avantage pédagogique : comme il vous donne à peine assez
+d’outils pour travailler, vous êtes obligés de tout faire vous-mêmes
+et d’apprendre comment marche ce qu’il y a “en dessous” (système, C, UNIX).&lt;/p&gt;
+
+&lt;p&gt;Lors de l’apprentissage du C, un des premiers blocages que je vois
+souvent et qui impressionne les gens est celui de la liste
+chaînée. Cela fait appel à des concepts simples mais qui à ce
+moment-là de l’apprentissage sont souvent confus : les mélanger, c’est
+la catastrophe.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Une variable&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Une variable est une boîte, ou une étiquette.
+On y range des choses qu’on récupère plus tard en “rappelant” le nom qu’on avait utilisé.
+Quand on y range autre chose, on “oublie”, perd, écrase ce qu’il y avait.&lt;/p&gt;
+
+&lt;p&gt;Dans certains langages, ces boîtes sont typées : on ne peut y mettre
+que des couteaux, ou que des fourchettes. Dans d’autres, pas de contraintes.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Attention : Cette approximation du type est grossière et largement fausse !&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Un pointeur&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Un pointeur c’est comme un numéro de téléphone. Personne n’a jamais
+confondu le numéro avec la personne, alors pourquoi avoir peur dès que
+ça parle de code ? En C, avec&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;int valeur = 42;&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;int* pointeur = &amp;amp;valeur&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous avez le nombre 42 dans &lt;code class=&quot;highlighter-rouge&quot;&gt;valeur&lt;/code&gt;, rangé à l’adresse mémoire
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;valeur&lt;/code&gt;.  Le pointeur &lt;code class=&quot;highlighter-rouge&quot;&gt;pointeur&lt;/code&gt; est le numéro de téléphone, et
+&lt;code class=&quot;highlighter-rouge&quot;&gt;*pointeur&lt;/code&gt; son contenu : quand on regarde la valeur de &lt;code class=&quot;highlighter-rouge&quot;&gt;pointeur&lt;/code&gt; on
+n’a qu’un numéro, mais quand on regarde &lt;code class=&quot;highlighter-rouge&quot;&gt;*pointeur&lt;/code&gt; on retombe sur le
+contenu : &lt;code class=&quot;highlighter-rouge&quot;&gt;42&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;ERRATUM (&lt;a href=&quot;https://twitter.com/vdwxv&quot;&gt;@vdwxv&lt;/a&gt;) :
+je dis “chiffre” mais il faut bien sûr comprendre “nombre”.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Une liste chaînée&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous souhaitez maintenant contacter Dave. Vous n’avez pas son numéro,
+mais vous savez que quelqu’un dans le cercle d’amis l’a. Vous appelez
+Alice, qui a le numéro de Bob, qui a celui de Carole, qui a celui de
+Dave.&lt;/p&gt;
+
+&lt;p&gt;Vous pouvez maintenant parler à Dave.&lt;/p&gt;
+
+&lt;p&gt;Bien sûr, je ne parle ici que des chaînons. Le principe d’une liste
+c’est que vous rangez quelque chose dedans : vous vous préparez alors
+à travailler sur une structure qui a une “charge utile”, par exemple
+le livre que vous avez prêté, et bien sûr le lien vers la prochaine
+personne à qui elle aurait pu prêter votre livre.&lt;/p&gt;
+
+&lt;p&gt;Pour récupérer votre livre, vous allez donc appeler Alice, qui ne l’a
+plus car elle l’a prêté à Bob, qui l’a prêté à Carole etc. Au bout
+d’un moment, la recherche s’arrête : soit vous trouvez que Dave a le
+livre, soit il ne l’a pas mais ne sait plus qui appeler, et la
+recherche a échoué.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Ces sujets sont-ils complexes ? Pas pires qu’autre chose.&lt;/b&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Le langage humain est complexe, et pourtant peu de gens se trompent.
+Quand on dit l’Élysée : c’est une adresse, un palais, le siège du
+pouvoir exécutif français, le président… on mélange tout cela et
+pourtant tout le monde comprend.&lt;/p&gt;
+
+&lt;p&gt;Alors, le code, c’est compliqué ?&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Prenez soin de vous, soyez heureux !&lt;/b&gt;&lt;br /&gt;
+Et pour vivre heureux, ne faisons plus de C.
+Il ne devrait plus y avoir de C dans zenm4.&lt;/p&gt;
+
+&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Variables, pointeurs, liste chaînée c'est comme contacter quelqu&#39;un par téléphone
+	</itunes:subtitle>
+	<itunes:summary>
+	  Variables, pointeurs, liste chaînée c'est comme contacter quelqu&#39;un par téléphone
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/tree.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/243520005-zenm4-001-zen-metaphor-liste-chainee.m4a" length="32700" type="audio/mp4" />
+	<itunes:duration>5:27</itunes:duration>
+
+        <pubDate>Sun, 24 Jan 2016 15:45:00 +0100</pubDate>
+        <link>http://zenm4.net/001/</link>
+        <guid isPermaLink="true">http://zenm4.net/001/</guid>
         
+        <category>meta</category>
+      </item>
+    
+      <item>
+        <title>man ZenM4</title>
+        <description>&lt;p&gt;Bienvenue à l’épisode zéro de zenm4 !&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Qu’est-ce que c’est,&lt;/b&gt; d’où ça vient, où ça va ?&lt;br /&gt;
+C’est &lt;b&gt;un podcast court français avec une métaphore par semaine&lt;/b&gt;.&lt;br /&gt;
+Avec des thèmes variés autour du code, du développement web et informatique.
+Ça ira des listes chaînées aux tris, des jointures SQL au concept de cache,
+de la sécurite au déploiement.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Ces thèmes sont-ils complexes ? Souvent oui, mais pas forcément.&lt;/b&gt;&lt;br /&gt;
+En tout cas, avec suffisamment de billes pour comprendre les enjeux,
+les solutions possibles et leurs compromis, on peut raisonner
+efficacement sur des sujets complexes, et c’est ce que je veux faire.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;D’où ça vient ?&lt;/b&gt;&lt;br /&gt;
+Du langage &lt;a href=&quot;https://www.ruby-lang.org/fr/&quot;&gt;Ruby&lt;/a&gt;, du meetup &lt;a href=&quot;https://rubyparis.org/&quot;&gt;ParisRB&lt;/a&gt;,
+de l’initiative &lt;a href=&quot;http://railsgirls.com/&quot;&gt;RailsGirls&lt;/a&gt; hebdomadaire à Paris,
+de la lecture de &lt;a href=&quot;http://thecodelesscode.com/case/100?lang=fr&amp;amp;trans=abelards&quot;&gt;The Codeless Code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Où ça va ?&lt;/b&gt;&lt;br /&gt;
+C’est une expérience, qui se veut SMART : simple, réalisable, limitée dans le temps.
+Je veux la lancer avec un effort minimal qui me donnera des compétences et des leçons pour la suite.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Avantages attendus&lt;/b&gt;&lt;br /&gt;
+&lt;b&gt;Si ça aide des gens, j’estime que j’aurai réussi.&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Avantages possibles&lt;/b&gt;&lt;br /&gt;
+Si l’essai se transforme, je serais ravi s’il pouvait poser les bases
+pour un podcast un peu plus long (c’est dur de faire court !) de discussions,
+si l’on pouvait faire soit intervenir des invités, soit donner le lead et
+un podcast dédié aux apprenantes de RailsGirls Paris hedbomadaire.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Risques&lt;/b&gt;&lt;br /&gt;
+Si ça rate, les risques de l’initiative sont extrêmement faibles :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;que ça ne dure pas par manque de temps (dommage)&lt;/li&gt;
+  &lt;li&gt;que ça ne trouve pas son audience (trop dur, j’ai perdu moins de 10€ de nom de domaine)&lt;/li&gt;
+  &lt;li&gt;que le format soit trop complexe pour poster du code (à la voix)&lt;/li&gt;
+  &lt;li&gt;que je n’aie pas le temps et la motivation de faire la transcription texte (j’en suis sûr)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Il y aura bien sûr des risques si ça marche :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;que ça soit faux (je vais éviter quand même)&lt;/li&gt;
+  &lt;li&gt;que ça soit inexact (ça va forcément arriver en simplifiant)&lt;/li&gt;
+  &lt;li&gt;que je me fasse troller parce que je n’ai pas parlé de tous les cas (je peux encaisser)&lt;/li&gt;
+  &lt;li&gt;que j’aie l’air ridicule avec les leçons de sagesse et le thème Zen (je peux encaisser aussi)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;Questions&lt;/b&gt;&lt;br /&gt;
+Je suis encore en train de déterminer le format du podcast.&lt;/p&gt;
+
+&lt;p&gt;Ce qui est sûr : une métaphore du jour, et un lien du jour.&lt;/p&gt;
+
+&lt;p&gt;Ce qui est moins sûr :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;l’exercice du jour : &lt;em&gt;codez un cellular automaton, un convertisseur, golf, rewriting…&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;le conseil du jour : &lt;em&gt;soyez en bonne santé, lisez, appellez famille et proches, asseyez-vous correctement, restez curieux…&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;le koan du jour : &lt;em&gt;(ne sera probablement pas choisi) le dev est-il un un combattant ? un jardinier ? architecte ? rêveur ? négociateur ? écrivain ?&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;le mot du jour : &lt;em&gt;sérendipité, par exemple&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;le mot anglais du jour : &lt;em&gt;(peut-être fusionné avec le mot du jour) restlessness, grit, growth mindset…&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Merci et à bientôt !&lt;/p&gt;
+
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Zen META-four : qu&#39;est-ce que c&#39;est, où ça va
+	</itunes:subtitle>
+	<itunes:summary>
+	  Zen META-four : qu&#39;est-ce que c&#39;est, où ça va
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/zenm4_logo.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/242392059-zenm4-000-zen-metaphor-pisode-z-ro.mp3" length="10100" type="audio/mp4" />
+	<itunes:duration>11:35</itunes:duration>
+
+        <pubDate>Sun, 17 Jan 2016 15:45:00 +0100</pubDate>
+        <link>http://zenm4.net/000/</link>
+        <guid isPermaLink="true">http://zenm4.net/000/</guid>
+        
+        <category>meta</category>
       </item>
     
   </channel>
