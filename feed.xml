@@ -18,9 +18,153 @@
     <itunes:image href="http://zenm4.net/img/zenm4_big.jpg" />
     <itunes:category text="Technology" />
     <itunes:explicit>no</itunes:explicit>
-    <pubDate>Tue, 19 Apr 2016 10:16:25 +0200</pubDate>
-    <lastBuildDate>Tue, 19 Apr 2016 10:16:25 +0200</lastBuildDate>
-    <generator>Jekyll v3.1.2</generator>
+    <pubDate>Mon, 25 Apr 2016 23:24:58 +0200</pubDate>
+    <lastBuildDate>Mon, 25 Apr 2016 23:24:58 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Injections</title>
+        <description>&lt;p&gt;Bonjour, bienvenue dans l’épisode 13.&lt;/p&gt;
+
+&lt;p&gt;Dans l’épisode &lt;a href=&quot;/011&quot;&gt;011. À l’attaque !&lt;/a&gt; on a fait une introduction
+sur la sécurité : une vision globale pour éviter de se perdre sur la technique,
+en comparant avec la sécurité de votre habitation.&lt;/p&gt;
+
+&lt;p&gt;Pour mieux se protéger, il est important de comprendre comment pense l’attaquant,
+et comment les points techniques de la sécurité se traduiraient dans le monde réel…
+Disons plutôt le monde physique, par opposition à virtuel ou numérique, parce
+que vu la place des technologies dans notre vie, le monde numérique est tout
+à fait réel.&lt;/p&gt;
+
+&lt;p&gt;Je vais me baser sur douze erreurs classiques listées par le projet
+OWASP (Open Web Application Security Project), que je classe grossièrement
+en “usage de documents falsifiés”, “la porte était restée ouverte”, et
+“j’ai laissé trop d’informations à l’attaquant”.&lt;/p&gt;
+
+&lt;p&gt;Encore une fois, je ne veux pas vous empêcher de dormir la nuit, mais
+après avoir acheté et fait installer une porte d’entrée très solide
+avec des clés compliquées, c’est sûr qu’on se sent bête d’avoir laissé
+le garage ouvert ou la clé sur la porte.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Faux et usage de faux&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Une énorme partie de ces erreurs vient tout bêtement par “imposture” :
+un ordre arrive, vous croyez qu’il faut l’exécuter, mais il s’agit en fait
+d’un mensonge placé là par un attaquant.&lt;/p&gt;
+
+&lt;p&gt;Le souci c’est que chaque canal de communication sur chaque partie de vos
+systèmes peut avoir son attaque appropriée. Depuis des siècles, on a aussi
+plusieurs personnes ou équipes qui vont faire des faux : fausses lettres,
+fausses signatures, fausse monnaie… Vous faites confiance à l’autorité,
+à la signature, à un papier qui ressemble à de l’argent, et vous êtes coincés.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Injection&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Encore plus facile que de fabriquer un faux message royal, imaginons
+que le contenu du message soit : “faites ce que dira mon messager”.
+Vous prenez la place du messager, et vous avez gagné.&lt;/p&gt;
+
+&lt;p&gt;Et encore plus facile que tout cela : si le message du roi a une zone
+blanche dans laquelle vous pouvez écrire tout ce que vous voulez,
+le message, la signature, le messager ont beau être connus et certifiés,
+vous ajoutez “et vous donnerez une forte somme d’argent à untel”,
+et tout tombe à l’eau.&lt;/p&gt;
+
+&lt;p&gt;De même, vous faites tourner du code sur toute une infrastructure (machine, OS, BDD…)
+et vous avez besoin que le code leur envoie des ordres. Si ces ordres viennent du monde
+extérieur, vous DEVEZ vous en méfier.&lt;/p&gt;
+
+&lt;p&gt;Le plus connu c’est l’injection SQL. On va écrire une requête très simple,
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT * FROM users where email = &quot;#{params[:email]}&quot; AND active = true&lt;/code&gt;
+et quel que soit votre langage vous aurez une méthode pour dire
+“dans la chaîne de texte qui représente ma requête, ajoute ici la chaîne
+de texte qui vient du champ de recherche, du champ login etc.&lt;/p&gt;
+
+&lt;p&gt;Si jamais j’entre une recherche avec du code SQL dedans, je peux par exemple
+faire croire que la chaîne email est finie avec un caractère simple quote ou double
+quote (qui ressemblent à des ‘apostrophes’ ou “guillemets” respectivement),
+que la requête est finie avec un point virgule, puis je continue à écrire le
+code SQL que je veux pour détruire ou récupérer vos données (un mot de passe
+admin par exemple, ou modifier le montant de ma facture), et enfin je termine
+en mettant le reste en commentaire pour éviter toute erreur de syntaxe.&lt;/p&gt;
+
+&lt;p&gt;Ça y est, votre base de données fait confiance à la chaîne de caractères ainsi
+envoyée, mais elle contient de quoi vous attaquer de l’intérieur.&lt;/p&gt;
+
+&lt;p&gt;En Ruby on Rails, comme dans la plupart des frameworks Web ou bibliothèques
+pour accéder à la base de données, on trouvera des mécanismes qui évitent
+cela en interdisant ou en “échappant” les caractères : tout guillemet contenu
+dans le paramètre email sera traduit afin que la base de données comprenne
+que ce n’est pas la fin de la chaîne, mais un guillemet dans la recherche :
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Personne.active.where(email: params[:email])&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Autres injections&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Dès que vous parlez à quelqu’un qui vous fait confiance, c’est le même problème.
+Il existe l’injection shell, qui envoie des commandes à votre ligne de commande,
+et via laquelle on peut attaquer le système d’exploitation du serveur.&lt;/p&gt;
+
+&lt;p&gt;Il y a aussi les XSS (Cross-Site Scripting) : le but pour l’attaquant est
+d’écrire du Javascript qui va tourner dans la même page que votre site.
+Par exemple, si dans mon champ email de tout à l’heure j’écris du JS et que
+dans une page vous affichez mon JS sans “échapper” les caractères, il a gagné.&lt;/p&gt;
+
+&lt;p&gt;Gagné ? Eh oui, il peut voir plein de choses, comme vos cookies, et
+envoyer tout ce qu’il trouve sur un autre site. Par exemple, récupérer
+la session sur votre banque en ligne et émettre des virements.&lt;/p&gt;
+
+&lt;p&gt;Enfin, en JS, en affichage ou autres, si j’arrive à vous faire cliquer
+sur un lien qui vous sort du site en question, je peux faire du phishing
+(hameçonnage en français) : au lieu d’aller sur le site de la banque,
+vous allez sur un site qui appartient à l’attaquant, aux mêmes couleurs,
+qui vous fait croire que vous êtes déconnecté par exemple. Vous rentrez
+alors votre login et mot de passe… sur le site de l’attaquant.&lt;/p&gt;
+
+&lt;p&gt;Là ce n’est plus du tout une histoire de sécurité sur VOTRE site,
+mais de filoutage classique où l’on vous met de la poudre aux yeux
+pour avoir des informations confidentielles.&lt;/p&gt;
+
+&lt;p&gt;Toutefois, vous pouvez au moins de votre côté et pour vos
+utilisateurs, éviter le XSS et pour les redirections intempestives, a
+minima les éviter, interdire, ou les rendre plus difficiles ou plus
+évidentes : si je dois me reconnecter à ma banque juste après avoir
+vu “vous allez sortir de votre espace sécurisé”, je suis plus méfiant.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;alert(‘pwn3d’)&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Et c’est pour cela que vous voyez des démos de sécurité, où il y
+a écrit &lt;code class=&quot;highlighter-rouge&quot;&gt;alert(&quot;bad security&quot;)&lt;/code&gt; et un popup navigateur avec le
+message “bad security”, bien sûr ça ne fait rien de grave.
+Ce que la personne vient de vous prouvez, c’est que vous êtes
+vulnérables à ce XSS et à ces redirections de votre site vers
+un site vérolé.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Autres attaques&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;L’épisode est assez long, je vais garder huit autres failles et vulnérabilités pour la suite.
+Je ne vais pas les dicter mais vous pourrez les trouver, ainsi que des liens vers le site OWASP
+et la présentation à &lt;a href=&quot;http://rubyparis.org&quot;&gt;ParisRB&lt;/a&gt; de &lt;a href=&quot;https://twitter.com/DorianLupu&quot;&gt;Dorian Lupu&lt;/a&gt;
+sur la page de l’article &lt;a href=&quot;/012/&quot;&gt;zenm4.net/013/&lt;/a&gt; - à bientôt !&lt;/p&gt;
+
+&lt;p&gt;http://slides.com/kundigo/if-you-are-hacked-via-owasp-top-10-you-re-not-allowed-to-call-it-advanced-or-sophisticated#/5&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Les attaques par injection c'est comme abuser de votre confiance avec un message trompeur ou piégé
+	</itunes:subtitle>
+	<itunes:summary>
+	  Les attaques par injection c'est comme abuser de votre confiance avec un message trompeur ou piégé
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/pix_yinyang.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/260867799-zenm4-013-zen-metaphor-les-injections.m4a" length="45000" type="audio/mp4" />
+	<itunes:duration>7:30</itunes:duration>
+
+        <pubDate>Sun, 24 Apr 2016 15:45:00 +0200</pubDate>
+        <link>http://zenm4.net/013/</link>
+        <guid isPermaLink="true">http://zenm4.net/013/</guid>
+        
+        <category>meta</category>
+      </item>
     
       <item>
         <title>Git, ou l&#39;écriture à N cerveaux</title>

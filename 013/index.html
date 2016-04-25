@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+
+
+
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="stylesheet" href="/css/sharingbuttonsio.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/pix_yinyang.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Les attaques par injection c'est comme abuser de votre confiance avec un message trompeur ou piégé - Podcast en français pour apprendre et progresser dans le code" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://zenm4.net" />
+  <meta property="og:description" content="Zen Metaphor - Les attaques par injection c'est comme abuser de votre confiance avec un message trompeur ou piégé - Podcast en français pour apprendre et progresser dans le code" />
+  <meta property="og:image" content="http://zenm4.net/img/pix_yinyang.png" />
+  <meta property="og:title" content="Zen Metaphor " />
+
+  <meta property="og:updated_time" content="2016-04-24" />
+  <meta property="og:audio:type"         content="audio/mp3" /> 
+  <meta property="og:audio"              content="http://feeds.soundcloud.com/stream/260867799-zenm4-013-zen-metaphor-les-injections.m4a" />
+  
+
+  <meta property="og:locale" content="fr-FR" />
+  <meta property="og:rich_attachment" content="true" />
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/012/">012. Git</a></span>
+      &mdash;
+      
+    </p>
+
+    <h1 class="post-title">013. Injections</h1>
+    <h4>Les attaques par injection
+      <br /><em>c'est comme</em><br />abuser de votre confiance avec un message trompeur ou piégé
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260867799&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+
+    <ul class="share">
+    
+    <li><a href="http://feeds.soundcloud.com/stream/260867799-zenm4-013-zen-metaphor-les-injections.m4a"><b>&dArr; Télécharger</b></a></li>
+    
+    </ul>
+
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="http://slides.com/kundigo/if-you-are-hacked-via-owasp-top-10-you-re-not-allowed-to-call-it-advanced-or-sophisticated#/">OWASP top 10</a>
+        <p>Présentation par @DorianLupu à @parisrb</p>
+      </li>
+    
+      <li><a href="https://www.youtube.com/watch?v=MKo9wLUTzAI">Point Sécu #2 - Chiffrement Symétrique</a>
+        <p>Vidéo de ~5mn sur la sécu</p>
+      </li>
+    
+      <li><a href="http://www.comptoirsecu.fr/">Comptoir Sécu</a>
+        <p>Le Comptoir de la Sécurité - podcast en français</p>
+      </li>
+    
+      <li><a href="https://twitter.com/DorianLupu">@DorianLupu</a>
+        <p>Twitter de Dorian Lupu</p>
+      </li>
+    
+      <li><a href="https://twitter.com/Izura">@Izura</a>
+        <p>Twitter de Justin Ganivet</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Bonjour, bienvenue dans l’épisode 13.</p>
+
+<p>Dans l’épisode <a href="/011">011. À l’attaque !</a> on a fait une introduction
+sur la sécurité : une vision globale pour éviter de se perdre sur la technique,
+en comparant avec la sécurité de votre habitation.</p>
+
+<p>Pour mieux se protéger, il est important de comprendre comment pense l’attaquant,
+et comment les points techniques de la sécurité se traduiraient dans le monde réel…
+Disons plutôt le monde physique, par opposition à virtuel ou numérique, parce
+que vu la place des technologies dans notre vie, le monde numérique est tout
+à fait réel.</p>
+
+<p>Je vais me baser sur douze erreurs classiques listées par le projet
+OWASP (Open Web Application Security Project), que je classe grossièrement
+en “usage de documents falsifiés”, “la porte était restée ouverte”, et
+“j’ai laissé trop d’informations à l’attaquant”.</p>
+
+<p>Encore une fois, je ne veux pas vous empêcher de dormir la nuit, mais
+après avoir acheté et fait installer une porte d’entrée très solide
+avec des clés compliquées, c’est sûr qu’on se sent bête d’avoir laissé
+le garage ouvert ou la clé sur la porte.</p>
+
+<p><b>Faux et usage de faux</b></p>
+
+<p>Une énorme partie de ces erreurs vient tout bêtement par “imposture” :
+un ordre arrive, vous croyez qu’il faut l’exécuter, mais il s’agit en fait
+d’un mensonge placé là par un attaquant.</p>
+
+<p>Le souci c’est que chaque canal de communication sur chaque partie de vos
+systèmes peut avoir son attaque appropriée. Depuis des siècles, on a aussi
+plusieurs personnes ou équipes qui vont faire des faux : fausses lettres,
+fausses signatures, fausse monnaie… Vous faites confiance à l’autorité,
+à la signature, à un papier qui ressemble à de l’argent, et vous êtes coincés.</p>
+
+<p><b>Injection</b></p>
+
+<p>Encore plus facile que de fabriquer un faux message royal, imaginons
+que le contenu du message soit : “faites ce que dira mon messager”.
+Vous prenez la place du messager, et vous avez gagné.</p>
+
+<p>Et encore plus facile que tout cela : si le message du roi a une zone
+blanche dans laquelle vous pouvez écrire tout ce que vous voulez,
+le message, la signature, le messager ont beau être connus et certifiés,
+vous ajoutez “et vous donnerez une forte somme d’argent à untel”,
+et tout tombe à l’eau.</p>
+
+<p>De même, vous faites tourner du code sur toute une infrastructure (machine, OS, BDD…)
+et vous avez besoin que le code leur envoie des ordres. Si ces ordres viennent du monde
+extérieur, vous DEVEZ vous en méfier.</p>
+
+<p>Le plus connu c’est l’injection SQL. On va écrire une requête très simple,
+<code class="highlighter-rouge">SELECT * FROM users where email = "#{params[:email]}" AND active = true</code>
+et quel que soit votre langage vous aurez une méthode pour dire
+“dans la chaîne de texte qui représente ma requête, ajoute ici la chaîne
+de texte qui vient du champ de recherche, du champ login etc.</p>
+
+<p>Si jamais j’entre une recherche avec du code SQL dedans, je peux par exemple
+faire croire que la chaîne email est finie avec un caractère simple quote ou double
+quote (qui ressemblent à des ‘apostrophes’ ou “guillemets” respectivement),
+que la requête est finie avec un point virgule, puis je continue à écrire le
+code SQL que je veux pour détruire ou récupérer vos données (un mot de passe
+admin par exemple, ou modifier le montant de ma facture), et enfin je termine
+en mettant le reste en commentaire pour éviter toute erreur de syntaxe.</p>
+
+<p>Ça y est, votre base de données fait confiance à la chaîne de caractères ainsi
+envoyée, mais elle contient de quoi vous attaquer de l’intérieur.</p>
+
+<p>En Ruby on Rails, comme dans la plupart des frameworks Web ou bibliothèques
+pour accéder à la base de données, on trouvera des mécanismes qui évitent
+cela en interdisant ou en “échappant” les caractères : tout guillemet contenu
+dans le paramètre email sera traduit afin que la base de données comprenne
+que ce n’est pas la fin de la chaîne, mais un guillemet dans la recherche :
+<code class="highlighter-rouge">Personne.active.where(email: params[:email])</code></p>
+
+<p><b>Autres injections</b></p>
+
+<p>Dès que vous parlez à quelqu’un qui vous fait confiance, c’est le même problème.
+Il existe l’injection shell, qui envoie des commandes à votre ligne de commande,
+et via laquelle on peut attaquer le système d’exploitation du serveur.</p>
+
+<p>Il y a aussi les XSS (Cross-Site Scripting) : le but pour l’attaquant est
+d’écrire du Javascript qui va tourner dans la même page que votre site.
+Par exemple, si dans mon champ email de tout à l’heure j’écris du JS et que
+dans une page vous affichez mon JS sans “échapper” les caractères, il a gagné.</p>
+
+<p>Gagné ? Eh oui, il peut voir plein de choses, comme vos cookies, et
+envoyer tout ce qu’il trouve sur un autre site. Par exemple, récupérer
+la session sur votre banque en ligne et émettre des virements.</p>
+
+<p>Enfin, en JS, en affichage ou autres, si j’arrive à vous faire cliquer
+sur un lien qui vous sort du site en question, je peux faire du phishing
+(hameçonnage en français) : au lieu d’aller sur le site de la banque,
+vous allez sur un site qui appartient à l’attaquant, aux mêmes couleurs,
+qui vous fait croire que vous êtes déconnecté par exemple. Vous rentrez
+alors votre login et mot de passe… sur le site de l’attaquant.</p>
+
+<p>Là ce n’est plus du tout une histoire de sécurité sur VOTRE site,
+mais de filoutage classique où l’on vous met de la poudre aux yeux
+pour avoir des informations confidentielles.</p>
+
+<p>Toutefois, vous pouvez au moins de votre côté et pour vos
+utilisateurs, éviter le XSS et pour les redirections intempestives, a
+minima les éviter, interdire, ou les rendre plus difficiles ou plus
+évidentes : si je dois me reconnecter à ma banque juste après avoir
+vu “vous allez sortir de votre espace sécurisé”, je suis plus méfiant.</p>
+
+<p><b>alert(‘pwn3d’)</b></p>
+
+<p>Et c’est pour cela que vous voyez des démos de sécurité, où il y
+a écrit <code class="highlighter-rouge">alert("bad security")</code> et un popup navigateur avec le
+message “bad security”, bien sûr ça ne fait rien de grave.
+Ce que la personne vient de vous prouvez, c’est que vous êtes
+vulnérables à ce XSS et à ces redirections de votre site vers
+un site vérolé.</p>
+
+<p><b>Autres attaques</b></p>
+
+<p>L’épisode est assez long, je vais garder huit autres failles et vulnérabilités pour la suite.
+Je ne vais pas les dicter mais vous pourrez les trouver, ainsi que des liens vers le site OWASP
+et la présentation à <a href="http://rubyparis.org">ParisRB</a> de <a href="https://twitter.com/DorianLupu">Dorian Lupu</a>
+sur la page de l’article <a href="/012/">zenm4.net/013/</a> - à bientôt !</p>
+
+<p>http://slides.com/kundigo/if-you-are-hacked-via-owasp-top-10-you-re-not-allowed-to-call-it-advanced-or-sophisticated#/5</p>
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : Happy Place</h4>
+    <p>Trouvez votre Happy Place, vos Feel-good-*</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : Comfort zone</h4>
+    <p>Zone de confort - sortez-en !</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/012/">012. Git</a></span>
+    &mdash;
+    
+    </p>
+    <p>
+      2016-04-24 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41077934-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  </body>
+
+</html>
