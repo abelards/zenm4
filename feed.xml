@@ -18,8 +18,8 @@
     <itunes:image href="http://zenm4.net/img/zenm4_big.jpg" />
     <itunes:category text="Technology" />
     <itunes:explicit>no</itunes:explicit>
-    <pubDate>Mon, 02 May 2016 14:06:39 +0200</pubDate>
-    <lastBuildDate>Mon, 02 May 2016 14:06:39 +0200</lastBuildDate>
+    <pubDate>Mon, 02 May 2016 15:29:16 +0200</pubDate>
+    <lastBuildDate>Mon, 02 May 2016 15:29:16 +0200</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
     
       <item>
@@ -204,30 +204,34 @@ qu’il vient probablement d’un endroit que nous n’avions pas prévu”.&lt;
 
 &lt;p&gt;Bref, révision rapide du top 10 de l’OWASP :&lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;Faussaires, imposteurs et passe-passe&lt;/b&gt;&amp;lt;ul&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Faussaires, imposteurs et passe-passe&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;b&gt;1.&lt;/b&gt; injection SQL&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;?.&lt;/b&gt; injection shell&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;3.&lt;/b&gt; XSS (Cross-Site Scripting)&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;10.&lt;/b&gt; redirections non vérifiées&lt;/li&gt;
-&lt;p&gt;&amp;lt;/ul&amp;gt;&lt;/p&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;b&gt;Je laisse la porte ouverte&lt;/b&gt;&amp;lt;ul&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Je laisse la porte ouverte&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;b&gt;5.&lt;/b&gt; Mauvaise configuration&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;9.&lt;/b&gt; Dépendances vulnérables&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;2.&lt;/b&gt; Authentification / gestion des sessions&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;7.&lt;/b&gt; Missing function level access control&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;?.&lt;/b&gt; Oubli des `strong parameters`&lt;/li&gt;
-&lt;p&gt;&amp;lt;/ul&amp;gt;&lt;/p&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;b&gt;Je laisse trop d’infos&lt;/b&gt;&amp;lt;ul&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Je laisse trop d’infos&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;b&gt;4.&lt;/b&gt; Insecure direct object references&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;6.&lt;/b&gt; Sensitive data exposure&lt;/li&gt;
-&lt;p&gt;&amp;lt;/ul&amp;gt;&lt;/p&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;b&gt;Un peu un mix :&lt;/b&gt;&amp;lt;ul&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Un peu un mix :&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;b&gt;8.&lt;/b&gt; CSRF - Cross Site Request Forgery&lt;br /&gt;
  vous avez confiance en votre browser mais il est prédictible et je vous ferai cliquer sur un lien&lt;/li&gt;
-&lt;p&gt;&amp;lt;/ul&amp;gt;&lt;/p&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Je pense que pour la suite du sujet je vais vous laisser vous documenter
 auprès de qui de droit, la technique et les sujets pointus ne tiendront pas
