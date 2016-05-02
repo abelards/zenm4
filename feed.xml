@@ -18,9 +18,242 @@
     <itunes:image href="http://zenm4.net/img/zenm4_big.jpg" />
     <itunes:category text="Technology" />
     <itunes:explicit>no</itunes:explicit>
-    <pubDate>Mon, 25 Apr 2016 23:24:58 +0200</pubDate>
-    <lastBuildDate>Mon, 25 Apr 2016 23:24:58 +0200</lastBuildDate>
+    <pubDate>Mon, 02 May 2016 14:06:39 +0200</pubDate>
+    <lastBuildDate>Mon, 02 May 2016 14:06:39 +0200</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Sécurité par obscurité</title>
+        <description>&lt;p&gt;Bienvenue dans l’épisode 14 !
+On va continuer un peu sur la sécurité, après un épisode
+complet sur une approche générale et un autre sur les injections.&lt;/p&gt;
+
+&lt;p&gt;Il nous reste deux types de failles du top 10 de l’OWASP,
+et dans ma grossière qualification ça donne :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“faux et usage de faux” (impostures, arnaques…)&lt;/li&gt;
+  &lt;li&gt;“la porte était ouverte” (ou une autre porte)&lt;/li&gt;
+  &lt;li&gt;“trop d’infos disponibles”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;La sécurité par l’obscurité&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Mais dès qu’on se dit que laisser trop d’infos c’est une mauvaise sécurité,
+on pourrait croire qu’une bonne sécurité c’est laisser peu d’informations.
+Bien entendu, ça ne suffit pas.&lt;/p&gt;
+
+&lt;p&gt;Trop d’infos, ça augmente les chances qu’un attaquant trouve une porte
+d’entrée, et pourquoi pas un moyen spécifique de l’attaquer (on réduit
+les possibilités auxquelles il devrait se préparer), mais la base
+reste quand même d’avoir toutes ses portes bien sécurisées.&lt;/p&gt;
+
+&lt;p&gt;Si votre clé est sous le paillasson ou sous un pot de fleurs,
+elle n’est pas en évidence, mais vous avez quand même un double
+dans la nature et vous ne faites qu’espérer que personne ne
+le trouvera.&lt;/p&gt;
+
+&lt;p&gt;Au lieu de vous dire “ma porte et ma clé sont sécurisées”, vous
+devez alors vous assurer que :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;personne n’ira par hasard chercher sous le paillasson&lt;/li&gt;
+  &lt;li&gt;lors des rares occasions où je dois chercher mon double, personne ne me voit&lt;/li&gt;
+  &lt;li&gt;quand je donne la cachette à une connaissance, personne n’entend&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Et bien sûr puisque vous avez transmis votre confiance, s’assurer
+que cette personne mérite cette confiance, ne fera pas de double,
+n’ébruitera pas votre secret, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Passe et Backdoor&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Entre parenthèses, c’est tout à fait l’enjeu du récent procès entre
+Apple et le FBI : autoriser une “Master Key”, un passe, surtout si
+c’est public, fait que les attaquants ne vont plus nécessairement
+chercher à pirater les maisons une par une, mais simplement tenter
+de récupérer le passe qui leur ouvrira d’un coup toutes les maisons.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;La porte n’était pas fermée&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;La sécurité d’une chaîne est celle de son maillon le plus faible.
+L’adage est connu.&lt;/p&gt;
+
+&lt;p&gt;Le plus bête : vous avez une super porte, mais vous avez oublié
+de la fermer en partant. C’est le cas “mauvaise configuration”
+de l’OWASP : vous avez des outils, qui sont bons et bien choisis,
+mais vous les utilisez de travers, ou vous oubliez de les brancher.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;La fenêtre était ouverte&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Presque aussi bête, puisque ça ne vient pas de vous : une de vos
+dépendances est vulnérable. La porte d’entrée est fermée, mais il
+y a une fenêtre ouverte au rez-de-chaussée.&lt;/p&gt;
+
+&lt;p&gt;Tous nos systèmes informatiques et tous nos logiciels sont composés
+de nombreuses petites parties qui s’articulent entre elles. Si vous
+vous basez sur tel outil ou telle bibliothèque un peu vieille, sa
+dernière version a peut-être mis des correctifs de sécurité.
+Ne pas la mettre à jour, c’est risquer de se faire attaquer par là.&lt;/p&gt;
+
+&lt;p&gt;Le problème c’est que les dépendances d’un logiciel sont de plus
+en plus nombreuses et ajoutent elles-mêmes d’autres dépendances.
+La vérification de chacune devient vite pénible,
+sauf si vous la faites automatiquement.&lt;/p&gt;
+
+&lt;p&gt;Heureusement, chaque langage et framework vient de plus en plus
+avec son gestionnaire de dépendances, et outre les commandes pour
+installer et mettre à jour des paquets, ces outils proposent souvent
+aussi de lister les paquets à mettre à jour, obsolètes etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;La porte est restée ouverte trop longtemps&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est un peu le cas du fraudeur qui passe le portillon du métro
+derrière d’autres : la porte est là, elle marche, elle est plutôt
+bien dimensionnée, mais il y a des cas où c’est ouvert trop grand,
+trop longtemps etc.&lt;/p&gt;
+
+&lt;p&gt;Ce n’est pas suffisant, mais c’est la raison pour laquelle certaines
+applications vont vous déconnecter après un temps d’inactivité,
+vous faire changer de mot de passe de temps à autre,
+vous rappeler de supprimer les accès qui n’ont plus raison d’être,
+rappeler de ne pas prêter son badge, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;L’accès pièce par pièce, placard par placard&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Enfin, la métaphore a là aussi atteint ses limites d’utilité.&lt;/p&gt;
+
+&lt;p&gt;Je parlais de la sécurité de votre habitation, et il y a un “dehors”
+et un “dedans”. Une fois “dedans” on peut tout faire. Dans un logiciel,
+on peut et on veut souvent être bien plus spécifique : une zone pour
+les administrateurs et une zone pour les clients, très souvent.&lt;/p&gt;
+
+&lt;p&gt;On pourrait dire aussi : une zone pour la gestion de stock,
+une autre pour la comptabilité. Un accès pour la succursale de
+chaque département, et un accès global pour consolider les infos.&lt;/p&gt;
+
+&lt;p&gt;Imaginez une telle finesse chez vous : le facteur peut entrer
+s’il a un trop gros colis, mais ne peut que laisser un colis
+dans l’entrée ; la voisine peut nourrir le chat, mais pas aller
+dans les chambres ; les enfants ont accès aux placards pour les
+boissons et le repas, mais pas pour piller les desserts et
+les bonbons.&lt;/p&gt;
+
+&lt;p&gt;L’une des failles d’OWASP est d’oublier ou de mal configurer
+ce genre d’accès. Dans leur section propre à Ruby on Rails,
+ça donne même un conseil de plus : utiliser les “strong parameters”
+pour que le concept “modifier un enregistrement” se limite à
+certains champs, et eux seuls.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Je laisse trop d’infos&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Maintenant qu’il est clair que cacher des choses ne vous sauvera pas,
+on garde quand même la logique de rendre les attaques plus dures,
+plus longues, plus complexes et plus visibles.&lt;/p&gt;
+
+&lt;p&gt;Bref, on peut quand même éviter de simplifier les attaques.
+Par exemple, un attaquant peut tenter de vous envoyer un email en se
+faisant passer pour votre banque. S’il se trompe de banque, non
+seulement il ne vous aura pas, mais en plus il va potentiellement vous
+mettre la puce à l’oreille pour la prochaine tentative.&lt;/p&gt;
+
+&lt;p&gt;S’il fait un envoi de plusieurs spams avec chacune des banques
+les plus probables, l’attaque est plus longue et plus visible,
+et vous vous doutez non seulement qu’on vous en veut, mais d’où
+les attaques viennent en ce moment. En cas de doute, vous serez
+plus enclin à appeler votre banque pour confirmation, et elle vous
+précisera en général comment identifier un mail qui vient bien de
+chez eux, et vous précisera probablement que JAMAIS ils ne vous
+demanderont de mots de passe ou données confidentielles par email.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;German Tank Problem&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;De même, si vos identifiants sont numériques et croissants, sans même
+vouloir vous attaquer, vos concurrents sont capables de voir votre
+progression : tiens, mon compte test d’hier est le numéro 300, mon compte
+test d’aujourd’hui est le numéro 400, et l’entreprise prétend avoir
+des milliers d’inscriptions par jour, et des millions d’utilisateurs
+au total ? Peu crédible.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Open API&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Laisser trop d’infos, comme vos identifiants ou la liste de vos champs,
+très classique dans le cas d’une API ouverte à l’extérieur,
+permet à un attaquant de mieux cibler ses tentatives d’injection.
+Si je sais qui sont les admins, où est le champ qui donne les droits…&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;CSRF&lt;/b&gt;
+Tout cela nous mène au dernier point, la CSRF, prononcée Sea-Surf,
+pour Cross-Site Request Forgery : fausse requête de site à site.&lt;/p&gt;
+
+&lt;p&gt;Si un attaquant sait que votre site a une URL qui fait quelque chose,
+par exemple vous désinscrire, ou valider un transfert d’argent, ou
+vous faire voter dans un concours en ligne qui l’intéresse, il peut
+en profiter pour vous faire cliquer ou vous faire faire une requête du
+genre, depuis un autre site, par exemple avec un lien “cliquez ici pour
+voir des photos de chatons”.&lt;/p&gt;
+
+&lt;p&gt;On se protège rarement de cela pour des requêtes en lecture (GET),
+mais pour un formulaire qui envoie des informations, Rails va souvent
+ajouter son CSRF-token, un “jeton unique” avec une clé qui permet de
+se dire “tiens, l’utilisateur souhaite voter pour le concours, mais
+pourtant il ne connaît pas la clé que je lui ai donnée, c’est donc
+qu’il vient probablement d’un endroit que nous n’avions pas prévu”.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;OWASP TOP 10&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Bref, révision rapide du top 10 de l’OWASP :&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Faussaires, imposteurs et passe-passe&lt;/b&gt;&amp;lt;ul&amp;gt;&lt;/p&gt;
+&lt;li&gt;&lt;b&gt;1.&lt;/b&gt; injection SQL&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;?.&lt;/b&gt; injection shell&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;3.&lt;/b&gt; XSS (Cross-Site Scripting)&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;10.&lt;/b&gt; redirections non vérifiées&lt;/li&gt;
+&lt;p&gt;&amp;lt;/ul&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Je laisse la porte ouverte&lt;/b&gt;&amp;lt;ul&amp;gt;&lt;/p&gt;
+&lt;li&gt;&lt;b&gt;5.&lt;/b&gt; Mauvaise configuration&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;9.&lt;/b&gt; Dépendances vulnérables&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;2.&lt;/b&gt; Authentification / gestion des sessions&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;7.&lt;/b&gt; Missing function level access control&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;?.&lt;/b&gt; Oubli des `strong parameters`&lt;/li&gt;
+&lt;p&gt;&amp;lt;/ul&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Je laisse trop d’infos&lt;/b&gt;&amp;lt;ul&amp;gt;&lt;/p&gt;
+&lt;li&gt;&lt;b&gt;4.&lt;/b&gt; Insecure direct object references&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;6.&lt;/b&gt; Sensitive data exposure&lt;/li&gt;
+&lt;p&gt;&amp;lt;/ul&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Un peu un mix :&lt;/b&gt;&amp;lt;ul&amp;gt;&lt;/p&gt;
+&lt;li&gt;&lt;b&gt;8.&lt;/b&gt; CSRF - Cross Site Request Forgery&lt;br /&gt;
+ vous avez confiance en votre browser mais il est prédictible et je vous ferai cliquer sur un lien&lt;/li&gt;
+&lt;p&gt;&amp;lt;/ul&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Je pense que pour la suite du sujet je vais vous laisser vous documenter
+auprès de qui de droit, la technique et les sujets pointus ne tiendront pas
+dans un format audio ni en 5~10mn, et j’espère que vous avez une
+meilleure idée de la sécurité, ses enjeux, et les endroits où vous
+pouvez intervenir.&lt;/p&gt;
+
+&lt;p&gt;À bientôt !&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  La sécurité par le secret c'est comme croire que laisser la porte ouverte ce n&#39;est pas grave, si c&#39;est secret
+	</itunes:subtitle>
+	<itunes:summary>
+	  La sécurité par le secret c'est comme croire que laisser la porte ouverte ce n&#39;est pas grave, si c&#39;est secret
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/daisies.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/261954852-zenm4-014-zen-metaphor-securite-par-obscurite.m4a" length="56300" type="audio/mp4" />
+	<itunes:duration>9:23</itunes:duration>
+
+        <pubDate>Sun, 01 May 2016 15:45:00 +0200</pubDate>
+        <link>http://zenm4.net/014/</link>
+        <guid isPermaLink="true">http://zenm4.net/014/</guid>
+        
+        <category>meta</category>
+      </item>
     
       <item>
         <title>Injections</title>
