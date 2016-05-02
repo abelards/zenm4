@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+
+
+
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+
+  <link rel="stylesheet" href="/css/light.css" />
+  <link rel="stylesheet" href="/css/sharingbuttonsio.css" />
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/daisies.png" />
+  <meta name="twitter:description" content="Zen Metaphor - La sécurité par le secret c'est comme croire que laisser la porte ouverte ce n'est pas grave, si c'est secret - Podcast en français pour apprendre et progresser dans le code" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://zenm4.net" />
+  <meta property="og:description" content="Zen Metaphor - La sécurité par le secret c'est comme croire que laisser la porte ouverte ce n'est pas grave, si c'est secret - Podcast en français pour apprendre et progresser dans le code" />
+  <meta property="og:image" content="http://zenm4.net/img/daisies.png" />
+  <meta property="og:title" content="Zen Metaphor " />
+
+  <meta property="og:updated_time" content="2016-05-01" />
+  <meta property="og:audio:type"         content="audio/mp3" /> 
+  <meta property="og:audio"              content="http://feeds.soundcloud.com/stream/261954852-zenm4-014-zen-metaphor-securite-par-obscurite.m4a" />
+  
+
+  <meta property="og:locale" content="fr-FR" />
+  <meta property="og:rich_attachment" content="true" />
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
+       href="https://soundcloud.com/user-794009814">
+      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="@Zen_M4 / Twitter"
+       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="past" href="/archive">Archive</a>
+<!--    <a class="past" href="/archive">Archive</a> | -->
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+
+<!--     <div class="content" id="page"> -->
+      <!-- <div class="post"> -->
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/013/">013. Injections</a></span>
+      &mdash;
+      
+    </p>
+
+    <h1 class="post-title">014. Sécurité par obscurité</h1>
+    <h4>La sécurité par le secret
+      <br /><em>c'est comme</em><br />croire que laisser la porte ouverte ce n'est pas grave, si c'est secret
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/261954852&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+
+    <ul class="share">
+    
+    <li><a href="http://feeds.soundcloud.com/stream/261954852-zenm4-014-zen-metaphor-securite-par-obscurite.m4a"><b>&dArr; Télécharger</b></a></li>
+    
+    </ul>
+
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="http://joelonsoftware.com/">Joel on Software</a>
+        <p>Le blog de Joel Spolsky - commencez par sa colonne verte 'Top 10'</p>
+      </li>
+    
+      <li><a href="http://local.joelonsoftware.com/wiki/French">Joel on Software FR</a>
+        <p>Wiki avec des traductions françaises (36 articles)</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Bienvenue dans l’épisode 14 !
+On va continuer un peu sur la sécurité, après un épisode
+complet sur une approche générale et un autre sur les injections.</p>
+
+<p>Il nous reste deux types de failles du top 10 de l’OWASP,
+et dans ma grossière qualification ça donne :</p>
+
+<ul>
+  <li>“faux et usage de faux” (impostures, arnaques…)</li>
+  <li>“la porte était ouverte” (ou une autre porte)</li>
+  <li>“trop d’infos disponibles”</li>
+</ul>
+
+<p><b>La sécurité par l’obscurité</b></p>
+
+<p>Mais dès qu’on se dit que laisser trop d’infos c’est une mauvaise sécurité,
+on pourrait croire qu’une bonne sécurité c’est laisser peu d’informations.
+Bien entendu, ça ne suffit pas.</p>
+
+<p>Trop d’infos, ça augmente les chances qu’un attaquant trouve une porte
+d’entrée, et pourquoi pas un moyen spécifique de l’attaquer (on réduit
+les possibilités auxquelles il devrait se préparer), mais la base
+reste quand même d’avoir toutes ses portes bien sécurisées.</p>
+
+<p>Si votre clé est sous le paillasson ou sous un pot de fleurs,
+elle n’est pas en évidence, mais vous avez quand même un double
+dans la nature et vous ne faites qu’espérer que personne ne
+le trouvera.</p>
+
+<p>Au lieu de vous dire “ma porte et ma clé sont sécurisées”, vous
+devez alors vous assurer que :</p>
+
+<ul>
+  <li>personne n’ira par hasard chercher sous le paillasson</li>
+  <li>lors des rares occasions où je dois chercher mon double, personne ne me voit</li>
+  <li>quand je donne la cachette à une connaissance, personne n’entend</li>
+</ul>
+
+<p>Et bien sûr puisque vous avez transmis votre confiance, s’assurer
+que cette personne mérite cette confiance, ne fera pas de double,
+n’ébruitera pas votre secret, etc.</p>
+
+<p><b>Passe et Backdoor</b></p>
+
+<p>Entre parenthèses, c’est tout à fait l’enjeu du récent procès entre
+Apple et le FBI : autoriser une “Master Key”, un passe, surtout si
+c’est public, fait que les attaquants ne vont plus nécessairement
+chercher à pirater les maisons une par une, mais simplement tenter
+de récupérer le passe qui leur ouvrira d’un coup toutes les maisons.</p>
+
+<p><b>La porte n’était pas fermée</b></p>
+
+<p>La sécurité d’une chaîne est celle de son maillon le plus faible.
+L’adage est connu.</p>
+
+<p>Le plus bête : vous avez une super porte, mais vous avez oublié
+de la fermer en partant. C’est le cas “mauvaise configuration”
+de l’OWASP : vous avez des outils, qui sont bons et bien choisis,
+mais vous les utilisez de travers, ou vous oubliez de les brancher.</p>
+
+<p><b>La fenêtre était ouverte</b></p>
+
+<p>Presque aussi bête, puisque ça ne vient pas de vous : une de vos
+dépendances est vulnérable. La porte d’entrée est fermée, mais il
+y a une fenêtre ouverte au rez-de-chaussée.</p>
+
+<p>Tous nos systèmes informatiques et tous nos logiciels sont composés
+de nombreuses petites parties qui s’articulent entre elles. Si vous
+vous basez sur tel outil ou telle bibliothèque un peu vieille, sa
+dernière version a peut-être mis des correctifs de sécurité.
+Ne pas la mettre à jour, c’est risquer de se faire attaquer par là.</p>
+
+<p>Le problème c’est que les dépendances d’un logiciel sont de plus
+en plus nombreuses et ajoutent elles-mêmes d’autres dépendances.
+La vérification de chacune devient vite pénible,
+sauf si vous la faites automatiquement.</p>
+
+<p>Heureusement, chaque langage et framework vient de plus en plus
+avec son gestionnaire de dépendances, et outre les commandes pour
+installer et mettre à jour des paquets, ces outils proposent souvent
+aussi de lister les paquets à mettre à jour, obsolètes etc.</p>
+
+<p><b>La porte est restée ouverte trop longtemps</b></p>
+
+<p>C’est un peu le cas du fraudeur qui passe le portillon du métro
+derrière d’autres : la porte est là, elle marche, elle est plutôt
+bien dimensionnée, mais il y a des cas où c’est ouvert trop grand,
+trop longtemps etc.</p>
+
+<p>Ce n’est pas suffisant, mais c’est la raison pour laquelle certaines
+applications vont vous déconnecter après un temps d’inactivité,
+vous faire changer de mot de passe de temps à autre,
+vous rappeler de supprimer les accès qui n’ont plus raison d’être,
+rappeler de ne pas prêter son badge, etc.</p>
+
+<p><b>L’accès pièce par pièce, placard par placard</b></p>
+
+<p>Enfin, la métaphore a là aussi atteint ses limites d’utilité.</p>
+
+<p>Je parlais de la sécurité de votre habitation, et il y a un “dehors”
+et un “dedans”. Une fois “dedans” on peut tout faire. Dans un logiciel,
+on peut et on veut souvent être bien plus spécifique : une zone pour
+les administrateurs et une zone pour les clients, très souvent.</p>
+
+<p>On pourrait dire aussi : une zone pour la gestion de stock,
+une autre pour la comptabilité. Un accès pour la succursale de
+chaque département, et un accès global pour consolider les infos.</p>
+
+<p>Imaginez une telle finesse chez vous : le facteur peut entrer
+s’il a un trop gros colis, mais ne peut que laisser un colis
+dans l’entrée ; la voisine peut nourrir le chat, mais pas aller
+dans les chambres ; les enfants ont accès aux placards pour les
+boissons et le repas, mais pas pour piller les desserts et
+les bonbons.</p>
+
+<p>L’une des failles d’OWASP est d’oublier ou de mal configurer
+ce genre d’accès. Dans leur section propre à Ruby on Rails,
+ça donne même un conseil de plus : utiliser les “strong parameters”
+pour que le concept “modifier un enregistrement” se limite à
+certains champs, et eux seuls.</p>
+
+<p><b>Je laisse trop d’infos</b></p>
+
+<p>Maintenant qu’il est clair que cacher des choses ne vous sauvera pas,
+on garde quand même la logique de rendre les attaques plus dures,
+plus longues, plus complexes et plus visibles.</p>
+
+<p>Bref, on peut quand même éviter de simplifier les attaques.
+Par exemple, un attaquant peut tenter de vous envoyer un email en se
+faisant passer pour votre banque. S’il se trompe de banque, non
+seulement il ne vous aura pas, mais en plus il va potentiellement vous
+mettre la puce à l’oreille pour la prochaine tentative.</p>
+
+<p>S’il fait un envoi de plusieurs spams avec chacune des banques
+les plus probables, l’attaque est plus longue et plus visible,
+et vous vous doutez non seulement qu’on vous en veut, mais d’où
+les attaques viennent en ce moment. En cas de doute, vous serez
+plus enclin à appeler votre banque pour confirmation, et elle vous
+précisera en général comment identifier un mail qui vient bien de
+chez eux, et vous précisera probablement que JAMAIS ils ne vous
+demanderont de mots de passe ou données confidentielles par email.</p>
+
+<p><b>German Tank Problem</b></p>
+
+<p>De même, si vos identifiants sont numériques et croissants, sans même
+vouloir vous attaquer, vos concurrents sont capables de voir votre
+progression : tiens, mon compte test d’hier est le numéro 300, mon compte
+test d’aujourd’hui est le numéro 400, et l’entreprise prétend avoir
+des milliers d’inscriptions par jour, et des millions d’utilisateurs
+au total ? Peu crédible.</p>
+
+<p><b>Open API</b></p>
+
+<p>Laisser trop d’infos, comme vos identifiants ou la liste de vos champs,
+très classique dans le cas d’une API ouverte à l’extérieur,
+permet à un attaquant de mieux cibler ses tentatives d’injection.
+Si je sais qui sont les admins, où est le champ qui donne les droits…</p>
+
+<p><b>CSRF</b>
+Tout cela nous mène au dernier point, la CSRF, prononcée Sea-Surf,
+pour Cross-Site Request Forgery : fausse requête de site à site.</p>
+
+<p>Si un attaquant sait que votre site a une URL qui fait quelque chose,
+par exemple vous désinscrire, ou valider un transfert d’argent, ou
+vous faire voter dans un concours en ligne qui l’intéresse, il peut
+en profiter pour vous faire cliquer ou vous faire faire une requête du
+genre, depuis un autre site, par exemple avec un lien “cliquez ici pour
+voir des photos de chatons”.</p>
+
+<p>On se protège rarement de cela pour des requêtes en lecture (GET),
+mais pour un formulaire qui envoie des informations, Rails va souvent
+ajouter son CSRF-token, un “jeton unique” avec une clé qui permet de
+se dire “tiens, l’utilisateur souhaite voter pour le concours, mais
+pourtant il ne connaît pas la clé que je lui ai donnée, c’est donc
+qu’il vient probablement d’un endroit que nous n’avions pas prévu”.</p>
+
+<p><b>OWASP TOP 10</b></p>
+
+<p>Bref, révision rapide du top 10 de l’OWASP :</p>
+
+<p><b>Faussaires, imposteurs et passe-passe</b>&lt;ul&gt;</p>
+<li><b>1.</b> injection SQL</li>
+<li><b>?.</b> injection shell</li>
+<li><b>3.</b> XSS (Cross-Site Scripting)</li>
+<li><b>10.</b> redirections non vérifiées</li>
+<p>&lt;/ul&gt;</p>
+
+<p><b>Je laisse la porte ouverte</b>&lt;ul&gt;</p>
+<li><b>5.</b> Mauvaise configuration</li>
+<li><b>9.</b> Dépendances vulnérables</li>
+<li><b>2.</b> Authentification / gestion des sessions</li>
+<li><b>7.</b> Missing function level access control</li>
+<li><b>?.</b> Oubli des `strong parameters`</li>
+<p>&lt;/ul&gt;</p>
+
+<p><b>Je laisse trop d’infos</b>&lt;ul&gt;</p>
+<li><b>4.</b> Insecure direct object references</li>
+<li><b>6.</b> Sensitive data exposure</li>
+<p>&lt;/ul&gt;</p>
+
+<p><b>Un peu un mix :</b>&lt;ul&gt;</p>
+<li><b>8.</b> CSRF - Cross Site Request Forgery<br />
+ vous avez confiance en votre browser mais il est prédictible et je vous ferai cliquer sur un lien</li>
+<p>&lt;/ul&gt;</p>
+
+<p>Je pense que pour la suite du sujet je vais vous laisser vous documenter
+auprès de qui de droit, la technique et les sujets pointus ne tiendront pas
+dans un format audio ni en 5~10mn, et j’espère que vous avez une
+meilleure idée de la sécurité, ses enjeux, et les endroits où vous
+pouvez intervenir.</p>
+
+<p>À bientôt !</p>
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : La Ligne de Commande Unix</h4>
+    <p>Aller plus vite, plus loin, et sans peur. Automatiser</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : Fuzzing</h4>
+    <p>Lancer plein de données invalides pour voir si ça casse</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/013/">013. Injections</a></span>
+    &mdash;
+    
+    </p>
+    <p>
+      2016-05-01 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+<!-- </div> -->
+
+<!--     </div> -->
+
+    
+
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41077934-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  </body>
+
+</html>
