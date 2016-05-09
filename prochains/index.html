@@ -14,7 +14,7 @@
   <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
 
   <link rel="stylesheet" href="/css/light.css" />
-  <link rel="stylesheet" href="/css/sharingbuttonsio.css" />
+<!--  <link rel="stylesheet" href="/css/sharingbuttonsio.css" /> -->
   <link rel="canonical" href="http://zenm4.net/" />
   <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
 
@@ -49,20 +49,14 @@
   <h1><a href="/">Zen M-4</a></h1>
   <h3>Zen Metaphor</h3>
   <div class="menu">
-    <a class="soundcloud icon" title="ZenM4 / SoundCloud"
-       href="https://soundcloud.com/user-794009814">
-      &nbsp;<img src="/img/soundcloud.ico" />&nbsp;Audio</a>
-    <a class="twitter icon" title="@Zen_M4 / Twitter"
-       href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" />&nbsp;@zenm4</a>
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud" href="https://soundcloud.com/zenm4"><img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="Zen_M4 / Twitter" href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" class="twitter_icon" />&nbsp;@zen_m4</a>
     <a class="past" href="/archive">Archive</a>
-<!--    <a class="past" href="/archive">Archive</a> | -->
     <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
   </div>
 </div>
 
-
-<!--     <div class="content" id="page"> -->
-      <div class="home">
+    <div class="home">
   <div class="menu">
  <a href="/archive/">Archive</a> :
  <a href="/mots/">Mots</a> &mdash;
@@ -80,32 +74,19 @@
 
   <ul class="post-list">
     
-      <li class="deep">
-        <h4>015. Immutabilité</h4>
-	  <p class="base">Travailler avec des données immutables<br />
-	  <em>être privé de la gomme. On ne peut que corriger, pas réécrire.</em></p>
+      <li class="tech">
+        <h4>016. Résoudre un bug</h4>
+	  <p class="base">Résoudre un bug<br />
+	  <em>un intervention d'urgence, guérir et prévenir les maladies</em></p>
 	<ul>
-	  <li class="mot" title="Boucle de rétroaction : le résultat de ce que vous faites">
-	    Feedback Loop</li>
-	  <li class="todo" title="REPL, logs, tests auto, TDD, relectures de specs...">
-	    Raccourcir les feedback loops</li>
+	  <li class="mot" title="L'amélioration continue">
+	    Kaizen</li>
+	  <li class="todo" title="Soyez prêts. Passez une formation, et recyclez-la. Ça va sans dire mais ça va mieux en le disant.">
+	    Formation aux premiers secours</li>
 	  <li class="links">
-	  <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/100511" title="2004 : le Duck Typing étonne et il faut l'expliquer">The Zen of Duck Typing</a>
-	  </li>
-	</ul>
-      </li>
-    
-      <li class="philo">
-        <h4>016. La taxe débutants</h4>
-	  <p class="base">Les challenges de l'apprentissage du code<br />
-	  <em>ceux pour faire du vélo, de la conduite, de la cuisine...</em></p>
-	<ul>
-	  <li class="mot" title="Un mythe dangereux pour les développeurs, recrutements et communautés.">
-	    10x programmer</li>
-	  <li class="todo" title="Be conservative in what you send, be liberal in what you accept">
-	    Postel's Law</li>
-	  <li class="links">
-	  <a href="http://clojurebridge-berlin.github.io/coaches_training.deck.html#how_to_make_your_class_awesome" title="Astuces ClojureBridge à lire si vous coachez des débutants.">Coaches Training</a>
+	  <a href="http://www.croix-rouge.fr/Nos-actions/Urgence-et-secourisme/Chacun-peut-agir/8h-pour-devenir-sauveteur" title="Croix Rouge Française - Premiers Secours">Formation CRF PSC1</a>
+	  </li><li class="links">
+	  <a href="https://duckduckgo.com/?q=blameless+post+mortems" title="Comment conduire une rétrospective efficace en retirant le blâme">Blameless Post-Mortems</a>
 	  </li>
 	</ul>
       </li>
@@ -115,29 +96,27 @@
 	  <p class="base">Don't Repeat Yourself<br />
 	  <em>avoir une seule source de vérité, pas de hurler à chaque copie</em></p>
 	<ul>
-	  <li class="mot" title="L'emploi du temps de celui qui doit se concentrer.">
-	    Maker's schedule, manager's schedule</li>
-	  <li class="todo" title="Tout est frustrant avec le code, mais il le faut pour s'améliorer.">
-	    Gérer sa frustration, motivation, discipline</li>
+	  <li class="mot" title="Un mythe dangereux pour les développeurs, recrutements et communautés.">
+	    10x programmer</li>
+	  <li class="todo" title="Be conservative in what you send, be liberal in what you accept">
+	    Postel's Law</li>
 	  <li class="links">
-	  <a href="https://alexnisnevich.github.io/untrusted/" title="Jeu où il faut "hacker" du javascript">Untrusted</a>
-	  </li><li class="links">
-	  <a href="https://www.bloc.io/ruby-warrior#/" title="Complétez le code de l'intelligence du guerrier pour avancer">Ruby Warrior</a>
+	  <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/100511" title="2004 : le Duck Typing étonne et il faut l'expliquer">The Zen of Duck Typing</a>
 	  </li>
 	</ul>
       </li>
     
-      <li class="tech">
-        <h4>018. Unix Pipes</h4>
-	  <p class="base">Les commandes Unix avec des pipes<br />
-	  <em>une ligne de traitement dans une usine</em></p>
+      <li class="deep">
+        <h4>018. Immutabilité</h4>
+	  <p class="base">Travailler avec des données immutables<br />
+	  <em>être privé de la gomme. On ne peut que corriger, pas réécrire.</em></p>
 	<ul>
 	  <li class="mot" title="Expliquer votre problème vous décoince tout seul">
 	    Rubber-duck debugging</li>
 	  <li class="todo" title="Laissez ceux qui apprennent réexpliquer, faites-les accoucher.">
 	    Mentoring - maïeutique</li>
 	  <li class="links">
-	  <a href="https://fr.wikipedia.org/wiki/Illusions_de_l'informatique_distribu%C3%A9e" title="Remettez tout en question. Mais vivez quand même heureux !">Les illusions de l'informatique distribuée</a>
+	  <a href="http://clojurebridge-berlin.github.io/coaches_training.deck.html#how_to_make_your_class_awesome" title="Astuces ClojureBridge à lire si vous coachez des débutants.">Coaches Training</a>
 	  </li>
 	</ul>
       </li>
@@ -147,18 +126,20 @@
 	  <p class="base">Des informations qui arrivent en désordre<br />
 	  <em>des amis qui partagent des ragots pas à jour</em></p>
 	<ul>
-	  
-	  
+	  <li class="mot" title="L'emploi du temps de celui qui doit se concentrer.">
+	    Maker's schedule, manager's schedule</li>
+	  <li class="todo" title="Tout est frustrant avec le code, mais il le faut pour s'améliorer.">
+	    Gérer sa frustration, motivation, discipline</li>
 	  <li class="links">
-	  <a href="http://codon.com/refactoring-ruby-with-monads" title="Les Monades ça ne devrait pas faire peur.">Ruby with Monads</a>
+	  <a href="https://fr.wikipedia.org/wiki/Illusions_de_l'informatique_distribu%C3%A9e" title="Remettez tout en question. Mais vivez quand même heureux !">Les illusions de l'informatique distribuée</a>
 	  </li>
 	</ul>
       </li>
     
       <li class="philo">
-        <h4>020. Dette technique</h4>
-	  <p class="base">Expliquer à son patron le besoin de retravailler<br />
-	  <em>Spaghetti code, Refactoring, ranger ses multiprises...</em></p>
+        <h4>020. La taxe débutants</h4>
+	  <p class="base">Les challenges de l'apprentissage du code<br />
+	  <em>ceux pour faire du vélo, de la conduite, de la cuisine...</em></p>
 	<ul>
 	  
 	  
@@ -192,7 +173,9 @@
 	    Laziness, Impatience, Hubris</li>
 	  
 	  <li class="links">
-	  <a href="http://www.informationisbeautiful.net/visualizations/arguments-rhetologiques-fallacieux/" title="Erreurs et manipulations dans le discours / 'Moisissures argumentatives'">Arguments Rhétologiques Fallacieux</a>
+	  <a href="https://alexnisnevich.github.io/untrusted/" title="Jeu où il faut "hacker" du javascript">Untrusted</a>
+	  </li><li class="links">
+	  <a href="https://www.bloc.io/ruby-warrior#/" title="Complétez le code de l'intelligence du guerrier pour avancer">Ruby Warrior</a>
 	  </li>
 	</ul>
       </li>
@@ -218,7 +201,7 @@
 	  
 	  
 	  <li class="links">
-	  <a href="http://www.jamisbuck.org/mazes/" title="Visualisation d'algos de labyrinthes.">Visual maze algorithms</a>
+	  <a href="http://www.informationisbeautiful.net/visualizations/arguments-rhetologiques-fallacieux/" title="Erreurs et manipulations dans le discours / 'Moisissures argumentatives'">Arguments Rhétologiques Fallacieux</a>
 	  </li>
 	</ul>
       </li>
@@ -242,9 +225,9 @@
       </li>
     
       <li class="tech">
-        <h4>026. Circuit Breaker</h4>
-	  <p class="base"><br />
-	  </p>
+        <h4>026. Unix Pipes</h4>
+	  <p class="base">Les commandes Unix avec des pipes<br />
+	  <em>une ligne de traitement dans une usine</em></p>
 	<ul>
 	  <li class="mot" title="Extract Transform Load">
 	    ETL</li>
@@ -281,20 +264,20 @@
 	  
 	  
 	  <li class="links">
-	  <a href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_CAP" title="Une saine lecture sur les bases de données ACID et BASE">Théorème CAP</a>
+	  <a href="http://www.jamisbuck.org/mazes/" title="Visualisation d'algos de labyrinthes.">Visual maze algorithms</a>
 	  </li>
 	</ul>
       </li>
     
-      <li class="rails">
-        <h4>029. Single Table Inheritance</h4>
-	  <p class="base">Utiliser le STI dans Rails<br />
-	  <em>remplir selon les cas une partie des colonnes d'un tableau</em></p>
+      <li class="philo">
+        <h4>029. Dette technique</h4>
+	  <p class="base">Expliquer à son patron le besoin de retravailler<br />
+	  <em>Spaghetti code, Refactoring, ranger ses multiprises...</em></p>
 	<ul>
 	  
 	  
 	  <li class="links">
-	  <a href="http://lesswrong.com/lw/y5/the_babyeating_aliens_18/" title="">Three Worlds Collide</a>
+	  <a href="http://codon.com/refactoring-ruby-with-monads" title="Les Monades ça ne devrait pas faire peur.">Ruby with Monads</a>
 	  </li>
 	</ul>
       </li>
@@ -307,7 +290,9 @@
 	  <li class="mot" title="Quand vous avez un état à 0, puis à 1, le moment où ça change.">
 	    Front montant</li>
 	  
-	  
+	  <li class="links">
+	  <a href="http://fr.slideshare.net/happynoff/rails-king" title="MVC c'est comme un fast-food">Rails is like Burger King</a>
+	  </li>
 	</ul>
       </li>
     
@@ -318,7 +303,9 @@
 	<ul>
 	  
 	  
-	  
+	  <li class="links">
+	  <a href="http://lesswrong.com/lw/y5/the_babyeating_aliens_18/" title="">Three Worlds Collide</a>
+	  </li>
 	</ul>
       </li>
     
@@ -329,7 +316,9 @@
 	<ul>
 	  
 	  
-	  
+	  <li class="links">
+	  <a href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_CAP" title="Une saine lecture sur les bases de données ACID et BASE">Théorème CAP</a>
+	  </li>
 	</ul>
       </li>
     
@@ -404,8 +393,19 @@
 	</ul>
       </li>
     
-      <li class="">
-        <h4>039. </h4>
+      <li class="rails">
+        <h4>039. Single Table Inheritance</h4>
+	  <p class="base"><br />
+	  </p>
+	<ul>
+	  
+	  
+	  
+	</ul>
+      </li>
+    
+      <li class="tech">
+        <h4>040. Circuit Breaker</h4>
 	  <p class="base"><br />
 	  </p>
 	<ul>
@@ -419,10 +419,7 @@
 
 </div>
 
-<!--     </div> -->
-
     
-
     </div>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
