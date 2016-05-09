@@ -18,9 +18,173 @@
     <itunes:image href="http://zenm4.net/img/zenm4_big.jpg" />
     <itunes:category text="Technology" />
     <itunes:explicit>no</itunes:explicit>
-    <pubDate>Mon, 02 May 2016 15:29:16 +0200</pubDate>
-    <lastBuildDate>Mon, 02 May 2016 15:29:16 +0200</lastBuildDate>
+    <pubDate>Mon, 09 May 2016 14:26:04 +0200</pubDate>
+    <lastBuildDate>Mon, 09 May 2016 14:26:04 +0200</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Désinsectisation</title>
+        <description>&lt;p&gt;Bienvenue dans l’épisode 15, sur le debugging.
+On ne va pas parler des méthodes de résolution de bugs,
+qui vont dépendre de chaque langage, plateforme, et bug bien sûr.&lt;/p&gt;
+
+&lt;p&gt;Ce qui va m’intéresser ici c’est de voir comment un bug peut arriver,
+comment le résoudre, et comment gérer ce qui se passe humainement
+durant les étapes de résolution du bug.&lt;/p&gt;
+
+&lt;p&gt;Là encore j’ai de quoi faire une petite série, pour l’instant en
+deux épisodes : aujourd’hui sur la détection et la réaction au bug,
+et la semaine prochaine sur la résolution du bug. Il n’est pas
+impossible que d’ici quelque temps on reprenne le sujet si ça vous
+intéresse et si je trouve encore d’autres choses à dire.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Quoi de neuf, docteur ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Pour ne pas épuiser la métaphore sur la voiture, et parce que bien
+souvent on rabaisse les développeurs à des exécutants techniques,
+je vais plutôt choisir une métaphore filée sur la médecine.&lt;/p&gt;
+
+&lt;p&gt;On parle parfois d’un développeur sur un bug comme d’un pompier,
+un démineur, mais je n’aime pas le côté urgence forcée, et l’absence
+de responsabilité que cela sous-entend.&lt;/p&gt;
+
+&lt;p&gt;Pour moi, intervenir sur un bug, c’est comme être le médecin traitant
+face à quelques symptômes. On pourrait dire chirurgienne, mais j’aime
+moins l’aspect d’intervention certes d’une haute technicité,
+mais ponctuelle et qui ignore la santé globale : à résoudre les soucis
+un par un, on peut facilement oublier d’avoir une vision générale.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Les causes&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Je suis obligé de commencer par la définition du mot “bug”
+la plus générale qui soit : quelque chose d’inattendu ou de néfaste
+que l’on attribue (à tort ou à raison) à votre système.&lt;/p&gt;
+
+&lt;p&gt;Et donc la cause la plus générale qui soit, c’est qu’un postulat
+sur lequel vous vous basiez… n’est plus valide en ce moment.&lt;/p&gt;
+
+&lt;p&gt;Ça peut être dans votre infra, vos données, votre code,
+votre documentation ou vos spécifications.
+Pour être clair, il y a quelque chose de :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;physiquement cassé : connexion, serveur…&lt;/li&gt;
+  &lt;li&gt;mal tourné dans l’environnement : configuration, dépendances…&lt;/li&gt;
+  &lt;li&gt;différent de vos attentes dans les données, ce qui peut “casser” un algo…&lt;/li&gt;
+  &lt;li&gt;mal exprimé dans votre documentation, et ça coince ceux qui dépendent de vous&lt;/li&gt;
+  &lt;li&gt;pas très clair dans les messages d’erreur ou options proposées&lt;/li&gt;
+  &lt;li&gt;pas prévu ou mal anticipé dans vos spécifications&lt;/li&gt;
+  &lt;li&gt;dangereux dans la résolution hâtive d’un bug, qui cause un autre bug !&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ou enfin, tout simplement, c’est que votre code est en défaut.&lt;/p&gt;
+
+&lt;p&gt;Le corps médical a le même problème : outils cassés, prescriptions mal
+suivies parce que pas claires ou trop contraignantes, situation imprévue,
+combinaison de médicaments ou de maladies aux effets combinés désastreux…
+Sans parler de l’environnement global du patient qui serait toxique ou
+délétères (mauvaises habitudes…) et ça finit toujours pareil :&lt;/p&gt;
+
+&lt;p&gt;quelqu’un va voir son ou sa médecin (qui est rarement la cause du souci),
+exige une solution (rapide si possible), et le tout sous peine de
+conséquences (parfois dramatiques).&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Le message n’est pas clair&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;De même, un diagnostic est parfois difficile quand il y a une ou
+plusieurs causes de départ, mais qu’on ne les voit pas parce que
+les informations sont cachées, conflictuelles, similaires à un
+autre cas… pensez à la série Dr House si vous voulez un exemple.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Mais, c’est pas mon problème ?&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Pourquoi ai-je tenu à faire cette liste si longue et qui parle si peu de code ?&lt;/p&gt;
+
+&lt;p&gt;Tout d’abord parce que les cas de la vraie vie sont au moins aussi nombreux.&lt;/p&gt;
+
+&lt;p&gt;Mais aussi parce qu’on tentera d’attribuer des erreurs de ces huit catégories-là à votre code, faute de mieux comprendre ou par calcul
+politique. Pour être clair, parce qu’il y a quelqu’un qui pense
+“ce bug, c’est pas mon problème”.&lt;/p&gt;
+
+&lt;p&gt;Enfin, pour ne pas vous entendre, en tant que développeurs et développeuses, dire ce genre de phrase.
+Parce que toutes ces catégories sont ou devraient être de votre ressort :
+comprendre les implications des choix en amont, en aval, savoir dire non
+et expliquer les options à ceux qui feront les choix.&lt;/p&gt;
+
+&lt;p&gt;Accepteriez-vous de voir un médecin qui se dédouane de vos problèmes ?&lt;/p&gt;
+
+&lt;p&gt;Un ou une médecin a une position de prestige, de pouvoir, et vous êtes
+en position de dépendance. Les sujets abordés vous touchent directement.&lt;/p&gt;
+
+&lt;p&gt;Les décisions ont intérêt d’être claires et concises.
+On n’accepte pas d’être cobaye, de jouer aux devinettes.
+Toute action doit être motivée et expliquée, y compris quand il s’agit
+de se dessaisir du sujet pour le confier à un confrère ou une consoeur.&lt;/p&gt;
+
+&lt;p&gt;Et pourtant, on serait tellement en colère de voir une décision
+hâtive et fausse prise avec autorité et aplomb, se révéler fausse :
+on se sentirait trompé, on perd confiance, on peut se mettre en colère !
+Mais à l’inverse, ça donne davantage confiance de s’entendre dire
+“je ne sais pas, on va chercher” ou
+“j’ai une piste, on va faire des examens pour confirmer”,
+ou encore “j’ai plusieurs pistes, on va tester pour voir”.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Avant le bug : monitoring&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Je n’ai pas retrouvé de source mais Toyota avait une manière de
+décrire les problèmes, non par leurs conséquences comme souvent,
+mais comme étant une déviation de la norme.&lt;/p&gt;
+
+&lt;p&gt;Les tests médicaux, analyse ou monitorings sont chers ou pas pratiques.
+On aura tendance à ne les faire que quand tout va mal. C’est un peu
+dommage, et c’est pourquoi on encourage non seulement à un suivi de
+ce qui a été mal un jour, mais aussi parfois à un checkup régulier.&lt;/p&gt;
+
+&lt;p&gt;Avant de se dire ce qui est normal, il faut pouvoir le suivre,
+savoir ce qui est dans la norme ou pas. Et encore, pensez à la
+météo, aux pollens ou aux grippes : il y a la norme saisonnière.
+Pour un site web de commerce, par exemple, quelles sont les heures,
+les jours de la semaine, les périodes de l’année les plus importantes ?&lt;/p&gt;
+
+&lt;p&gt;Après le décès de Michael Jackson, Google a reçu tellement de requêtes
+qu’ils ont cru à une attaque. Après chaque événement marquant, Wikipedia
+reçoit un flot de modifications plus ou moins légitimes : il est important
+d’avoir un plan d’action, même s’il dit juste “attention, il se passe
+davantage de choses que la normale”.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Identification du bug&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;L’identification d’un problème est facilitée si vous avez un monitoring
+en place. Sinon, c’est souvent par hasard, par chance (en anticipation),
+ou parce que les conséquences de votre bug vont remonter avec bruit.&lt;/p&gt;
+
+&lt;p&gt;Je pense qu’il y aurait beaucoup à dire, et chaque métier a probablement
+ses moyens d’améliorer et d’anticiper l’identification de problèmes,
+mais ça dépend tellement de chaque cas que je vais arrêter là.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;À la semaine prochaine !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Et voilà, on a vu ce qu’on peut faire avant et au moment où l’on
+détecte un problème, à la semaine prochaine pour voir comment on
+peut réagir et corriger ce bug !&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Découvrir un bug c'est comme diagnostiquer et prévenir les maladies
+	</itunes:subtitle>
+	<itunes:summary>
+	  Découvrir un bug c'est comme diagnostiquer et prévenir les maladies
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/tri_protect.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/263203034-zenm4-015-zen-metaphor-desinsectisation.m4a" length="48700" type="audio/mp4" />
+	<itunes:duration>8:07</itunes:duration>
+
+        <pubDate>Sun, 08 May 2016 15:45:00 +0200</pubDate>
+        <link>http://zenm4.net/015/</link>
+        <guid isPermaLink="true">http://zenm4.net/015/</guid>
+        
+        <category>meta</category>
+      </item>
     
       <item>
         <title>Sécurité par obscurité</title>

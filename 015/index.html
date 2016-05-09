@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Sylvain Abélard" />
+
+
+
+  <title>Zen M-4</title>
+  <meta name="description" content="Zen Metaphor - Chaque semaine une image simple pour comprendre quelque chose qui n'aurait jamais dû être compliqué dans le développement informatique - Podcast en français pour apprendre et progresser dans le code" />
+
+  <link rel="stylesheet" href="/css/light.css" />
+<!--  <link rel="stylesheet" href="/css/sharingbuttonsio.css" /> -->
+  <link rel="canonical" href="http://zenm4.net/" />
+  <link rel="alternate" type="application/rss+xml" title="Sylvain Abélard" href="http://zenm4.net/feed.xml" />
+
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@zen_m4" />
+  <meta name="twitter:creator" content="@abelar_s" />
+  <meta name="twitter:domain" content="zenm4.net" />
+  <meta name="twitter:title" content="Zen Metaphor" />
+  <meta name="twitter:image" content="http://zenm4.net/img/tri_protect.png" />
+  <meta name="twitter:description" content="Zen Metaphor - Découvrir un bug c'est comme diagnostiquer et prévenir les maladies - Podcast en français pour apprendre et progresser dans le code" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://zenm4.net" />
+  <meta property="og:description" content="Zen Metaphor - Découvrir un bug c'est comme diagnostiquer et prévenir les maladies - Podcast en français pour apprendre et progresser dans le code" />
+  <meta property="og:image" content="http://zenm4.net/img/tri_protect.png" />
+  <meta property="og:title" content="Zen Metaphor " />
+
+  <meta property="og:updated_time" content="2016-05-08" />
+  <meta property="og:audio:type"         content="audio/mp3" /> 
+  <meta property="og:audio"              content="http://feeds.soundcloud.com/stream/263203034-zenm4-015-zen-metaphor-desinsectisation.m4a" />
+  
+
+  <meta property="og:locale" content="fr-FR" />
+  <meta property="og:rich_attachment" content="true" />
+</head>
+
+
+  <body>
+    <div class="page">
+    <div id="title">
+  <a id="home" href="/"><img id="logo" src="/img/zenm4_logo.png" alt="&#9775;" /></a>
+  <h1><a href="/">Zen M-4</a></h1>
+  <h3>Zen Metaphor</h3>
+  <div class="menu">
+    <a class="soundcloud icon" title="ZenM4 / SoundCloud" href="https://soundcloud.com/zenm4"><img src="/img/soundcloud.ico" />&nbsp;Audio</a>
+    <a class="twitter icon" title="Zen_M4 / Twitter" href="https://twitter.com/zen_m4"><img src="/img/twitter.ico" class="twitter_icon" />&nbsp;@zen_m4</a>
+    <a class="past" href="/archive">Archive</a>
+    <a class="rss icon" title="RSS" href="/feed.xml"><img src="/img/rss.ico" />&nbsp;RSS</a>
+  </div>
+</div>
+
+    
+  <header class="post-header">
+    <p class="post-meta">
+      <span>&#x21fd; <a href="/014/">014. La sécurité par l'obscurité</a></span>
+      &mdash;
+      
+    </p>
+
+    <h1 class="post-title">015. Désinsectisation</h1>
+    <h4>Découvrir un bug
+      <br /><em>c'est comme</em><br />diagnostiquer et prévenir les maladies
+    </h4>
+  </header>
+
+  <div class="sound block">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/263203034&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+
+    <ul class="share">
+    
+    <li><a href="http://feeds.soundcloud.com/stream/263203034-zenm4-015-zen-metaphor-desinsectisation.m4a"><b>&dArr; Télécharger</b></a></li>
+    
+    </ul>
+
+  </div>
+
+  <div class="links block">
+    <h4>Les liens du jour</h4>
+    <ul>
+      <li><a href="https://fr.wikipedia.org/wiki/The_Toyota_Way">The Toyota Way</a>
+        <p>Principes de management de Toyota - desquels est issu Kaizen</p>
+      </li>
+    
+      <li><a href="http://www.brendangregg.com/Perf/linux_observability_tools.png">Linux Observability tools</a>
+        <p>Boîte à outils d'analyse sous Linux - perf, logs, etc.</p>
+      </li>
+    
+      <li><a href="http://guides.rubyonrails.org/debugging_rails_applications.html">Rails Guides - debugging</a>
+        <p>Guides Rails pour débugguer vos applications</p>
+      </li>
+    </ul>
+  </div>
+
+  <article class="post-content">
+    <p>Bienvenue dans l’épisode 15, sur le debugging.
+On ne va pas parler des méthodes de résolution de bugs,
+qui vont dépendre de chaque langage, plateforme, et bug bien sûr.</p>
+
+<p>Ce qui va m’intéresser ici c’est de voir comment un bug peut arriver,
+comment le résoudre, et comment gérer ce qui se passe humainement
+durant les étapes de résolution du bug.</p>
+
+<p>Là encore j’ai de quoi faire une petite série, pour l’instant en
+deux épisodes : aujourd’hui sur la détection et la réaction au bug,
+et la semaine prochaine sur la résolution du bug. Il n’est pas
+impossible que d’ici quelque temps on reprenne le sujet si ça vous
+intéresse et si je trouve encore d’autres choses à dire.</p>
+
+<p><b>Quoi de neuf, docteur ?</b></p>
+
+<p>Pour ne pas épuiser la métaphore sur la voiture, et parce que bien
+souvent on rabaisse les développeurs à des exécutants techniques,
+je vais plutôt choisir une métaphore filée sur la médecine.</p>
+
+<p>On parle parfois d’un développeur sur un bug comme d’un pompier,
+un démineur, mais je n’aime pas le côté urgence forcée, et l’absence
+de responsabilité que cela sous-entend.</p>
+
+<p>Pour moi, intervenir sur un bug, c’est comme être le médecin traitant
+face à quelques symptômes. On pourrait dire chirurgienne, mais j’aime
+moins l’aspect d’intervention certes d’une haute technicité,
+mais ponctuelle et qui ignore la santé globale : à résoudre les soucis
+un par un, on peut facilement oublier d’avoir une vision générale.</p>
+
+<p><b>Les causes</b></p>
+
+<p>Je suis obligé de commencer par la définition du mot “bug”
+la plus générale qui soit : quelque chose d’inattendu ou de néfaste
+que l’on attribue (à tort ou à raison) à votre système.</p>
+
+<p>Et donc la cause la plus générale qui soit, c’est qu’un postulat
+sur lequel vous vous basiez… n’est plus valide en ce moment.</p>
+
+<p>Ça peut être dans votre infra, vos données, votre code,
+votre documentation ou vos spécifications.
+Pour être clair, il y a quelque chose de :</p>
+
+<ul>
+  <li>physiquement cassé : connexion, serveur…</li>
+  <li>mal tourné dans l’environnement : configuration, dépendances…</li>
+  <li>différent de vos attentes dans les données, ce qui peut “casser” un algo…</li>
+  <li>mal exprimé dans votre documentation, et ça coince ceux qui dépendent de vous</li>
+  <li>pas très clair dans les messages d’erreur ou options proposées</li>
+  <li>pas prévu ou mal anticipé dans vos spécifications</li>
+  <li>dangereux dans la résolution hâtive d’un bug, qui cause un autre bug !</li>
+</ul>
+
+<p>Ou enfin, tout simplement, c’est que votre code est en défaut.</p>
+
+<p>Le corps médical a le même problème : outils cassés, prescriptions mal
+suivies parce que pas claires ou trop contraignantes, situation imprévue,
+combinaison de médicaments ou de maladies aux effets combinés désastreux…
+Sans parler de l’environnement global du patient qui serait toxique ou
+délétères (mauvaises habitudes…) et ça finit toujours pareil :</p>
+
+<p>quelqu’un va voir son ou sa médecin (qui est rarement la cause du souci),
+exige une solution (rapide si possible), et le tout sous peine de
+conséquences (parfois dramatiques).</p>
+
+<p><b>Le message n’est pas clair</b></p>
+
+<p>De même, un diagnostic est parfois difficile quand il y a une ou
+plusieurs causes de départ, mais qu’on ne les voit pas parce que
+les informations sont cachées, conflictuelles, similaires à un
+autre cas… pensez à la série Dr House si vous voulez un exemple.</p>
+
+<p><b>Mais, c’est pas mon problème ?</b></p>
+
+<p>Pourquoi ai-je tenu à faire cette liste si longue et qui parle si peu de code ?</p>
+
+<p>Tout d’abord parce que les cas de la vraie vie sont au moins aussi nombreux.</p>
+
+<p>Mais aussi parce qu’on tentera d’attribuer des erreurs de ces huit catégories-là à votre code, faute de mieux comprendre ou par calcul
+politique. Pour être clair, parce qu’il y a quelqu’un qui pense
+“ce bug, c’est pas mon problème”.</p>
+
+<p>Enfin, pour ne pas vous entendre, en tant que développeurs et développeuses, dire ce genre de phrase.
+Parce que toutes ces catégories sont ou devraient être de votre ressort :
+comprendre les implications des choix en amont, en aval, savoir dire non
+et expliquer les options à ceux qui feront les choix.</p>
+
+<p>Accepteriez-vous de voir un médecin qui se dédouane de vos problèmes ?</p>
+
+<p>Un ou une médecin a une position de prestige, de pouvoir, et vous êtes
+en position de dépendance. Les sujets abordés vous touchent directement.</p>
+
+<p>Les décisions ont intérêt d’être claires et concises.
+On n’accepte pas d’être cobaye, de jouer aux devinettes.
+Toute action doit être motivée et expliquée, y compris quand il s’agit
+de se dessaisir du sujet pour le confier à un confrère ou une consoeur.</p>
+
+<p>Et pourtant, on serait tellement en colère de voir une décision
+hâtive et fausse prise avec autorité et aplomb, se révéler fausse :
+on se sentirait trompé, on perd confiance, on peut se mettre en colère !
+Mais à l’inverse, ça donne davantage confiance de s’entendre dire
+“je ne sais pas, on va chercher” ou
+“j’ai une piste, on va faire des examens pour confirmer”,
+ou encore “j’ai plusieurs pistes, on va tester pour voir”.</p>
+
+<p><b>Avant le bug : monitoring</b></p>
+
+<p>Je n’ai pas retrouvé de source mais Toyota avait une manière de
+décrire les problèmes, non par leurs conséquences comme souvent,
+mais comme étant une déviation de la norme.</p>
+
+<p>Les tests médicaux, analyse ou monitorings sont chers ou pas pratiques.
+On aura tendance à ne les faire que quand tout va mal. C’est un peu
+dommage, et c’est pourquoi on encourage non seulement à un suivi de
+ce qui a été mal un jour, mais aussi parfois à un checkup régulier.</p>
+
+<p>Avant de se dire ce qui est normal, il faut pouvoir le suivre,
+savoir ce qui est dans la norme ou pas. Et encore, pensez à la
+météo, aux pollens ou aux grippes : il y a la norme saisonnière.
+Pour un site web de commerce, par exemple, quelles sont les heures,
+les jours de la semaine, les périodes de l’année les plus importantes ?</p>
+
+<p>Après le décès de Michael Jackson, Google a reçu tellement de requêtes
+qu’ils ont cru à une attaque. Après chaque événement marquant, Wikipedia
+reçoit un flot de modifications plus ou moins légitimes : il est important
+d’avoir un plan d’action, même s’il dit juste “attention, il se passe
+davantage de choses que la normale”.</p>
+
+<p><b>Identification du bug</b></p>
+
+<p>L’identification d’un problème est facilitée si vous avez un monitoring
+en place. Sinon, c’est souvent par hasard, par chance (en anticipation),
+ou parce que les conséquences de votre bug vont remonter avec bruit.</p>
+
+<p>Je pense qu’il y aurait beaucoup à dire, et chaque métier a probablement
+ses moyens d’améliorer et d’anticiper l’identification de problèmes,
+mais ça dépend tellement de chaque cas que je vais arrêter là.</p>
+
+<p><b>À la semaine prochaine !</b></p>
+
+<p>Et voilà, on a vu ce qu’on peut faire avant et au moment où l’on
+détecte un problème, à la semaine prochaine pour voir comment on
+peut réagir et corriger ce bug !</p>
+
+  </article>
+
+  <div class="todo block">
+    <h4>TODO-list : Raccourcir les feedback loops</h4>
+    <p>REPL, logs, tests auto, TDD, relectures de specs...</p>
+  </div>
+
+  <div class="mot block">
+    <h4>Le mot du jour : Feedback Loop</h4>
+    <p>Boucle de rétroaction : le résultat de ce que vous faites</p>
+  </div>
+
+  <footer class="post-footer">
+    <p class="post-meta">
+      <span>&#x21fd;
+	<a href="/014/">014. La sécurité par l'obscurité</a></span>
+    &mdash;
+    
+    </p>
+    <p>
+      2016-05-08 • <a href="http://maitre-du-monde.fr">Sylvain Abélard</a>
+  </footer>
+
+    
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-41077934-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  </body>
+
+</html>
