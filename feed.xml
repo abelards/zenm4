@@ -18,9 +18,219 @@
     <itunes:image href="http://zenm4.net/img/zenm4_big.jpg" />
     <itunes:category text="Technology" />
     <itunes:explicit>no</itunes:explicit>
-    <pubDate>Mon, 09 May 2016 14:26:04 +0200</pubDate>
-    <lastBuildDate>Mon, 09 May 2016 14:26:04 +0200</lastBuildDate>
+    <pubDate>Sun, 15 May 2016 17:56:57 +0200</pubDate>
+    <lastBuildDate>Sun, 15 May 2016 17:56:57 +0200</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Solution d&#39;urgence</title>
+        <description>&lt;p&gt;Suite de l’épisode 15 sur le debugging.
+On a vu comment un bug peut arriver, et on en a détecté un.&lt;/p&gt;
+
+&lt;p&gt;Maintenant, comment le résoudre et comment réagir ?
+Et comment gérer humainement ce qui se passe autour de vous ?&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Urgence&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;J’avais pris le parti de regarder du côté de la médecine,
+mais parlons maintenant des interventions et secours d’urgence.&lt;/p&gt;
+
+&lt;p&gt;Les formations de premiers secours vous donneront trois étapes :
+protéger, alerter, secourir.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Protéger&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Protéger, c’est éviter le suraccident. Si une erreur source vous
+cause des problèmes en pagaille, et si vous avez une idée de ce que
+ça peut être, évaluez rapidement et limitez les dégâts.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Alerter&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Alerter, c’est prévenir qui de droit : qui a été ou est encore impacté,
+que doit-il absolument savoir tout de suite, pour ne pas le noyer dans
+les informations inutiles, peut-il agir, que recommandez-vous…&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Secourir&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Et enfin, secourir, c’est à dire a minima s’assurer que lorsque les
+secours arrivent, la personne en détresse n’est pas dans une pire
+situation qu’auparavant. Si vous résolvez le tout, tant mieux, mais
+il y aura probablement l’avis d’un professionnel de santé plus tard,
+question de responsabilités.&lt;/p&gt;
+
+&lt;p&gt;Reprenons dans notre contexte.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Protéger : coupure d’urgence&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans certains cas, et sûrement en accord préalable avec ceux que
+ça concerne, la solution la plus simple est de “tout couper”.&lt;/p&gt;
+
+&lt;p&gt;Comme vous pourriez couper le disjoncteur ou le gaz en cas
+d’incendie, ou l’eau en cas d’inondation de votre appartement :
+si le site Web institutionnel de votre entreprise est tombé,
+ce n’est pas sérieux, mais s’il a été “défiguré” par des pirates,
+c’est pire.
+Peut-être vaut-il mieux le couper le temps de comprendre et réagir.&lt;/p&gt;
+
+&lt;p&gt;Souvent, on aura mis des barrières pour éviter les attaques massives :
+au bout de plusieurs tentatives erronnées pour votre code de carte bleue
+ou de téléphone, ça se bloque, ou ça attend de plus en plus longtemps.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Alerter : qualification de bug&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Quand vous appelez les secours (pompiers, SAMU…) ils vous posent
+un certain nombre de questions pour qualifier votre urgence :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;un nid de frelons ou d’abeilles, ce ne sont plus les pompiers qui gèrent&lt;/li&gt;
+  &lt;li&gt;un arrêt cardiaque, c’est plus urgent qu’une jambe cassée&lt;/li&gt;
+  &lt;li&gt;un souci de santé exige ambulance et médecin, pas un camion incendie&lt;/li&gt;
+  &lt;li&gt;un carambolage avec 3, 10, 30 voitures n’a pas le même nombre de blessés&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bref, savoir quels moyens (type, nombre) mettre en face de votre besoin,
+et s’occuper de vous au mieux sans priver quelqu’un dans une urgence
+encore plus grave.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;et selon les cas, faut-il aussi contacter la police ?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Les gens du centre de répartition pourront se coordonner avec d’autres
+services pour alerter, communiquer, limiter les dégâts ou assurer une
+continuité de service : par exemple lors d’un accident de la route,
+il y aura les constatations à faire, et la circulation à assurer.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Prioriser&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Une fois identifié, un bug finit souvent dans un outil de ticketing
+ou bug tracker : un produit du marché, quelque chose de dédié,
+de fait maison, ou comme très souvent rangé dans un tableur.&lt;/p&gt;
+
+&lt;p&gt;On apprécie en général de pouvoir noter la gravité de chaque bug,
+pour savoir ce qui est prioritaire.&lt;/p&gt;
+
+&lt;p&gt;Et là, la médecine a deux mots utiles pour nous : “aigu” et “chronique”.
+Une douleur aigue est typiquement courte et intense, elle s’impose à vous.
+Une condition chronique se fait dans la durée… et peut causer, à terme,
+des épisodes aigus. À vous de voir comment vous priorisez.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Secourir : “cellule de crise”&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Tous les bugs ne le justifient pas forcément, mais on peut s’inspirer
+de plusieurs protocoles que mettent en place notamment les pompiers,
+l’armée, mais aussi des cellules de relation presse en cas d’incident.&lt;/p&gt;
+
+&lt;p&gt;On trouve assez souvent des process réinventés par chaque équipe, mais
+les points qui reviennent souvent sont :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;une seule personne qui supervise et décide&lt;/li&gt;
+  &lt;li&gt;une seule personne qui sert de point d’entrée et de communication&lt;/li&gt;
+  &lt;li&gt;déranger le moins possible les personnes qui résolvent&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bref, une “cellule de crise” ou “war room” pour améliorer la communication
+et les retours rapides. C’est très bien mais les petits malins se
+demanderont toujours pourquoi on n’a pas mis en place avant un système
+de communication inter-équipes efficace. À vous de voir.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;La vie reprend son cours&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;En parallèle à l’incident ou après celui-ci, il faudra bien reprendre
+un jour le cours normal des événements. Je ne vais pas m’étendre sur
+les PCA et PRA, plans de continuité ou reprise d’activité, mais c’est
+là qu’on verra si vous en avez un, s’il a été testé, et s’il marche.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Rétrospective&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;On essaie aussi au maximum de noter les étapes de résolution :
+si on se rate lors des correctifs, on pourra savoir où et quand on
+s’est ratés, pour faire une reprise sur incident.&lt;/p&gt;
+
+&lt;p&gt;Puisque tout est déjà écrit, ça peut aussi devenir à terme un
+nouveau processus dans l’équipe : si le problème revient, on saura
+mieux chercher, mieux résoudre, et limiter les pistes à explorer.&lt;/p&gt;
+
+&lt;p&gt;De même, quand des médecins se renvoient votre cas les uns les autres,
+ils font parfois pour eux, parfois par contrainte réglementaire,
+parfois pour la recherche, des notes sur ce qui marche ou marche pas,
+afin de mieux réagir les fois d’après.&lt;/p&gt;
+
+&lt;p&gt;Puisque j’ai choisi une analogie avec la médecine, je préfère le mot
+“rétrospective”, mais on trouve souvent le mot “post-mortem”,
+notamment dans le cas des attaques informatiques.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Blameless Post-Mortems&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Une bonne rétrospective doit être faite avec des informations fiables
+pour occasionner le changement voulu : process, doc, code, infra…
+afin qu’on gagne du temps et de la confiance par la suite.&lt;/p&gt;
+
+&lt;p&gt;Mais elle se fait forcément après l’incident. On souffre donc :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;de ne pas la prioriser car on a plus urgent (on ne s’améliorera pas)&lt;/li&gt;
+  &lt;li&gt;de la voir se transformer en distribution de claques (culture du blâme)&lt;/li&gt;
+  &lt;li&gt;et donc de ne pas avoir d’informations fiables (tendre le bâton pour se faire battre)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Là encore, j’espère que si ça n’est pas le cas dans votre équipe,
+vous aurez l’occasion d’expliquer pour mettre ça en place sereinement.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Humainement&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Pour tout le monde, l’enjeu est d’accepter l’erreur humaine mais
+d’avoir un process robuste mais flexible, “résilient”,
+qui résiste à ce genre d’erreurs.&lt;/p&gt;
+
+&lt;p&gt;Un moyen simple et que le monde hospitalier a mis en place pour cela,
+c’est une abondance de check-lists : toutes ces questions pour s’assurer
+que vous êtes bien le bon patient, venu pour telle raison, qui a ou n’a
+pas pris tel médicament, n’a pas fait tel voyage etc.&lt;/p&gt;
+
+&lt;p&gt;On parlera peut-être un jour des estimations, qui prendront au moins
+un épisode à elles toutes seules, mais pour le moment dites-vous
+juste que, bien que tous mes conseils insistent pour garder son calme,
+résoudre les choses correctement après enquête, il y a forcément un
+sens de l’urgence pour certains, et que leur répondre
+“on verra quand ce sera fait” n’est pas satisfaisant.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Empathie et compassion&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Bien sûr, tout le monde peut le comprendre, que penserait-on d’un
+médecin qui vous annonce votre problème sans vous avoir examiné ?
+Question de sérieux, de professionalisme, et de bon sens.&lt;/p&gt;
+
+&lt;p&gt;Mais quand vous gérez un bug en tant que développeur ou développeuse,
+pensez à ce que vous répondez à vos clients et demandez-vous
+“comment je le prendrais si j’étais malade et que les médecins me
+disaient cela ?”&lt;/p&gt;
+
+&lt;p&gt;Dans ces situations, n’oubliez jamais de faire preuve
+d’empathie et de compassion. Non seulement c’est la base du
+respect, mais vous risqueriez bien d’en apprendre davantage sur
+le métier, les contraintes non dites, et avoir des idées pour la suite
+en terme de priorisation, communication, et prévention.&lt;/p&gt;
+
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Résoudre un bug c'est comme une intervention des secours d&#39;urgence
+	</itunes:subtitle>
+	<itunes:summary>
+	  Résoudre un bug c'est comme une intervention des secours d&#39;urgence
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/typhon.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/264236612-zenm4-016-zen-metaphor-solution-durgence.m4a" length="54700" type="audio/mp4" />
+	<itunes:duration>9:07</itunes:duration>
+
+        <pubDate>Sun, 15 May 2016 15:45:00 +0200</pubDate>
+        <link>http://zenm4.net/016/</link>
+        <guid isPermaLink="true">http://zenm4.net/016/</guid>
+        
+        <category>meta</category>
+      </item>
     
       <item>
         <title>Désinsectisation</title>
@@ -2450,10 +2660,10 @@ Il ne devrait plus y avoir de C dans zenm4.&lt;/p&gt;
 </description>
 	<itunes:author>Sylvain Abélard</itunes:author>
 	<itunes:subtitle>
-	  Variables, pointeurs, liste chaînée c'est comme contacter quelqu&#39;un par téléphone
+	  Variables, pointeurs, liste chaînée c'est comme chercher le numéro de téléphone de quelqu&#39;un via des amis
 	</itunes:subtitle>
 	<itunes:summary>
-	  Variables, pointeurs, liste chaînée c'est comme contacter quelqu&#39;un par téléphone
+	  Variables, pointeurs, liste chaînée c'est comme chercher le numéro de téléphone de quelqu&#39;un via des amis
 	</itunes:summary>
 	<itunes:image href="http://zenm4.net/img/tree.png" />
 	<enclosure url="http://feeds.soundcloud.com/stream/243520005-zenm4-001-zen-metaphor-liste-chainee.m4a" length="32700" type="audio/mp4" />
