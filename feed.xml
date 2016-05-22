@@ -18,9 +18,244 @@
     <itunes:image href="http://zenm4.net/img/zenm4_big.jpg" />
     <itunes:category text="Technology" />
     <itunes:explicit>no</itunes:explicit>
-    <pubDate>Sun, 15 May 2016 17:56:57 +0200</pubDate>
-    <lastBuildDate>Sun, 15 May 2016 17:56:57 +0200</lastBuildDate>
+    <pubDate>Sun, 22 May 2016 23:34:01 +0200</pubDate>
+    <lastBuildDate>Sun, 22 May 2016 23:34:01 +0200</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Graphes ? Eek!</title>
+        <description>&lt;p&gt;Retour à l’école et aux épisodes “concept” pour parler des graphes !&lt;/p&gt;
+
+&lt;p&gt;En première année de prépa en cours d’algo, j’ai vu trois structures
+de données principales que sont les listes, les arbres et les graphes.&lt;/p&gt;
+
+&lt;p&gt;Encore une fois, mon but n’est pas que les profs d’algos s’étranglent
+scandalisés devant ce que je raconte, mais de dédramatiser pour les
+débutants et leur mettre le pied à l’étrier.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Listes, Arbres, Graphes&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Évidemment il y a énormément à dire sur chacun, la clé est que chaque
+fois que vous arrivez à représenter le problème que vous avez, sous
+des formes connues, vous avez tout un ensemble de connaissances à
+votre disposition.&lt;/p&gt;
+
+&lt;p&gt;Et à chaque spécificité de votre problème, vous avez soit la chance
+d’avoir des contraintes qui simplifient les algos connus ou vous
+permettent d’éviter des prises de tête, soit la malchance de ne pas
+rentrer dans les cases de ce qui est couramment étudié et présenté,
+et de devoir trouver les astuces vous-mêmes.&lt;/p&gt;
+
+&lt;p&gt;On a parlé des listes chaînées, et des énumérations en Ruby, et bien
+qu’il y ait de nombreuses variantes et astuces à ajouter, je pense
+en rester là.&lt;/p&gt;
+
+&lt;p&gt;Je n’ai pas encore parlé des arbres, principalement parce que je
+n’ai eu ni d’inspiration, ni vu de problème majeur et explicable
+simplement : soit des étudiants se battre sur des points d’algo
+assez techniques, soit des gens qui n’avaient pas vu que leur
+problème était en réalité à représenter sous forme d’arbre, mais
+le concept en lui-même me semble assez bien compris.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Graphes&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;La manière dont je visualise un graphe, c’est un GPS ou une carte
+des transports, disons le métro parisien.&lt;/p&gt;
+
+&lt;p&gt;Quand vous dessinez un graphe, vous avez des boîtes ou des points
+reliés par des lignes ou des flèches. Les relations sont des arcs
+(“arêtes”), les éléments reliés entre eux, des noeuds (“sommets”).&lt;/p&gt;
+
+&lt;p&gt;La carte du métro vous représente les lignes et stations, d’ailleurs
+de manière simplifiée par rapport à la réalité : vous n’avez pas les
+sorties, les couloirs, le temps de trajet représenté fidèlement.&lt;/p&gt;
+
+&lt;p&gt;Les deux choses les plus simples à faire avec un tel graphe sont :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;lister les stations (parcours du graphe sans rien oublier)&lt;/li&gt;
+  &lt;li&gt;trouver un plus court chemin entre deux stations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Les façons les plus simples de faire sont de choisir un point de
+départ, et de tout lister ensuite à partir de là. Pour trouver une
+stratégie adaptée, on doit se poser plusieurs questions.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Graphe orienté&lt;/b&gt;&lt;br /&gt;
+&lt;i&gt;Est-ce que je peux toujours faire marche arrière ?&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans la plupart des stations du métro parisien, oui.
+S’il y a un tunnel entre deux stations, il les relie dans un sens et
+dans l’autre. Mais sur quelques endroits, on a des sens uniques :
+ligne 7bis ou Michel Ange (Auteuil/Molitor) lignes 9 et 10.&lt;/p&gt;
+
+&lt;p&gt;Le graphe du métro parisien est orienté (ou dirigé) : si vous trouvez
+un chemin pour aller d’une station à une autre, le chemin retour ne
+sera pas forcément exactement le même.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Graphe connexe&lt;/b&gt;&lt;br /&gt;
+&lt;i&gt;Est-ce que toutes les stations sont reliées entre elles ?&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;A priori, oui. On peut débattre sur le funiculaire de Montmartre,
+mais c’est à peu près tout.&lt;/p&gt;
+
+&lt;p&gt;Par contre, imaginez un instant que telle ou telle ligne ou station
+soit fermée : travaux, grèves, incidents, ou même correspondance
+fermée vous obligent à changer de trajet.&lt;/p&gt;
+
+&lt;p&gt;Le métro parisien est si dense qu’on imagine mal une situation où il
+représenterait deux graphes coupés qui ne peuvent pas communiquer
+entre eux. À la rigueur, couper le pont de Charenton : le terminus de
+Créteil est assez loin mais la ligne 8 n’a pas de correspondance après
+Porte de Charenton. Bien entendu, dans ces cas-là, il n’y aurait
+probablement pas de métro entre les poignées de stations qui restent
+seules.&lt;/p&gt;
+
+&lt;p&gt;Mais si on représente le graphe de toutes les voies ferrées françaises
+et britanniques, quand le Tunnel sous la Manche est fermé, on a bien
+deux graphes assez grands qui ne sont pas reliés entre eux.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Graphe pondéré&lt;/b&gt;&lt;br /&gt;
+&lt;i&gt;Est-ce que tout chemin d’une station à ses voisines prend le même temps ?&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;À Paris, bien sûr que non. Certaines stations sont proches et d’autres
+éloignées. Si on veut vous proposer un chemin optimal, c’est une
+information intéressante à prendre en compte : non seulement il y a
+des trajets plus courts, mais il y a aussi des correspondances plus
+simples, mais il y a aussi dans la vraie vie le fait de marcher plus
+ou moins longtemps en surface et choisir les bonnes stations de départ
+et d’arrivée.&lt;/p&gt;
+
+&lt;p&gt;En voiture, votre GPS va même probablement avoir des poids différents,
+voire toute une liste de contraintes : les kilomètres à parcourir,
+mais aussi les vitesses maximum autorisées voire le trafic en temps
+réel, pour calculer le temps ; l’argent, les voies limitées en hauteur
+ou largeur…&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Plus court chemin&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;À partir de là, vous pouvez envisager plusieurs algos de cartographie
+par analogies simples : vous partez d’une station, et on va simuler
+presque tous les chemins possibles entre départ et arrivée.
+Si vous le faites vous-mêmes, vous allez repasser par plein de stations.&lt;/p&gt;
+
+&lt;p&gt;Plus rapide, vous le faites avec une équipe, ou disons une infinité de
+clones de vous-mêmes, qui doivent pouvoir se parler pour comparer les
+chemins empruntés.&lt;/p&gt;
+
+&lt;p&gt;Et là, la métaphore a atteint ses limites : quand on rédige un algorithme,
+on doit se rappeler que l’ordinateur est très bête, il ne se rappellera de
+rien de particulier sauf si vous lui dites de faire attention.
+Un algo un peu naïf pourrait l’oublier et ferait des recherches à
+l’infini, en passant sans cesse par les mêmes stations.&lt;/p&gt;
+
+&lt;p&gt;Ça nous mène à une propriété et une contrainte de plus :&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Graphe cyclique&lt;b&gt;&lt;br /&gt;
+&lt;i&gt;Est-ce que partant d’une station, je peux y revenir ?&lt;/i&gt;&lt;/b&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;À Paris, oui, vu le nombre de lignes et le fait que presque tous les
+chemins sont faisables en sens inverse.&lt;/p&gt;
+
+&lt;p&gt;Comme dans la vraie vie, on sait bien qu’on est en train d’évaluer un
+chemin qu’on a déjà vu, dans la plupart des algorithmes on va
+conserver quelque part une liste des sommets qu’on a déjà visités.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Cycle absorbant&lt;/b&gt;&lt;br /&gt;
+&lt;i&gt;Est-ce que je peux faire tourner le temps à l’envers ?&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;OK ce n’est pas la meilleure formulation, mais imaginons des
+poids négatifs dans un graphe pondéré.
+Dans l’image du métro, on ne peut pas revenir dans le temps,
+aucune arête n’a de poids négatif. A fortiori, il n’existe
+pas de boucle de transports qui vous ferait revenir dans le temps.&lt;/p&gt;
+
+&lt;p&gt;Mais imaginons que vous avez construit un graphe pour représenter une
+suite de choix et d’étapes, certaines où vous payez de l’argent et
+d’autres où on vous en rend.&lt;/p&gt;
+
+&lt;p&gt;Si vous trouviez une combine pour gagner de l’argent indéfiniment,
+pourquoi pas : elle n’est probablement soit pas légale, soit pas
+éthique, soit avec des conditions de départ particulièrement
+restrictives, mais pourquoi pas.&lt;/p&gt;
+
+&lt;p&gt;En tout cas, parcourir un tel graphe pour trouver le coût le moins
+cher est une question qui n’aura pas de sens, puisque le moins
+cher serait “moins l’infini”. La plupart des algos de plus court
+chemin ne savent pas gérer ce cas-là, le mieux qu’ils puissent
+faire c’est détecter quand ça arrive.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Liste d’adjacence&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;On a raisonné tout l’épisode sur la carte du métro.
+Comment on pourrait stocker de telles informations dans un ordinateur ?&lt;/p&gt;
+
+&lt;p&gt;Deux des méthodes les plus utilisées sont la liste d’ajacence et la matrice d’adjacence.&lt;/p&gt;
+
+&lt;p&gt;La liste d’adjacence, c’est quand chaque station connaît ses “voisines”, celles
+qu’on peut atteindre à partir de là.
+C’est ce que vous avez affiché ou annoncé dans de nombreux systèmes de transport :
+la station suivante et les correspondances.&lt;/p&gt;
+
+&lt;p&gt;On n’en parle pas dans les transports mais bien évidemment, dans votre code,
+il faudrait mentionner la station précédente si on peut y aller (hors cas du
+sens unique donc).&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Matrice d’adjacence&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Et la matrice d’adjacence, c’est faire un tableau avec tous les
+sommets en ligne d’en-tête, tous les sommets en colonne d’en-tête, et
+à chaque case correspondante, ces sommets sont-ils reliés par un arc ?
+Oui, non, et le cas échéant avec quel poids ?&lt;/p&gt;
+
+&lt;p&gt;Ça ressemble un peu à ce que vous avez dans les cartes routières ou
+sur des tickets de péage : à titre indicatif, de telle ville à telle
+ville, tant de kilomètres ou tant d’euros.&lt;/p&gt;
+
+&lt;p&gt;Et comme on peut faire l’aller et le retour, c’est souvent représenté
+sous forme de triangle : je ne peux pas lire “de Toulouse à Bordeaux”,
+mais je peux trouver “de Bordeaux à Toulouse”. Si le graphe était
+orienté, on aurait besoin du tableau complet.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Essayez de l’écrire sur papier !&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;À écrire comme à lire, on voit rapidement que la liste d’adjacence est
+plus pratique quand il y a peu d’arêtes, de connexions, et que la matrice
+d’adjacence est plus adaptée quand il y a beaucoup de connexions entre les
+sommets.&lt;/p&gt;
+
+&lt;p&gt;Ce n’est pas toujours le cas qu’une intuition s’avère vraie, alors autant le noter :)&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Le cours n’est pas terminé&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;L’épisode va s’arrêter là, mais bien sûr le cours sur les graphes va
+plus loin : définitions précises, algos différents et calculs de complexité,
+et puis plusieurs outils de transformation, par exemple représenter un graphe
+sous forme d’arbre etc.&lt;/p&gt;
+
+&lt;p&gt;Ça permet quand on coince sur une représentation qui ne nous aide pas
+beaucoup, de retomber sur des situations qu’on maîtrise mieux, ce qui
+est une excellente méthode à suivre quand vous bloquez sur un cas
+précis.&lt;/p&gt;
+
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Les graphes et leurs usages c'est comme un GPS ou une carte du métro
+	</itunes:subtitle>
+	<itunes:summary>
+	  Les graphes et leurs usages c'est comme un GPS ou une carte du métro
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/barque.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/265404473-zenm4-017-zen-metaphor-graphes-eek.m4a" length="58500" type="audio/mp4" />
+	<itunes:duration>9:45</itunes:duration>
+
+        <pubDate>Sun, 22 May 2016 15:45:00 +0200</pubDate>
+        <link>http://zenm4.net/017/</link>
+        <guid isPermaLink="true">http://zenm4.net/017/</guid>
+        
+        <category>meta</category>
+      </item>
     
       <item>
         <title>Solution d&#39;urgence</title>
