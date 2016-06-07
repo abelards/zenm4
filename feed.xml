@@ -18,9 +18,247 @@
     <itunes:image href="http://zenm4.net/img/zenm4_big.jpg" />
     <itunes:category text="Technology" />
     <itunes:explicit>no</itunes:explicit>
-    <pubDate>Sun, 22 May 2016 23:34:01 +0200</pubDate>
-    <lastBuildDate>Sun, 22 May 2016 23:34:01 +0200</lastBuildDate>
+    <pubDate>Tue, 07 Jun 2016 14:48:39 +0200</pubDate>
+    <lastBuildDate>Tue, 07 Jun 2016 14:48:39 +0200</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Relativité</title>
+        <description>&lt;p&gt;Bonjour, aujourd’hui nous parlons de relatif et d’absolu.&lt;/p&gt;
+
+&lt;p&gt;Le concept est abstrait, mais utilisé partout, mais vous le comprenez
+déjà très bien. Malheureusement il y a parfois des confusions.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Contexte&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Par exemple, quand vous dites “ma chambre est au premier étage”, on
+suppose sans autre information qu’il s’agit de votre maison ou votre
+appartement. Si vous êtes en déplacement, qu’il s’agit de votre hôtel
+ou lieu de résidence. L’information est relative à quelque chose.&lt;/p&gt;
+
+&lt;p&gt;Mais si vous donnez l’adresse, il n’y a plus de doute.
+On peut retrouver votre chambre dans l’absolu.&lt;/p&gt;
+
+&lt;p&gt;Il y a un contexte qui aide à trouver “à partir de quoi” vous parlez.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Désambiguisation&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Malheureusement la confusion cause souvent des erreurs, non pas de
+débutant mais d’étourderie, puisque ça arrive aussi aux experts.&lt;/p&gt;
+
+&lt;p&gt;C’est juste que quand ça leur arrive, ils savent vite le voir car
+c’est en quelque sorte dans leur “checklist” interne de pistes
+d’attaques pour débugguer : le débutant ne l’a pas encore et c’est en
+rencontrant cette erreur (et tant d’autres) qu’il deviendra expert.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Le système de fichiers : un arbre&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Depuis longtemps, les ordinateurs traitent des fichiers, qu’ils
+rangent dans des dossiers, et on peut mettre autant de dossiers
+qu’on veut dans un dossier. Bref, on a une sorte d’arbre.&lt;/p&gt;
+
+&lt;p&gt;C’est une métaphore très utile qui nous sert depuis longtemps, dont
+“tout le monde” a l’habitude. Elle montre peut-être ses limites,
+on nous promettait des systèmes de fichiers basés sur des “tags”
+et peut-être que les terminaux mobiles et les applications Web
+sont en train de nous changer nos habitudes, mais ce n’est pas
+encore tout à fait ça.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Arborescence de fichiers&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Bref, quand vous naviguez dans un explorateur de fichier, vous avez un
+point de départ, un endroit où vous êtes en ce moment, et un point
+d’arrivée désiré.&lt;/p&gt;
+
+&lt;p&gt;En version graphique on espère que l’outil vous aide visuellement
+à situer où vous êtes. Windows, MacOSX et les différents Unix
+vous proposent souvent plusieurs points de départ :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;une “racine” d’arbre par support physique : je suis sur un disque dur ou une clé USB&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;quelques points d’entrée : système/applications, mon compte/mes documents&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Et ensuite on navigue de plus en plus profond dans les dossiers, on remonte, etc.&lt;/p&gt;
+
+&lt;p&gt;Chaque dossier est noté, pour Unix avec des barres obliques (slash),
+pour Windows avec des antislash (ou backslash).&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;PATH&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;On pourrait croire que dans la ligne de commande, il n’y a que deux
+points d’entrée : le dossier racine &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;, et votre dossier personnel &lt;code class=&quot;highlighter-rouge&quot;&gt;~&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Et bien non ! Il existe une variable d’environnement, le &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt; (chemin)
+qui dira, quand vous cherchez une commande, où aller la chercher.
+Votre shell va d’abord regarder si c’est pour lui (un builtin),
+puis dans chacun des dossiers de départ. Faites &lt;code class=&quot;highlighter-rouge&quot;&gt;echo $PATH&lt;/code&gt; et
+vous verrez la liste séparée par des “deux points”, par exemple
+&lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Quand vous utilisez des gestionnaires de paquets, ils essaieront
+probablement d’ajouter dans ce PATH un dossier pour que le système
+regarde d’abord s’il n’y a pas le binaire voulu dedans.&lt;/p&gt;
+
+&lt;p&gt;Quand on fait des ateliers d’installation avec des débutants, on se
+retrouve rapidement à gérer des erreurs du genre : soit l’exécutable
+n’est pas où on veut, soit le dossier que l’on veut n’est pas dans le
+PATH.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Le Web&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Quand le Web a été inventé, il était lui aussi calqué sur l’échange
+de fichiers, la mise à disposition de ressources à des endroits précis,
+et a très naturellement calqué ses URL (Universal Resource Location),
+emplacement universel de la ressource, un peu comme des fichiers,
+d’où les slash dans de nombreuses adresses.&lt;/p&gt;
+
+&lt;p&gt;Imaginons &lt;code class=&quot;highlighter-rouge&quot;&gt;http://bibliotheque.fr/sciences_et_techniques/informatique/web/url.htm&lt;/code&gt;
+une adresse avec le protocole, le domaine, puis une arborescence de
+fichiers qui&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ne devrait jamais changer&lt;/li&gt;
+  &lt;li&gt;vous permet aussi de voir un peu la structure qu’ils ont choisi, pour explorer davantage&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;b&gt;Rails&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;En Ruby on Rails, on fait bien davantage que juste accéder à des
+fichiers ou des représentations d’enregistrements de base de
+données. On a potentiellement toute une application qui tourne
+avec des actions différents et des process métiers spécifiques.&lt;/p&gt;
+
+&lt;p&gt;Au départ, le routage de base donnait par exemple &lt;code class=&quot;highlighter-rouge&quot;&gt;/users/show/1&lt;/code&gt;
+pour aller voir les utilisateurs (et le UsersController), son
+action show (la méthode que vous avez codée) avec l’identifiant 1.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;REST&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans les applications Rails récentes on ne voit même plus le &lt;code class=&quot;highlighter-rouge&quot;&gt;/show&lt;/code&gt;.
+On ira voir &lt;code class=&quot;highlighter-rouge&quot;&gt;/users/1&lt;/code&gt; et on lui dira quelque chose : on va soit lui
+demander de se présenter, soit lui ordonner des modifications, soit
+le supprimer ou juste voir s’il existe sans se soucier des détails…&lt;/p&gt;
+
+&lt;p&gt;Ce sont respectivement les verbes HTTP GET, POST, DELETE, HEAD.
+Il y a bien plus de verbes et de nuances dans l’utilisation qu’on
+en fait, mais ce sont les conventions que Rails utilise, et donc
+celles dont j’ai le plus l’habitude dans mes projets, ceux que
+je donnerai aux autres et ceux que je récupèrerai des autres.
+Encore une histoire de contexte à réexpliquer ou non.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;URLs&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;En réalité, une requête Web est un peu plus complexe : il y a une
+partie visible que vous voyez dans la barre d’adresses du navigateur,
+et une partie cachée qui donnera des informations en plus.
+Le fameux verbe, les fameuses données à envoyer, les cookies etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Relatif et absolu&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Pour en revenir au sujet, on voit bien que répéter l’aborescence est
+parfois pénible : quand vous demandez votre chemin, on vous donnera
+souvent à partir de là où vous êtes, allez dans telle direction
+jusqu’à tel repère etc. On ne vous réexplique pas comment arriver
+là où vous êtes en ce moment, on ne vous donne pas l’adresse ou la
+position GPS, mais plutôt quelque chose comme “troisième à gauche”.&lt;/p&gt;
+
+&lt;p&gt;De même, quand vous donnez une adresse Web, quand le moyen le plus
+simple est de dire “par rapport à là où vous êtes, allez dans ce sens-là”,
+ça vous embête de répéter “pour tel site web à tel endroit de départ”.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;HTML&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;HTML vous permet, dans les liens, via les références hypertexte (&lt;code class=&quot;highlighter-rouge&quot;&gt;href&lt;/code&gt;)
+soit de commencer par le protocole (ou double slash &lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt; pour dire “reste
+comme ça” : HTTP reste HTTP et HTTPS reste HTTPS) et le nom de domaine
+(&lt;code class=&quot;highlighter-rouge&quot;&gt;zenm4.net&lt;/code&gt;),
+soit à partir du début de l’arborescence du site, avec un slash
+(&lt;code class=&quot;highlighter-rouge&quot;&gt;/archive&lt;/code&gt; ou &lt;code class=&quot;highlighter-rouge&quot;&gt;/img/barque.png&lt;/code&gt;) ou encore juste un nom de fichier
+ou dossier, sans slash, qui signifiera “à partir du dossier dans lequel
+je me trouve”.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Rails&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Rails cache beaucoup de “magie” dans son helper &lt;code class=&quot;highlighter-rouge&quot;&gt;link_to&lt;/code&gt;, ou plus
+précisément &lt;code class=&quot;highlighter-rouge&quot;&gt;url_for&lt;/code&gt; :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vous pouvez mettre un objet ActiveRecord, et il tentera de voir si le routage, pris en sens inverse, permet de lui donner une URL&lt;/li&gt;
+  &lt;li&gt;vous pouvez mettre des options et il tentera de trouver la bonne URL en imaginant que tout ce que vous lui précisez, c’est parce que ça change, et tout ce que vous ne lui précisez pas ne change pas (changer d’action dans le même contrôleur etc)&lt;/li&gt;
+  &lt;li&gt;vous pouvez mettre du texte respectant la norme des liens HTML et il ne devinera rien, considérant que vous savez ce que vous faites&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;CSS&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Même le CSS s’y met avec la directive &lt;code class=&quot;highlighter-rouge&quot;&gt;position: absolute&lt;/code&gt; : HTML
+permet de décrire une structure de boîtes dans des boîtes, et CSS
+permet de préciser des règles d’affichage de ces boîtes.&lt;/p&gt;
+
+&lt;p&gt;Par défaut, tout est dépendant de la boîte dans laquelle vous êtes,
+donc tout est &lt;code class=&quot;highlighter-rouge&quot;&gt;relative&lt;/code&gt;, mais parfois vous voulez préciser que c’est
+à partir du coin en haut à gauche de la page, donc &lt;code class=&quot;highlighter-rouge&quot;&gt;absolute&lt;/code&gt;, voire
+indépendamment de la page, fixé sur l’écran, donc &lt;code class=&quot;highlighter-rouge&quot;&gt;fixed&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Fini la confusion&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Voilà ! Comme toujours j’espère avoir démystifié le sujet et que cela
+vous permettra de ne pas vous faire avoir par la suite.&lt;/p&gt;
+
+&lt;p&gt;Quand votre installation rate, votre fichier n’est pas trouvé, vos
+liens ne fonctionnent pas en HTML ou Rails, vos affichages visuels
+sont décalés… vérifier si vous parlez en absolu, ou bien en relatif,
+et si oui par rapport à quoi.&lt;/p&gt;
+
+&lt;p&gt;C’est un outil crucial dans votre “boîte à outils de débuggueur”,
+aussi important et bête que “avez-vous bien branché les câbles”,
+“est-ce qu’il y a du courant électrique” ou “êtes-vous connecté à
+Internet”.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Clarté et concision&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Je n’ai pas de préférence entre l’un et l’autre.
+Chaque cas d’usage fera que l’un est plus pratique que l’autre,
+soit plus clair, explicite et verbeux, soit plus concis.&lt;/p&gt;
+
+&lt;p&gt;Si vous pensiez tout savoir, si vous pensez avoir perdu votre temps,
+rappelez-vous surtout si vous formez de grands débutants que c’est
+pourtant loin d’être évident : c’est en reformulant les référentiels
+et en questionnant les bases que de grandes découvertes scientifiques
+ont été faites (géocentrisme, héliocentrisme, physique de Newton et
+relativité).&lt;/p&gt;
+
+&lt;p&gt;Carl Sagan disait “si vous voulez faire une tarte aux pommes à partir
+de zéro, vous devez commencer par inventer l’univers”. Blague à part,
+aucune communication humaine ne peut tout réexpliquer, toutes se
+basent forcément sur des postulats de base.&lt;/p&gt;
+
+&lt;p&gt;Ça fait parfois du bien de les revisiter pour s’assurer qu’on est
+toujours dans le même référentiel.&lt;/p&gt;
+
+&lt;p&gt;À bientôt !&lt;/p&gt;
+</description>
+	<itunes:author>Sylvain Abélard</itunes:author>
+	<itunes:subtitle>
+	  Un chemin absolu ou relatif c'est comme trouver son chemin dans l&#39;absolu ou à partir de votre position
+	</itunes:subtitle>
+	<itunes:summary>
+	  Un chemin absolu ou relatif c'est comme trouver son chemin dans l&#39;absolu ou à partir de votre position
+	</itunes:summary>
+	<itunes:image href="http://zenm4.net/img/pas_japonais.png" />
+	<enclosure url="http://feeds.soundcloud.com/stream/267959579-zenm4-018-zen-metaphor-relativite.m4a" length="79600" type="audio/mp4" />
+	<itunes:duration>13:16</itunes:duration>
+
+        <pubDate>Sun, 05 Jun 2016 15:45:00 +0200</pubDate>
+        <link>http://zenm4.net/018/</link>
+        <guid isPermaLink="true">http://zenm4.net/018/</guid>
+        
+        <category>concept</category>
+      </item>
     
       <item>
         <title>Graphes ? Eek!</title>
